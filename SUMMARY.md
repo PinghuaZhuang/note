@@ -1,42 +1,26 @@
-# Note	
-
-> 记录自己的一些心得与经验.
-
-
+# Summary
 
 ## Frame
-
-+ [Vue](vue.md)
-+ [Angular](angular.md)
-+ [React](react.md)
-
-
+* [Vue](vue.md)
+* [Angular](angular.md)
+* [React](react.md)
 
 ## Packaging tools
-
-+ webpack
-+ grunt
-+ gulp
-+ rollup
-
-
+* [webpack](webpack.md)
+* [grunt](grunt.md)
+* [gulp](gulp.md)
+* [rollup](rollup.md)
 
 ## Plugins
-
--  `axios-mock-adapter`:	`axios` 利用定时器模拟本地数据
--  `teen.js`:    动画函数库
--  `tableData`:    表单制作
--  [Uploadify](http://www.uploadify.com/):    上传插件 (**DropZoneJS**, **jQuery File Uploader**)
-
-
+* [axios-mock-adapter](axios-mock-adapter.md)
+* [TEEN.js](TEEN.md)
+* [tableData](tableData.md)
+* [Uploadify](http://www.uploadify.com/)
 
 ## Animation
-
-- [canvas](canvas.md)
-
-
+* [canvas](canvas.md)
 
 ## Git & Gitbook
+* [git 常用命令](git.md)
+* [gitbook 常用命令](README.md)
 
-+ [git 常用命令](git.md)
-+ [gitbook 常用命令](README.md)
