@@ -1,2 +1,2 @@
-# Augular
+# Angular
 
