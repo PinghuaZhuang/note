@@ -26,3 +26,35 @@
 
 ---
 
+
+
+## Render
+
+`Vue` 中, 使用 `render` 函数渲染是非常快的, 例如修改 `li` 标签顺序的时候. 就可以动态生成标签字符串去修改
+
+---
+
+
+
+# keep-alive
+
+页面缓存
+
+### keys
+
++ include
++ 
+
+### FIXED
+
+```js
+// router.js
+meta: {
+    
+    // true: 缓存
+    keep-alive: true
+}
+```
+
+---
+
