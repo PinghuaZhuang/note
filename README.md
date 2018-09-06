@@ -14,9 +14,14 @@ Error: ENOENT: no such file or directory, stat 'C:\Users\Administrator.DESKTOP-O
 
 Fix:
 
+``` cli
 cd ~/.gitbook/versions/版本/lib/output/website/
+```
+
 vim copyPluginAssets.js
+
 删除112行
+
 原因：[https://github.com/GitbookIO/...](https://github.com/GitbookIO/gitbook/issues/1309#issuecomment-273584516)
 
 
