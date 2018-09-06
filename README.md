@@ -4,6 +4,23 @@
 
 
 
+## gitbook 常见 bug 
+
+problem: 
+
+```cli
+Error: ENOENT: no such file or directory, stat 'C:\Users\Administrator.DESKTOP-ON5VPQH\Documents\Gitbook\note_book\gitbook\gitbook-plugin-fontsettings\fontsettings.js'
+```
+
+Fix:
+
+cd ~/.gitbook/versions/版本/lib/output/website/
+vim copyPluginAssets.js
+删除112行
+原因：[https://github.com/GitbookIO/...](https://github.com/GitbookIO/gitbook/issues/1309#issuecomment-273584516)
+
+
+
 # gitbook 常用的命令
 
 这里主要介绍一下 GitBook 的命令行工具 `gitbook-cli` 的一些命令, 首先说明两点:
