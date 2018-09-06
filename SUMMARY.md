@@ -9,10 +9,12 @@
 
 
 
-## node
+## Tutorial
 
 - [node 安装](./node/node-install.md)
 - [npm](./node/npm.md)
+- [制作脚手架](./tutorial/customCli.md)
+- [bower](./tutorial/bower.md)
 
 
 
@@ -41,4 +43,3 @@
 ## Git & Gitbook
 * [git 常用命令](git.md)
 * [gitbook 常用命令](README.md)
-
