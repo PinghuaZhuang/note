@@ -28,6 +28,8 @@ vim copyPluginAssets.js
 
 # gitbook 常用的命令
 
+> 注意: 需要 publish 才可以在线观看
+
 这里主要介绍一下 GitBook 的命令行工具 `gitbook-cli` 的一些命令, 首先说明两点:
 
 - `gitbook-cli` 和 `gitbook` 是两个软件
