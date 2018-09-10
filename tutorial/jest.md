@@ -12,6 +12,8 @@
 npm i jest -S-dev
 ```
 
+---
+
 
 
 ## jest.conf.js
@@ -22,6 +24,8 @@ npm i jest -S-dev
 
 + jsdom: 模拟浏览器
 + node
+
+---
 
 
 
@@ -40,7 +44,6 @@ npm i jest -S-dev
       "testURL": "http://localhost/"
   }
   ```
-
 
 
 

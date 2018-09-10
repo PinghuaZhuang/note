@@ -16,11 +16,13 @@
 >
 > 注意:
 >
-> ​	这里不能连接指定的包. 不能使用 '@'
+> 	这里不能连接指定的包. 不能使用 '@'
 
 ### example
 
 ```cli
 npm link C:\Users\Administrator.DESKTOP-ON5VPQH\Documents\GitHub\demos\nm
 ```
+
+---
 

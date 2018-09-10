@@ -15,9 +15,9 @@
 - [npm](./node/npm.md)
 - [制作脚手架](./tutorial/customCli.md)
 - [bower浏览器相关](./tutorial/bower.md)
-- [plugins][./tutorial/plugins.md]
-- [compatibility][./tutorial/compatibility.md]
-- [html][./tutorial/html.md]
+- [plugins](./tutorial/plugins.md)
+- [compatibility](./tutorial/compatibility.md)
+- [html](./tutorial/html.md)
 - [jest-单元测试](./tutorial/jest.md)
 
 

@@ -12,6 +12,8 @@
 
 async: IE 浏览器不支持, 使用 defer. 
 
+---
+
 
 
 ## active 伪类
@@ -29,6 +31,7 @@ async: IE 浏览器不支持, 使用 defer.
 document.body.addEventListener('touchstart', function () { });
 ```
 
+2. 局部为目标注册 `touchstart` 事件
 
+---
 
-1. 局部为目标注册 `touchstart` 事件

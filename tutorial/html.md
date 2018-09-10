@@ -13,6 +13,8 @@
 
 > 有兼容问题
 
+---
+
 
 
 ## * onVisibilitychange
@@ -46,7 +48,7 @@ function getVisibilityState() {
 };
 ```
 
-
+---
 
 
 

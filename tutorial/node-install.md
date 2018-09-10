@@ -46,6 +46,8 @@ $ NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node nvm install 4
    npm use v8.3.0
    ```
 
+---
+
 
 
 ## nrm 镜像源管理
@@ -82,6 +84,8 @@ npm install -g nrm
    nrm add  <registry> <url> [home]
    nrm del <registry>
    ```
+
+---
 
 
 
