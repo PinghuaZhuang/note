@@ -6,19 +6,16 @@
 
 > 要求系统版本好像要到4.2以上，Chrome版本39以上。
 
+原文链接: [developers.google.com][1]
+
+[online-demo][1]
+
 在自己网页的<head></head>标签中加入：
 
 ```html
+<!-- 16进制颜色值 -->
 <meta name="theme-color" content="<!--颜色的HEX代码-->">
 ```
-
-原文链接: [developers.google.com][1]
-
-
-
----
-
-[1]: https://developers.google.com/web/updates/2014/11/Support-for-theme-color-in-Chrome-39-for-Android?hl=en
 
 
 
@@ -31,3 +28,19 @@
 
 ## 连接移动端调试技巧
 
+
+
+## 设置 title 文本信息
+
+```js
+document.title = 'hahaha';
+```
+
+
+
+
+
+---
+
+[1]: https://developers.google.com/web/updates/2014/11/Support-for-theme-color-in-Chrome-39-for-Android?hl=en
+[2]: https://hodorshy.github.io/example/chrome-title-color.html

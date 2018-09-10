@@ -14,7 +14,33 @@ npm i jest -S-dev
 
 
 
-## 注意事项
+## jest.conf.js
+
+### testEnvironment
+
+运行环境
+
++ jsdom: 模拟浏览器
++ node
+
+
+
+## Bugs
+
++ SecurityError: localStorage is not available for opaque origins
+
+  将运行环境改为 node, 默认为 jsdom, 或者修改 testUrl
+
+  ```json
+  {
+      "testEnvironment": "node",
+      
+      // 如果需要在 jsdom 环境下运行报这个错
+      "verbose": true,
+      "testURL": "http://localhost/"
+  }
+  ```
+
 
 
 
