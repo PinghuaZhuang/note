@@ -71,6 +71,27 @@ function getVisibilityState() {
 
 可以使用 PageTransitionEvent 对象的 persisted 属性来检测页面是从服务器下载的或是缓存的, 如果缓存了页面, 返回 true, 否则, 返回 false.
 
+---
+
+
+
+## HTML 页面加载顺序
+
+[原文链接][6]
+
+1. 解析HTML结构
+2. 加载外部脚本和样式表文件
+3. 解析并执行脚本代码
+4. DOM树构建完成. // DOMContentLoaded
+5. 加载图片等外部文件
+6. 页面加载完毕. // load
+
+其实，这里还有一个readystatechange事件。
+ 当document.readyState 为 interactive 的时候，同时会触发DOMContentLoaded。
+ 当document.readyState 为 complete 的时候，同时会触发load。
+
+以后如需判断当前文档是否加载完成，只需要获取document.readyState的值即可。
+
 
 
 ---
@@ -80,3 +101,5 @@ function getVisibilityState() {
 [3]: https://blog.csdn.net/yl02520/article/details/17174107
 [4]: https://blog.csdn.net/littlebearGreat/article/details/79207215
 [5]: https://hodorshy.github.io/example/%E9%A1%B5%E9%9D%A2%E5%88%87%E5%88%B0%E5%90%8E%E5%8F%B0%E6%A3%80%E6%B5%8B.html
+
+[6]: https://www.jianshu.com/p/5c86c51a166e
