@@ -6,7 +6,7 @@
 
 ## art-template
 
-引用 `lib/template-web.js` 文件, web 使用. 具体请看 [github][1]
+浏览器实时渲染: 引用 `lib/template-web.js` 文件, web 使用. 具体请看 [github][1]
 
 [中文文档][2]
 
