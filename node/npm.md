@@ -26,3 +26,30 @@ npm link C:\Users\Administrator.DESKTOP-ON5VPQH\Documents\GitHub\demos\nm
 
 ---
 
+
+
+## npm 发布
+
+```flow
+op1=>operation: npm login
+op2=>operation: npm publish
+
+op1->op2
+```
+
+
+
+
+
+---
+
+
+
+
+
+
+
+
+
+
+
