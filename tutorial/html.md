@@ -100,7 +100,7 @@ function getVisibilityState() {
 
 ### iframe 下获取 window 对象
 
-[文章][3]
+[文章][7]
 
 ```html
 <iframe id="ct" class="ct-class" name="ctName"></iframe>
@@ -127,6 +127,70 @@ function getVisibilityState() {
 
 3. ownerDocument 属性: 获取 iframe 下面的 document 对象
 
+---
+
+
+
+## A 标签下载
+
+[原文链接][7]
+
+利用 a 标签的 `download` 属性来下载.
+
+### Blob 对象简单介绍
+
+```js
+var blob = new Blob( array, options );
+```
+
++ array 是一个由ArrayBuffer（二进制数据缓冲区）、ArrayBufferView（二进制数据缓冲区的array-like视图）、Blob、DOMString等对象构成的Array，或者其他类似对象的混合体，它将会被放进Blob。DOMStrings会被编码为UTF-8。
++ options 是可选的，它可能会指定如下两个属性：
+  - type，默认值为 ""，它代表了将会被放入到blob中的数组内容的MIME类型。
+  - endings，默认值为"transparent"，用于指定包含行结束符n的字符串如何被写入。 它是以下两个值中的一个： "native"，代表行结束符会被更改为适合宿主操作系统文件系统的换行符，或者 "transparent"，代表会保持blob中保存的结束符不变。
+
+```js
+var data = 'ttttttssssssss';
+var blob = new Blob( [ data ], {
+    type: 'text/plain'
+} );
+```
+
+> 关于 type 的类型可以对照 [MIME 参考手册][9] 设置type
+
+### URL 对象
+
+通过 URL 对象创建下载链接
+
+```js
+var urlObj = window.URL.createObjectURL( blob );
+```
+
+#### window.URL.revokeObjectURL()
+
+在每次调用createObjectURL()方法时，都会创建一个新的 URL 对象，即使你已经用相同的对象作为参数创建过。当不再需要这些 URL 对象时，每个对象必须通过调用 URL.revokeObjectURL()方法来释放。浏览器会在文档退出的时候自动释放它们，但是为了获得最佳性能和内存使用状况，你应该在安全的时机主动释放掉它们。
+
+### 利用 A 标签下载
+
+```js
+var a = document.querySelector( '#a' );
+
+    console.log( { a } );
+
+    function download ( data ) {
+
+        var blob = new window.Blob( [ data ], {
+            type: 'text/plain'
+        } );
+
+        var urlObj = window.URL.createObjectURL( blob );
+
+        a.href = urlObj;
+        a.download = 'xxxx.txt';
+    }
+
+    download( 'salkfja;lkfja;lkjsdflkajsdflkajsfdlkajsfdlaksf' );
+```
+
 
 
 
@@ -140,3 +204,7 @@ function getVisibilityState() {
 [5]: https://hodorshy.github.io/example/%E9%A1%B5%E9%9D%A2%E5%88%87%E5%88%B0%E5%90%8E%E5%8F%B0%E6%A3%80%E6%B5%8B.html
 
 [6]: https://www.jianshu.com/p/5c86c51a166e
+
+[7]: https://www.cnblogs.com/TiestoRay/p/2660524.html
+[8]: https://segmentfault.com/a/1190000015026760
+[9]: http://www.w3school.com.cn/media/media_mimeref.asp
