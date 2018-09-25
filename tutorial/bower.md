@@ -42,12 +42,68 @@
   };
   ```
 
+---
+
+
+
+## 浏览器通知 Notification
+
+[MDN][3]
+
+**Notifications API** 允许网页或应用程序在系统级别发送在页面外部显示的通知;这样即使应用程序空闲或在后台，Web应用程序也会向用户发送信息。本文将介绍在您自己的应用程序中使用此API的基础知识。
+
+> 注意: chrome 下 file 协议打开无效
+
+### 查看权限
+
+**Notification.permission**
+
+`default`
+
+​	用户还未被询问是否授权，所以通知不会被显示。
+
+​	参看 [Getting permission][4] 以了解如何请求显示通知的权限。
+
+`granted`
+
+​	表示之前已经询问过用户，并且用户已经授予了显示通知的权限。
+
+`denied`
+
+​	用户已经明确的拒绝了显示通知的权限。
+
+### 请求权限
+
+如果权限尚未被授予，那么应用不得不通过 `Notification.requestPermission()` 方法让用户进行选择。这个方法接受一个回调函数，一旦用户回应了显示通知的请求，将会调用这个函数。
+
+```js
+window.addEventListener( 'load', function () {
+  Notification.requestPermission( function ( status ) {
+    // 这将使我们能在 Chrome/Safari 中使用 Notification.permission
+    if ( Notification.permission !== status ) {
+      Notification.permission = status;
+    }
+  } );
+} );
+```
 
 ---
 
 
 
 ## 连接移动端调试技巧
+
+### 利用 chrome 链接手机调试
+
+效果图
+
+![](../images/brower_01.png)
+
+1. `PC` 和 手机安卓同一个版本号 `chrome` 浏览器( `IOS` 可能版本对不上 )
+2. 使用 USB 连接电脑( 安卓打开`USB`调试 )
+3. 打开电脑的chrome 在地址栏输入 `chrome://inspect`  选中 `Discover USB devices` 可以检测到你的设备 
+
+
 
 ---
 
@@ -65,3 +121,5 @@ document.title = 'hahaha';
 
 [1]: https://developers.google.com/web/updates/2014/11/Support-for-theme-color-in-Chrome-39-for-Android?hl=en
 [2]: https://hodorshy.github.io/example/chrome-title-color.html
+[3]: https://developer.mozilla.org/zh-CN/docs/Web/API/notification/Using_Web_Notifications
+[4]: https://developer.mozilla.org/zh-CN/docs/Web/API/notification/Using_Web_Notifications#Getting_permission
