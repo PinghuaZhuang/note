@@ -103,8 +103,6 @@ window.addEventListener( 'load', function () {
 2. 使用 USB 连接电脑( 安卓打开`USB`调试 )
 3. 打开电脑的chrome 在地址栏输入 `chrome://inspect`  选中 `Discover USB devices` 可以检测到你的设备 
 
-
-
 ---
 
 
