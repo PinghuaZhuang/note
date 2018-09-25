@@ -20,6 +20,12 @@
 ---
 
 
+## iframe
+### iframe 下获取 window 对象
+[文章][3]
+
+---
+
 
 ## 浏览器唯一标识符
 
@@ -50,3 +56,4 @@ document.title = 'hahaha';
 
 [1]: https://developers.google.com/web/updates/2014/11/Support-for-theme-color-in-Chrome-39-for-Android?hl=en
 [2]: https://hodorshy.github.io/example/chrome-title-color.html
+[3]: https://www.cnblogs.com/TiestoRay/p/2660524.html
