@@ -24,7 +24,24 @@
 ## 浏览器唯一标识符
 
 + 通过 `IE`
+
+  `js` 想获取设备 `MAC`, `ip` 等信息, 只能通过 IE 浏览器下通过 `ActiveX` 取得, 这是由于 `js` 的安全机制导致
+
 + 创建一个 `UID`, 类似于 `cookies`
+
+  ```js
+  // 这个函数可以生成一个随机guid，碰撞几率可以忽略不计，可以认为是唯一的。
+  function generateUUID() {
+  var d = new Date().getTime();
+  var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = (d + Math.random()*16)%16 | 0;
+    d = Math.floor(d/16);
+    return (c=='x' ? r : (r&0x3|0x8)).toString(16);
+  });
+  return uuid;
+  };
+  ```
+
 
 ---
 
