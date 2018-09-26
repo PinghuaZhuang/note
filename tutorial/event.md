@@ -27,7 +27,9 @@
 
 ## 自定义事件
 
-[MDN][1]
+[MDN-CustomEvent][1]
+
+[MDN-create][2]
 
 + 创建
 
@@ -131,3 +133,4 @@ event = event || window.event;
 
 
 [1]: https://developer.mozilla.org/zh-CN/docs/Web/API/CustomEvent/CustomEvent
+[2]: https://developer.mozilla.org/zh-CN/docs/Web/Guide/Events/Creating_and_triggering_events
