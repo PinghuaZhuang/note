@@ -191,7 +191,34 @@ var a = document.querySelector( '#a' );
     download( 'salkfja;lkfja;lkjsdflkajsdflkajsfdlkajsfdlaksf' );
 ```
 
+---
 
+
+
+## 新单位 vw vh vmin vmax
+
+[原文链接][10]
+
++ 含义
+
+  `vw`, `vh`, `vmin`, `vmax` 是一种相对于视窗( viewport )的单位, 类似于百分比 , 视窗是指浏览器时机显示内容区域的大小, 不包括工具栏等.
+
+  `vw`: 视窗宽度的百分比
+
+  `vh`: 视窗高度的百分比
+
+  `vmin`: 视窗高度和视窗宽度的较小值
+
+  `vmax`: 视窗高度和视窗宽度的较大值
+
++ 与百分比单位的区别
+
+  1. % 是相对于父元素的大小设定的比率, `vw`, `vh` 是由视窗决定的.
+  2. `vw`, `vh` 是可以直接获取高度的, 但是 % 在没有设置 `body` 高度的情况下, 获取不到.
+
++ `vmin`, `vmax` 的用处
+
+  在做移动端的横竖屏切换的时候, 可以使得文字大小在横竖屏下表现一致.
 
 
 
@@ -208,3 +235,4 @@ var a = document.querySelector( '#a' );
 [7]: https://www.cnblogs.com/TiestoRay/p/2660524.html
 [8]: https://segmentfault.com/a/1190000015026760
 [9]: http://www.w3school.com.cn/media/media_mimeref.asp
+[10]: https://www.jb51.net/css/589835.html
