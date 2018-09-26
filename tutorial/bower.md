@@ -134,6 +134,7 @@ document.title = 'hahaha';
 
 [github开发平台文档-Authorizing OAuth Apps][9]
 
+> 各个平台第三方接入流程都是差不多的
 
 
 
@@ -145,7 +146,9 @@ document.title = 'hahaha';
   2. 根据code获取access_token, 创建成功后 `github` 会提供 `Client ID` 以及 `Client Secret`； 
   3. 根据access_token获取用户信息； 
 
+![](../images/github_01.png)
 
+![](../images/github_02.png)
 
 ---
 
