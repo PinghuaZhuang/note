@@ -42,6 +42,40 @@
 
 ​	输出文件目录
 
+`library`
+
+​	将会把 `bundle` 打包成 `lib. output.library` 的值就是文件名.
+
+`libraryTarget`
+
+​	"var" - 通过设置一个变量导出: var Library = xxx (default)
+
+​	"this" - 通过设置 this的属性来导出: this["Library"] = xxx
+
+​	"commonjs" - 通过设置 exports的属性导出: exports["Library"] = xxx
+
+​	"commonjs2" - 通过设置 module.exports导出: module.exports = xxx
+
+​	"amd" - 导出为AMD (视情况可通过output.library来命名)
+
+​	"umd" - 导出为 AMD, CommonJS2 或者是顶级属性
+
+## externals
+
+```js
+// 配置
+externals: {
+    aaa: 'jQuery'
+}
+```
+
+```js
+// 项目中引用
+import xx from 'aaa';
+```
+
+
+
 ## resolve
 
 解析相关
