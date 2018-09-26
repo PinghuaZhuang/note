@@ -113,6 +113,38 @@ window.addEventListener( 'load', function () {
 document.title = 'hahaha';
 ```
 
+---
+
+
+
+## 第三方登录
+
+基本是后台重定向, 原理: OAuth2.0 协议
+
+
+### 开发平台
+
+[QQ开发平台][5]
+
+[微信开发平台][6]
+
+[微博开发平台][7]
+
+[github开发平台文档-Creating an OAuth Apps][8]
+
+[github开发平台文档-Authorizing OAuth Apps][9]
+
+
+
+
++ GitHub
+
+  其实文档里面已经清晰的说明了授权登录的主要3个步骤： 
+
+  1. web端重定向[http://github.com/login/oauth/authorize](http://www.voidcn.com/link?url=http://github.com/login/oauth/authorize)； 
+  2. 根据code获取access_token, 创建成功后 `github` 会提供 `Client ID` 以及 `Client Secret`； 
+  3. 根据access_token获取用户信息； 
+
 
 
 ---
@@ -121,3 +153,8 @@ document.title = 'hahaha';
 [2]: https://hodorshy.github.io/example/chrome-title-color.html
 [3]: https://developer.mozilla.org/zh-CN/docs/Web/API/notification/Using_Web_Notifications
 [4]: https://developer.mozilla.org/zh-CN/docs/Web/API/notification/Using_Web_Notifications#Getting_permission
+[5]: https://connect.qq.com/
+[6]: https://open.weixin.qq.com/
+[7]: https://open.weixin.qq.com/
+[8]: https://developer.github.com/apps/building-oauth-apps/creating-an-oauth-app/
+[9]: https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/
