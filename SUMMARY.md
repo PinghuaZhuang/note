@@ -19,6 +19,7 @@
 - [compatibility](./tutorial/compatibility.md)
 - [html](./tutorial/html.md)
 - [jest-单元测试](./tutorial/jest.md)
+- [event](./tutorial/event.md)
 
 
 
