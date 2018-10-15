@@ -132,9 +132,11 @@ async: IE 浏览器不支持, 使用 defer.
 
 ## Eruda
 
-[GitHub][https://github.com/liriliri/eruda]
+[GitHub][6]
 
 移动端模拟控制台打印的调试插件.
+
+![](../images/Eruda.jpg)
 
 ---
 
@@ -142,5 +144,6 @@ async: IE 浏览器不支持, 使用 defer.
 [2]: https://aui.github.io/art-template/zh-cn/docs/
 [3]: http://aui.github.io/art-template/zh-cn/webpack/
 [4]: https://www.jianshu.com/p/183eca899ad7
-
 [5]: https://mp.weixin.qq.com/s/Kx335LCx3VN9AZRjizBu-A
+[6]: https://github.com/liriliri/eruda
+
