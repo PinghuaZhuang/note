@@ -2,7 +2,7 @@
 
 > 使用插件过程中的细节
 
-
+[如何写一个JavaScript库][5]
 
 ## art-template
 
@@ -142,3 +142,5 @@ async: IE 浏览器不支持, 使用 defer.
 [2]: https://aui.github.io/art-template/zh-cn/docs/
 [3]: http://aui.github.io/art-template/zh-cn/webpack/
 [4]: https://www.jianshu.com/p/183eca899ad7
+
+[5]: https://mp.weixin.qq.com/s/Kx335LCx3VN9AZRjizBu-A
