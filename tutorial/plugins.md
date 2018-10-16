@@ -140,6 +140,68 @@ async: IE 浏览器不支持, 使用 defer.
 
 ---
 
+
+
+## underscope
+
+[在线文档][7]
+
+Underscore是一个非常简洁、实用的JavaScript库，它没有对原生JavaScript对象进行扩展，而是调用_()方法进行封装，一旦封装完成，原生JavaScript对象便成为一个Underscore对象。也可以通过Underscore对象的value()方法获取原生JavaScript对象中的数据。
+
+```js
+_( [ 'a', 'b' ] ).each( function ( index, ele ) {
+    console.log( ele );
+} );
+
+// ==> a b
+
+// 分组
+_.groupBy([1.3, 2.1, 2.4], function(num){ return Math.floor(num); });
+// => {1: [1.3], 2: [2.1, 2.4]}
+
+_.groupBy(['one', 'two', 'three'], 'length');
+// => {3: ["one", "two"], 5: ["three"]}
+```
+
+
+
+## 链式调用
+
+```js
+var arr = _.filter( [ 1, 2, 3, 4 ], function ( ele, index ) {
+    console.log( ele, index );
+    return ele % 2;
+} ).map( function ( ele, index ) {
+    return ele + 10;
+} );
+console.log( arr );	// 11 13
+```
+
+---
+
+
+
+## jsmini
+
+[github][8]
+
+一个小巧的使用的函数库
+
++ clone
++ pubsub
++ is
++ extend
++ base
++ type
++ inherits
++ guid
+
++ event
+
+
+
+---
+
 [1]: https://github.com/aui/art-template
 [2]: https://aui.github.io/art-template/zh-cn/docs/
 [3]: http://aui.github.io/art-template/zh-cn/webpack/
@@ -147,3 +209,5 @@ async: IE 浏览器不支持, 使用 defer.
 [5]: https://mp.weixin.qq.com/s/Kx335LCx3VN9AZRjizBu-A
 [6]: https://github.com/liriliri/eruda
 
+[7]: http://www.css88.com/doc/underscore/
+[8]: https://github.com/jsmini
