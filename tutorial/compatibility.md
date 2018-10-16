@@ -1,8 +1,18 @@
 # Compatibility
 
+## CommonJS、AMD、CMD、NodeJs、RequireJS
+
+[原文][]
+
+---
+
 
 
 ## requireJS
+
+### plugins
+
+text和image插件，则是允许require.js加载文本和图片文件。
 
 ### 避免网页失去响应
 
@@ -35,3 +45,4 @@ document.body.addEventListener('touchstart', function () { });
 
 ---
 
+[1]: https://blog.csdn.net/fabulous1111/article/details/73431382
