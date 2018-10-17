@@ -14,6 +14,7 @@ window._Data = Data;
 var data = new Data();
 
 // option{ String | Object }: 设定, fns { Array }: 回调
+// option: type detail [ debounce defer ] 
 data.register( 'name' [, option, fns] );
 
 // 保存注册的数据
@@ -34,6 +35,7 @@ data[ name ].add();
 
 // 要添加的方法
 data[ name ].sub();
+data[ name ].del();
 // data[ name ].debounce( 1000 );
 
 ```
