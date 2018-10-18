@@ -17,13 +17,37 @@
 ## 常用配置参数
 
 + input: 入口文件
++ sourcemap
+  + true
+  + inline: 添加在 min.js 最后一行
 + output { Object }: 输出参数
-  + file: 输出文件名
-  + format: 输出格式
-  + name: 设定导出的变量名
+  - file: 输出文件名
+  - format: 输出格式
+  - name: 设定导出的变量名
 + plugins { Aarry }: 插件集
 + external: 外链, 详情看 webpack 的使用
 + globals: 全局模块, 可以配合 external 使用, 详情看 webpack 的使用
++ targets: 打包多个文件
+
+```js
+export default {
+  entry: 'index.js',
+  targets: [{
+      dest: 'dist/bundle.cjs.js',
+      format: 'cjs'
+    },
+    {
+      dest: 'dist/bundle.umd.js',
+      moduleName: 'res',
+      format: 'umd'
+    },
+    {
+      dest: 'dist/bundle.es.js',
+      format: 'es'
+    },
+  ]
+}
+```
 
 
 
@@ -55,9 +79,34 @@
 
   压缩代码
 
+```js
+plugins: [
+        nodeResolve({
+            main: true,
+            jsnext: true,
+            module: true
+        }),
+        commonjs({
+            include: 'node_modules/**',
+        }),
+        babel({
+            runtimeHelpers: true,
+            exclude: 'node_modules/**'
+        }),
+        replace({
+            // include: 'src/index.js', // 指定可以使用变量的文件路径
+            exclude: 'node_modules/**',
+            ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
+            VERSION: JSON.stringify( pkg.version )
+        }),
+    	uglify()
+    ]
+```
+
 
 
 ---
 
 [1]: https://www.rollupjs.com/guide/zh#-using-config-files-
 [2]: https://juejin.im/entry/57edcefda22b9d005bb0d62c
+[3]: https://segmentfault.com/a/1190000010628352
