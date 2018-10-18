@@ -14,7 +14,7 @@ window._Data = Data;
 var data = new Data();
 
 // option{ String | Object }: 设定, fns { Array }: 回调
-// option: type detail [ debounce defer ] 
+// option: type detail [ debounce defer ] onlyChange
 data.register( 'name' [, option, fns] );
 
 // 保存注册的数据
@@ -30,12 +30,15 @@ data[ name ].__proto__ === $.Callback();
 data[ name ].remove();
 data[ name ].empty();
 data[ name ].add();
+data[ name ].has();
 // data[ name ].fire();		// set 的时候默认调用. data[ name ]( 1 );
-// data[ name ].fireWith();	// 指定上下文, 默认 data[ name ]
+// 指定上下文, 默认 data[ name ], data[ name ].call( context )
+// data[ name ].fireWith();	
 
 // 要添加的方法
 data[ name ].sub();
-data[ name ].del();
+data[ name ].destory();
+data[ name ].pre();
 // data[ name ].debounce( 1000 );
 
 ```
