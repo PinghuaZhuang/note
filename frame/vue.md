@@ -46,12 +46,14 @@
 
 ### FIXED
 
+当不需要的时候缓存设置为 `false`
+
 ```js
 // router.js
 meta: {
     
     // true: 缓存
-    keep-alive: true
+    keep-alive: false
 }
 ```
 
