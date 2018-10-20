@@ -20,7 +20,7 @@ var handler = new Cesium.ScreenSpaceEventHandler( scene.canvas );
 
 // mousedown 左键点击
 handler.setInputAction( function (e) {
-    
+
 }, Cesium.ScreenSpaceEventType.LEFT_DOWN );
 
 // 事件类型
@@ -91,7 +91,7 @@ scene.camera.setView( {
 
 
 
-### 滑行​	
+### 滑行​
 
 ```js
 // 动态设置经纬度
@@ -160,7 +160,7 @@ wyoming.polygon.extrudedHeight : 250000;
 + 折线 entity.polyline
 + 折线卷 entity.polylineVolume
 + 矩形 entity.rectangle
-+ 球体和椭球体 entity.ellipsoid 
++ 球体和椭球体 entity.ellipsoid
 + 墙壁 entity.wall
 
 
@@ -191,7 +191,7 @@ viewer.entities.removeAll();
 
 + height { Number }: 离地高度
 
-+ material: 材质（相当于填充色，但是可以填充的可不止颜色，可以看到这里是红色半透明）. 
++ material: 材质（相当于填充色，但是可以填充的可不止颜色，可以看到这里是红色半透明）.
 
   @ep: Cesium.Color.RED.withAlpha(0.5)
 
@@ -423,4 +423,3 @@ pickPosition(windowPosition, result)
 
 
 ---
-

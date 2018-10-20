@@ -105,7 +105,7 @@ setTimeout(function() {
 <script src="js/require.js" defer async="true" data-main="./main.js" ></script>
 ```
 
-async: IE 浏览器不支持, 使用 defer. 
+async: IE 浏览器不支持, 使用 defer.
 
 ### 属性
 
@@ -118,7 +118,7 @@ async: IE 浏览器不支持, 使用 defer.
 + shim: 设置不支持 AMD 的第三方插件
 
   ```js
-  // example: 
+  // example:
   shim: {
   	bootstrap: {
   		exports: 'bootstrap'

@@ -51,7 +51,7 @@
 ```js
 // router.js
 meta: {
-    
+
     // true: 缓存
     keep-alive: false
 }
@@ -106,4 +106,3 @@ export default {
 
 
 ---
-
