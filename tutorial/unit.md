@@ -1,4 +1,4 @@
-# Jest 断言测试 单元测试
+# Jest 
 
 [Jest](http://facebook.github.io/jest/)是Facebook开发的一个对javascript进行单元测试的工具，之前仅在其内部使用，后开源，并且是在**Jasmine**测试框架上演变开发而来，使用了我们熟知的**expect(value).toBe(other)**这种断言格式。
 
@@ -25,6 +25,18 @@ npm i jest -S-dev
 + jsdom: 模拟浏览器
 + node
 
+### package.json
+
+```json
+{
+    "jest": "^22.4.3",
+    "jest-serializer-vue": "^1.0.0",
+    "vue-jest": "^2.5.0"
+}
+```
+
+
+
 ---
 
 
@@ -45,8 +57,28 @@ npm i jest -S-dev
   }
   ```
 
+---
+
+
+
+# mocha + expect.js
+
+[文档-阮一峰][2] [github][3]
+
+## mocha.opts
+
+配置文件
+
+
+
+## ES6 测试
+
+
+
 
 
 ---
 
 [1]: https://segmentfault.com/a/1190000008628067
+[2]: http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html
+[3]: https://github.com/ruanyf/mocha-demos
