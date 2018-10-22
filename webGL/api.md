@@ -291,9 +291,9 @@ var alt = cartographic.height;
 
 
 
-## 加载模型
+## 模型
 
-### 加载
+### 添加
 
 ```js
 // @return promise 实例集合. 这相当于发送请求
@@ -345,9 +345,9 @@ var insar = scene.layers.find("insar");
 
 
 
-## 加载图层
+## 图层
 
-### 加载
+### 添加/删除
 
 ```js
 var imageryLayers = viewer.imageryLayers;
@@ -355,8 +355,14 @@ var imageryLayers = viewer.imageryLayers;
 var provider_cad = new Cesium.SuperMapImageryProvider( {
     url: config.ip_2 + config.provider_dt
 } );
-// 工程图纸
+// 添加图层
 var imagery_cad = imageryLayers.addImageryProvider( provider_cad );
+```
+
+```js
+var baseLayer = imageryLayers.get( 1 );
+//移除之前的图层
+imageryLayers.remove( baseLayer );
 ```
 
 ### 查找获取图层
@@ -364,11 +370,15 @@ var imagery_cad = imageryLayers.addImageryProvider( provider_cad );
 ```js
 // 所有图层都在这里
 imageryLayers._layers
+// 查找建筑图层
+var scene = view.scene;
+var build = scene.layers.find("build");
 ```
 
 ### 图层属性
 
 + show { Boolean }: 控制显示隐藏
++ findByIndex: 根据下标获取 entities 点
 
 ### 图层函数
 
