@@ -44,6 +44,10 @@ handler.removeInputAction( Cesium.ScreenSpaceEventType.LEFT_CLICK );
 
 ## 相机
 
+[获取相机位置][1]
+
+
+
 ### 相机旋转
 
 - 选点( 地图出现一个白点 )
@@ -78,18 +82,14 @@ viewer.zoomTo( entity );
 var scene = view.scene;
 // 设置相机位置
 scene.camera.setView( {
-    destination: new Cesium.Cartesian3(),
+    destination: new Cesium.Cartesian3(),	// 笛卡尔坐标
     orientation: {
         heading: _heading,
         pitch: _pitch,
         roll: _roll
     }
 } );
-
-// 获取相机位置
 ```
-
-
 
 ### 滑行​
 
@@ -466,3 +466,6 @@ pickPosition(windowPosition, result)
 
 
 ---
+
+[1]: ##坐标
+
