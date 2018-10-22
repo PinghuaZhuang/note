@@ -391,6 +391,49 @@ line.setObjsVisible( [ '6599' ], true );
 
 
 
+## 获取对象
+
+### 获取地球球体对象
+
+```js
+ var ellipsoid = viewer.scene.globe.ellipsoid;  //获取地球球体对象
+```
+
+
+
+---
+
+
+
+## 开关
+
+```js
+// 如果为真，则允许用户旋转相机。如果为假，相机将锁定到当前标题。此标志仅适用于2D和3D
+scene.screenSpaceCameraController.enableRotate = false;
+// 如果为真，则允许用户平移地图。如果为假，相机将保持锁定在当前位置。
+// 此标志仅适用于2D和Columbus视图模式
+scene.screenSpaceCameraController.enableTranslate = false;
+// 如果为真，则允许用户放大和缩小。如果为假，相机将锁定到距离椭圆体的当前距离。
+scene.screenSpaceCameraController.enableZoom = false;
+// 如果为真，则允许用户倾斜相机。如果为假，相机将锁定到当前标题。这个标志只适用于3D和哥伦布视图。
+scene.screenSpaceCameraController.enableTilt = false;
+// 如果为真，则允许用户使用免费外观。如果为假，摄像机视图方向只能通过转换或旋转进行更改。
+// 此标志仅适用于3D和哥伦布视图模式。
+scene.screenSpaceCameraController.enableLook = false;
+```
+
+### 禁止用户右键缩放
+
+```js
+scene.screenSpaceCameraController.zoomEventTypes = Cesium.CameraEventType.WHEEL;
+```
+
+
+
+---
+
+
+
 # Other
 
 ## insar 点显示，隐藏函数 OK
