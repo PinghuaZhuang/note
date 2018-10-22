@@ -130,6 +130,51 @@ async: IE 浏览器不支持, 使用 defer.
 
 ***在入口函数中定义某个模块名的时候, 该模块会变成与入口文件同级目录.***
 
+### 定义变量, 动态添加属性
+
+```js
+// var/params
+define( [
+
+], function( ) {
+    'use strict';
+
+    return {};
+} );
+
+```
+
+```js
+// ready 函数
+define( [
+	'./var/params'
+], function( params ) {
+    'use strict';
+
+    $( function () {
+        params.data = 'data';
+    } );
+} );
+```
+
+```js
+// ready 函数
+define( [
+	'./var/params'
+], function( params ) {
+    'use strict';
+
+    window.onload = function () {
+        // 这里就可以访问的到了
+        console.log( 'params.data:', params.data );
+    }
+} );
+```
+
+定义只后, 可以动态天机属性, 只要保证执行顺序, 就可以实现将某个对象抽离出来.
+
+
+
 ---
 
 
