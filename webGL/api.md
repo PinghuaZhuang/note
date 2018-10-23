@@ -69,7 +69,13 @@ function callback ( ret ) {
 }
 ```
 
-- 控制选择停止继续旋转: ` scene.camera._isFlyCircle = false;
+- 控制选择停止继续旋转
+
+```js
+scene.camera._isFlyCircle = false;
+```
+
++ 其他
 
 ```js
 // 镜头追踪
@@ -131,6 +137,17 @@ var point = viewer.entities.add( new Cesium.Entity() );
 ```js
 // 所有的在地图上没有删除的 Entiy 点集合, { Array }
 var points = viewer.entities._entities._array;
+```
+
+
+
+### 点选
+
+```js
+// 选中 entities 点的信息
+viewer.selectedEntity;
+// id
+viewer.selectedEntity._id;
 ```
 
 
@@ -375,6 +392,20 @@ var scene = view.scene;
 var build = scene.layers.find("build");
 ```
 
+### 图层上的点 点选
+
+```js
+// 所有图层
+var layers = scene.layers;
+
+// 单个图层
+var layer = layers.findByIndex( i );
+// layer._name == 'build'
+
+// 选中的图层
+var id = layer.getSelection();
+```
+
 ### 图层属性
 
 + show { Boolean }: 控制显示隐藏
@@ -437,6 +468,21 @@ scene.screenSpaceCameraController.enableLook = false;
 ```js
 scene.screenSpaceCameraController.zoomEventTypes = Cesium.CameraEventType.WHEEL;
 ```
+
+
+
+---
+
+
+
+## 申请 KEY
+
+```js
+//请开发者自行到supermap online官网（http://www.supermapol.com/）申请key
+viewer.geocoder.viewModel.geoKey = '79F9yph6kv8c8I9aARQUxtvn';
+```
+
+
 
 
 
