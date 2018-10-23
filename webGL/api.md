@@ -130,16 +130,12 @@ var point = viewer.entities.add( option );
 var point = viewer.entities.add( new Cesium.Entity() );
 ```
 
-
-
 ### 获取点实例 Entiy
 
 ```js
 // 所有的在地图上没有删除的 Entiy 点集合, { Array }
 var points = viewer.entities._entities._array;
 ```
-
-
 
 ### 点选
 
@@ -149,10 +145,6 @@ viewer.selectedEntity;
 // id
 viewer.selectedEntity._id;
 ```
-
-
-
-
 
 ### 跳转到 entities 点上
 
@@ -164,8 +156,6 @@ wyoming.polygon.height = 300000;
 //两个高度差组成了它的体积
 wyoming.polygon.extrudedHeight : 250000;
 ```
-
-
 
 ### 形状
 
@@ -179,8 +169,6 @@ wyoming.polygon.extrudedHeight : 250000;
 + 矩形 entity.rectangle
 + 球体和椭球体 entity.ellipsoid
 + 墙壁 entity.wall
-
-
 
 ### 添加 3D 模型
 
@@ -200,8 +188,6 @@ viewer.entities.remove( entity );
 // 删除所有的点
 viewer.entities.removeAll();
 ```
-
-
 
 ### 参数
 
@@ -402,7 +388,7 @@ var layers = scene.layers;
 var layer = layers.findByIndex( i );
 // layer._name == 'build'
 
-// 选中的图层
+// 获取选中的图层 id
 var id = layer.getSelection();
 ```
 
