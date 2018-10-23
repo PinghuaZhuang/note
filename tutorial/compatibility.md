@@ -8,6 +8,16 @@
 
 
 
+## input 标签
+
+有时候 `$( 'input ).prop( 'checked', false )` 会失效, 可以直接删除该属性
+
+
+
+---
+
+
+
 ## requireJS
 
 ### plugins
