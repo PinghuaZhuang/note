@@ -428,18 +428,6 @@ line.setObjsVisible( [ '6599' ], true );
 
 
 
-## 获取地球球体对象
-
-```js
- var ellipsoid = viewer.scene.globe.ellipsoid;  //获取地球球体对象
-```
-
-
-
----
-
-
-
 ## 选取附近点
 
 ```js
@@ -558,15 +546,19 @@ http://support.supermap.com.cn:8090/webgl/Build/Documentation/S3MTilesLayer.html
 
 
 
----
-
-
-
 ## 坐标位置拾取
 
 http://support.supermap.com.cn:8090/webgl/Build/Documentation/Scene.html
 
 pickPosition(windowPosition, result)
+
+
+
+## 获取地球球体对象
+
+```js
+ var ellipsoid = viewer.scene.globe.ellipsoid;  //获取地球球体对象
+```
 
 
 
