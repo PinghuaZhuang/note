@@ -99,6 +99,8 @@ setTimeout(function() {
 
 ## requireJS
 
+[压缩][9]
+
 ### 避免网页失去响应
 
 ```html
@@ -126,7 +128,7 @@ async: IE 浏览器不支持, 使用 defer.
   }
   ```
 
-## 压缩 r.js
+### 压缩 r.js
 
 1. 按照 `requirejs`, 获取 `r.js`
 
@@ -147,16 +149,16 @@ npm i -g requirejs
 3. 输入命令行
 
 ```bash
-node ./external/r.js -o ./src/build.js
+node "\Program Files\nodejs\node_modules\requirejs\bin\r.js" -o ./src/build.js
 ```
 
-### 配置参数
+#### 配置参数
 
 + out: 输出文件路径, 以配置文件的位置为基准
 + name: 入口文件路径
 + baseUrl: 必须是本地路径
 
-注意: `r.js` 路径不能包含盘符, 例如 `c:\` .
+注意: 路径包含空格可以把路径添加上 `"`.
 
 
 
@@ -294,3 +296,5 @@ console.log( arr );	// 11 13
 
 [7]: http://www.css88.com/doc/underscore/
 [8]: https://github.com/jsmini
+
+[9]: https://www.cnblogs.com/rubylouvre/p/3526658.html
