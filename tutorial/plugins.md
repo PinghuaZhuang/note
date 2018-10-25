@@ -126,6 +126,40 @@ async: IE 浏览器不支持, 使用 defer.
   }
   ```
 
+## 压缩 r.js
+
+1. 按照 `requirejs`, 获取 `r.js`
+
+```bash
+npm i -g requirejs
+```
+
+2. 创建配置文件 `build.js`
+
+```js
+({
+    baseUrl: 'C:/Users/ZNV/Documents/GitHub/re',
+    name: "./src/index.js",
+    out: "main-built.js"
+})
+```
+
+3. 输入命令行
+
+```bash
+node ./external/r.js -o ./src/build.js
+```
+
+### 配置参数
+
++ out: 输出文件路径, 以配置文件的位置为基准
++ name: 入口文件路径
++ baseUrl: 必须是本地路径
+
+注意: `r.js` 路径不能包含盘符, 例如 `c:\` .
+
+
+
 ### config.path
 
 ***在入口函数中定义某个模块名的时候, 该模块会变成与入口文件同级目录.***
