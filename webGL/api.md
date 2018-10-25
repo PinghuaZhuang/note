@@ -428,61 +428,6 @@ line.setObjsVisible( [ '6599' ], true );
 
 
 
-## 选取附近点
-
-```js
-var enUrl = 'http://120.78.73.154:8090/iserver/services/map-JianZhuTouYing/rest/maps/FZ000TY@JZTY';
-
-var hdl = new Cesium.ScreenSpaceEventHandler( scene.canvas );
-
-hdl.setInputAction( function (e) {
-    // 传入经度纬度
-	var centerPoint = new SuperMap.Geometry.Point( layer.lon, layer.lat );
-	queryByDistance( centerPoint, 5 );
-}, Cesium.ScreenSpaceEventType.LEFT_CLICK);
-window.queryByDistance = function queryByDistance(centerPoint,queryDis) {
-    var queryByDistanceParams = new SuperMap.REST.QueryByDistanceParameters({
-        queryParams: new Array( new SuperMap.REST.FilterParameter({name: "FZ000TY@JZTY"}) ),
-        returnContent: true,	
-        distance: queryDis,		// 距离
-        geometry: centerPoint,	// 查询中心点
-        isNearest: true,	// 是否最近
-        // expectCount: 1	// 返回个数
-    });
-    var queryByDistanceService = new SuperMap.REST.QueryByDistanceService( enUrl );
-    queryByDistanceService.events.on({
-        "processCompleted": processCompleted,
-        "processFailed": processFailed
-    });
-    queryByDistanceService.processAsync(queryByDistanceParams);
-}
-
-function processCompleted(queryEventArgs) {
-    console.log( 'queryEventArgs:', queryEventArgs );
-    var i, j, result = queryEventArgs.result, min = +Infinity, SmID;
-    for(i = 0;i < result.recordsets.length; i++) {
-        for(j = 0; j < result.recordsets[i].features.length; j++) {
-            var point = result.recordsets[i].features[j];
-            SmID = result.recordsets[i].features[j].data.SmID;
-            build.setSelection( SmID );
-        }
-    }
-    build.setSelection( SmID );
-}
-
-function processFailed(e){
-    alert(e.error.errorMsg);
-}
-```
-
-
-
-
-
----
-
-
-
 ## 开关
 
 ```js
@@ -524,6 +469,63 @@ viewer.geocoder.viewModel.geoKey = '79F9yph6kv8c8I9aARQUxtvn';
 
 
 ---
+
+
+
+# example
+
+## 选取附近点
+
+```js
+var enUrl = 'http://120.78.73.154:8090/iserver/services/map-JianZhuTouYing/rest/maps/FZ000TY@JZTY';
+
+var hdl = new Cesium.ScreenSpaceEventHandler( scene.canvas );
+
+hdl.setInputAction( function (e) {
+    // 传入经度纬度
+	var centerPoint = new SuperMap.Geometry.Point( layer.lon, layer.lat );
+	queryByDistance( centerPoint, 5 );
+}, Cesium.ScreenSpaceEventType.LEFT_CLICK);
+window.queryByDistance = function queryByDistance(centerPoint,queryDis) {
+    var queryByDistanceParams = new SuperMap.REST.QueryByDistanceParameters({
+        queryParams: new Array( new SuperMap.REST.FilterParameter({name: "FZ000TY@JZTY"}) ),
+        returnContent: true,	
+        distance: queryDis,		// 距离
+        geometry: centerPoint,	// 查询中心点
+        isNearest: true,	    // 是否最近
+        // expectCount: 1	    // 返回个数
+    });
+    var queryByDistanceService = new SuperMap.REST.QueryByDistanceService( enUrl );
+    queryByDistanceService.events.on({
+        "processCompleted": processCompleted,
+        "processFailed": processFailed
+    });
+    queryByDistanceService.processAsync(queryByDistanceParams);
+}
+
+function processCompleted(queryEventArgs) {
+    console.log( 'queryEventArgs:', queryEventArgs );
+    var i, j, result = queryEventArgs.result, min = +Infinity, SmID;
+    for(i = 0;i < result.recordsets.length; i++) {
+        for(j = 0; j < result.recordsets[i].features.length; j++) {
+            var point = result.recordsets[i].features[j];
+            SmID = result.recordsets[i].features[j].data.SmID;
+            build.setSelection( SmID );
+        }
+    }
+    build.setSelection( SmID );
+}
+
+function processFailed(e){
+    alert(e.error.errorMsg);
+}
+```
+
+
+
+
+
+----
 
 
 

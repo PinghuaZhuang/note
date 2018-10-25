@@ -95,6 +95,12 @@ export default {
 
 ## 虚拟 DOM
 
+[在线文档-简书][1]
+
+[在线文档-cdsn][2]
+
+在已有的标签上利用虚拟 DOM 的原理实现快速更新 html
+
 
 
 ---
@@ -106,3 +112,7 @@ export default {
 
 
 ---
+
+[1]: https://www.jianshu.com/p/616999666920
+
+[2]: https://blog.csdn.net/qq_27626333/article/details/76082755
