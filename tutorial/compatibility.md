@@ -8,6 +8,16 @@
 
 
 
+## 编写插件的时候, window 要使用 this
+
+`window` 在 `node` 环境中不存在, `eslint` 会报错的.
+
+
+
+----
+
+
+
 ## input 标签
 
 有时候 `$( 'input ).prop( 'checked', false )` 会失效, 可以直接删除该属性
