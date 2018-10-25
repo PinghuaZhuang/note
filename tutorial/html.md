@@ -239,6 +239,14 @@ var a = document.querySelector( '#a' );
 
 
 
+## 修改 video 标签控制器的样式
+
+### chrome
+
+打开控制台 `setting`, 勾选 `Show user agent shadow DOM`.
+
+![](../images/html_01.png)
+
 
 
 ---
