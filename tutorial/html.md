@@ -96,6 +96,40 @@ function getVisibilityState() {
 
 
 
+## 获取已经滚动的居留
+
+### 获取 scrollTop 值
+
+```js
+document.documentElement.scrollTop //firefox
+
+document.documentElement.scrollLeft //firefox
+
+document.body.scrollTop //IE
+
+document.body.scrollLeft //IE
+
+// 获取 scrollTop 兼容写法
+var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+```
+
+### 设置
+
+```js
+// 特效
+window.scrollTo({ 
+    top: 0, 
+    behavior: "smooth" 
+});
+
+// 瞬动到指定坐标
+window.scrollTo( x, y );
+```
+
+
+
+
+
 ## iframe
 
 ### iframe 下获取 window 对象
