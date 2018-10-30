@@ -1,5 +1,51 @@
 # event 事件相关
 
+## 事件捕获与冒泡
+
+![](../images/event_01.png)
+
+1. 一个完整的JS事件流是从window开始，最后回到window的一个过程.
+2. 事件流被分为三个阶段.
+   1. (1~5)捕获过程.
+   2. (5~6)目标过程.
+   3. (6~10)冒泡过程.
+
+### addEventListener 第三个参数
+
++ true: 事件捕获
++ false: 事件冒泡
+
+### example
+
+```html
+<div id="demo">
+    <div class="c1"></div>
+</div>
+```
+
+
+
+```js
+// 捕获与冒泡
+// 捕获 -> 子容器 -> 冒泡
+// 第三个参数: false: 事件在冒泡阶段执行, true: 事件在捕获阶段执行
+c1.addEventListener( 'click', function ( e ) {
+    console.log( '子容器被点击了' );
+} );
+demo.addEventListener( 'click', function () {
+    console.log( '事件发生了冒泡' );
+} );
+demo.addEventListener( 'click', function () {
+    console.log( '事件捕获' );
+}, true );
+
+// 事件捕获
+// 子容器被点击了
+// 事件发生了冒泡
+```
+
+
+
 
 
 ## 鼠标左键按住不放事件
