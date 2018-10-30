@@ -6,7 +6,7 @@
 
 `onmousedown`
 
-​	通过 `event.button` 来判断
+	通过 `event.button` 来判断
 
 ### 不同浏览器下的 event.button 值
 
@@ -71,11 +71,11 @@ document.body.onclick = function ( e ) {
 
 `typeArg`
 
-​	一个代表 `event` 名字的字符串
+	一个代表 `event` 名字的字符串
 
 `CustomEventInit`
 
-​	初始化 `event` 
+	初始化 `event` 
 
 - `detail`: optional and defaulting to `null`, of type any, that is a event-dependant value associated with the event.   可选的默认值是 null 的任意类型数据，是一个与 event 相关的值
 - `bubbles`: 一个布尔值，表示该事件能否冒泡。 来自 `EventInit`。注意：测试chrome默认为不冒泡。
@@ -86,6 +86,8 @@ document.body.onclick = function ( e ) {
 
 
 ## 取消冒泡
+
+### canelBubble | stopPropagation
 
 + IE
 
@@ -105,6 +107,22 @@ document.body.onclick = function ( e ) {
 window.event ? window.event.cancelBubble = true : e.stopPropagation();
 event = event || window.event;
 ```
+
+### stopImmediatePropagation
+
+[MDN][3] [博客][4]
+
+如果其中某个监听函数执行了 `event.stopImmediatePropagation()`方法，则当前元素剩下的监听函数将不会被执行
+
+根据DOM事件流机制，在元素上触发的大多数事件都会冒泡传递到该元素的所有祖辈元素上，如果这些祖辈元素上也绑定了相应的事件处理函数，就会触发执行这些函数。
+
+使用`stopImmediatePropagation()`函数可以阻止当前事件向祖辈元素的冒泡传递，也就是说该事件不会触发执行当前元素的任何祖辈元素的任何事件处理函数。
+
+此外，与 `event.stopPropagation` 函数相比，`stopImmediatePropagation()`函数还会阻止该元素剩余的其他事件处理函数的执行。
+
+此外，由于live()函数并不是将事件处理函数直接绑定到自己身上，而是"委托"绑定到祖辈元素上，由祖辈元素来触发执行。live()函数会先一次性冒泡到文档的顶部，然后为符合条件的元素触发事件。因此，`stopImmediatePropagation()`函数无法阻止live事件的冒泡。
+
+同样地，delegate()函数也是"委托事件函数"，只有事件冒泡传递到"受委托"的祖辈元素才会被触发执行。因此，`stopImmediatePropagation()`函数无法阻止该元素到"受委托"的祖辈元素之间的事件冒泡。
 
 
 
@@ -134,3 +152,5 @@ event = event || window.event;
 
 [1]: https://developer.mozilla.org/zh-CN/docs/Web/API/CustomEvent/CustomEvent
 [2]: https://developer.mozilla.org/zh-CN/docs/Web/Guide/Events/Creating_and_triggering_events
+[3]: https://developer.mozilla.org/zh-CN/docs/Web/API/Event/stopImmediatePropagation
+[4]: http://www.365mini.com/page/jquery-event-stopimmediatepropagation.htm
