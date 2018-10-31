@@ -285,6 +285,22 @@ var a = document.querySelector( '#a' );
 
 ---
 
+
+
+## 隐藏域
+
+隐藏域是用保存用户提交的表单却不需要用户修改查看. 作用类似于 `cookies`, 简单实用.
+
+```html
+<input type="hidden" name="id" value="111"></input>
+```
+
+
+
+
+
+---
+
 [1]: https://blog.csdn.net/ityang521/article/details/76076813
 [2]: http://webkkl.com/dom-events/onpagehide.php
 [3]: https://blog.csdn.net/yl02520/article/details/17174107
