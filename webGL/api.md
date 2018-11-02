@@ -523,7 +523,7 @@ function processFailed(e){
 
 
 
-### 去除左击 Entity 出现绿色的框框
+## 去除左击 Entity 出现绿色的框框
 
 把viewer对象的selectionIndicator属性设置为false
 
