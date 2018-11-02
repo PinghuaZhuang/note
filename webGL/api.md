@@ -523,6 +523,25 @@ function processFailed(e){
 
 
 
+### 去除左击 Entity 出现绿色的框框
+
+把viewer对象的selectionIndicator属性设置为false
+
+或者再创建viewer对象时,设置selectionIndicator属性为false
+
+```js
+viewer = new Cesium.Viewer("cesiumContainer", {
+    terrainProvider: new Cesium.CesiumTerrainProvider({
+        url: urlTERRAIN.gaTerrain,
+        requestWaterMask: true,
+        requestVertexNormals: true,
+        isSct: true
+
+    }),
+    selectionIndicator: false//设置绿色框框不可见
+});
+```
+
 
 
 ----
