@@ -288,10 +288,10 @@ var lng = Cesium.Math.toDegrees( cartographic.longitude );
 var alt = cartographic.height;
 ```
 
-### 世界坐标转换成屏幕坐标
+### 世界坐标转|经纬度转换成屏幕坐标
 
 ```js
-var Cartesian3 = new new Cesium.Cartesian3( x, y, z );
+var Cartesian3 = new Cesium.Cartesian3( x, y, z );
 Cesium.SceneTransforms.wgs84ToWindowCoordinates(scene, Cartesian3);
 ```
 
