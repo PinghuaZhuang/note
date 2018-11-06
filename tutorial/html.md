@@ -96,7 +96,7 @@ function getVisibilityState() {
 
 
 
-## 获取已经滚动的居留
+## srollTop
 
 ### 获取 scrollTop 值
 
