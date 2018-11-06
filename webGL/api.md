@@ -654,8 +654,6 @@ function processFailed(e){
 }
 ```
 
-
-
 ## 去除左击 Entity 出现绿色的框框
 
 把viewer对象的selectionIndicator属性设置为false
@@ -672,6 +670,24 @@ viewer = new Cesium.Viewer("cesiumContainer", {
 
     }),
     selectionIndicator: false//设置绿色框框不可见
+});
+```
+
+## 绘制折线
+
+```js
+var line = new Cesium.Entity({
+    polyline: {
+        positions: Cesium.Cartesian3.fromDegreesArrayHeights( arr ),
+        //离地高度
+        height: 0,
+        //线宽
+        width: 10,
+        material: color,
+        //外边线
+        outline: false,
+        outlineColor: Cesium.Color.BLACK
+    }
 });
 ```
 
