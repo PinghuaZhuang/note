@@ -199,7 +199,7 @@ var blob = new Blob( [ data ], {
 var urlObj = window.URL.createObjectURL( blob );
 ```
 
-#### window.URL.revokeObjectURL()
+### window.URL.revokeObjectURL()
 
 在每次调用createObjectURL()方法时，都会创建一个新的 URL 对象，即使你已经用相同的对象作为参数创建过。当不再需要这些 URL 对象时，每个对象必须通过调用 URL.revokeObjectURL()方法来释放。浏览器会在文档退出的时候自动释放它们，但是为了获得最佳性能和内存使用状况，你应该在安全的时机主动释放掉它们。
 
@@ -297,6 +297,101 @@ var a = document.querySelector( '#a' );
 
 
 
+## picture 响应式加载图片的标签
+
+[CSDN][11]
+
++ `<picture>` 是HTML5的一个新元素；
+
++ 如果 `<picture>` 元素与当前的 `<audio>`, `<video>` 元素协同合作将增强响应式图像工作的进程，它允许在其内部设置多个 `<source>` 标签，以指定不同的图像文件名，根据不同的条件进行加载；
+
++ `<picture>` 可以根据不同的条件加载不同的图像，这些条件可以是视窗当前的高度（viewport），宽度（width），方向（orientation），像素密度（dpr）等；
+
+### example
+
+1. 如下栗子中针对不同屏幕宽度加载不同的图片；当页面宽度 在320px到640px之间时加载minpic.png；当页面宽度大于640px时加载middle.png
+
+```html
+<picture>
+    <source media="(min-width: 320px) and (max-width: 640px)" srcset="img/minpic.png">
+    <source media="(min-width: 640px)" srcset="img/middle.png">
+    <img src="img/picture.png" alt="this is a picture">
+</picture>
+```
+
+2. 如下栗子中添加了屏幕的方向作为条件；当屏幕方向为横屏方向时加载_landscape.png结尾的图片；当屏幕方向为竖屏方向时加载 _portrait.png结尾的图片；
+
+```html
+<picture>
+    <source media="(min-width: 320px) and (max-width: 640px) and (orientation: landscape)" srcset="img/minpic_landscape.png">
+    <source media="(min-width: 320px) and (max-width: 640px) and (orientation: portrait)" srcset="img/minpic_portrait.png">
+    <source media="(min-width: 640px) and (orientation: landscape)" srcset="img/middlepic_landscape.png">
+    <source media="(min-width: 640px) and (orientation: portrait)" srcset="img/middlepic_portrait.png">
+    <img src="img/picture.png" alt="this is a picture">
+</picture>
+```
+
+3. 如下栗子中添加了屏幕像素密度作为条件；当像素密度为2x时加载_retina.png 2x 的图片，当像素密度为1x时加载无retina后缀的图片；
+
+```html
+<picture>
+    <source media="(min-width: 320px) and (max-width: 640px)" srcset="img/minpic.png,img/minpic_retina.png 2x">
+    <source media="(min-width: 640px)" srcset="img/middle.png,img/middle_retina.png 2x">
+    <img src="img/picture.png,img/picture_retina.png 2x" alt="this is a picture">
+</picture>
+```
+
+4. 如下栗子中添加图片文件格式作为条件,当支持webp格式图片时加载webp格式图片，当不支持时加载png格式图片；
+
+```html
+<picture>
+    <source type="image/webp" srcset="img/picture.webp">
+    <img src="img/picture.png" alt="this is a picture">
+</picture>
+```
+
+5. 如下例子中添加宽度描述；页面会根据当前尺寸选择加载不大于当前宽度的最大的图片；
+
+```html
+<img src="picture-160.png" alt="this is a picture"
+     sizes="90vw" 
+     srcset="picture-160.png 160w,
+             picture-320.png 320w,
+             picture-640.png 640w,
+             picture-1280.png 1280w">
+```
+
+6. 如下例子中添加sizes属性；当窗口宽度大于等于800px时加载对应版本的图片；
+
+```html
+<source media="(min-width: 800px)"
+        sizes="90vw" 
+        srcset="picture-landscape-640.png 640w,
+                picture-landscape-1280.png 1280w,
+                picture-landscape-2560.png 2560w">
+<img src="picture-160.png" alt="this is a picture"
+     sizes="90vw" 
+     srcset="picture-160.png 160w,
+             picture-320.png 320w,
+             picture-640.png 640w,
+             picture-1280.png 1280w">
+```
+
+### 兼容性
+
+目前只有Chrome ， Firefox ， Opera 对其兼容性较好，具体兼容性如图
+
+![](../images/html_02.png)
+
+### 重要参数
+
+- srcset (必需)
+
+- **添加最后的 `<img>` 元素**
+
+  `<img>` 元素在 `<picture>` 内部用来当浏览器不支持时或者没有源标签匹配时的显示。在 `<picture>` 内使用 `<img>` 标签是必须得，如果你忘记了，将不会有图片显示出来。
+
+  用 `<img>` 来声明默认的图片显示。将 `<img>` 标签放到 `<picture>` 内的最后，浏览器在找到 `<img>` 标签之前会忽略 `<source>` 的声明。这个图片标签也需要你写上它的 alt 属性。
 
 
 ---
@@ -313,3 +408,4 @@ var a = document.querySelector( '#a' );
 [8]: https://segmentfault.com/a/1190000015026760
 [9]: http://www.w3school.com.cn/media/media_mimeref.asp
 [10]: https://www.jb51.net/css/589835.html
+[11]: https://blog.csdn.net/github_36534129/article/details/53537454
