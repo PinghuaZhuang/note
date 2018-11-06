@@ -61,7 +61,7 @@
 `default`
 
 	用户还未被询问是否授权，所以通知不会被显示。
-
+	
 	参看 [Getting permission][4] 以了解如何请求显示通知的权限。
 
 `granted`
@@ -159,6 +159,16 @@ document.title = 'hahaha';
 
 ---
 
+
+
+## Service Workers
+
+[在线文档][10]
+
+
+
+---
+
 [1]: https://developers.google.com/web/updates/2014/11/Support-for-theme-color-in-Chrome-39-for-Android?hl=en
 [2]: https://hodorshy.github.io/example/chrome-title-color.html
 [3]: https://developer.mozilla.org/zh-CN/docs/Web/API/notification/Using_Web_Notifications
@@ -168,3 +178,4 @@ document.title = 'hahaha';
 [7]: https://open.weixin.qq.com/
 [8]: https://developer.github.com/apps/building-oauth-apps/creating-an-oauth-app/
 [9]: https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/
+[10]: https://www.w3ctech.com/topic/866
