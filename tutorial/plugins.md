@@ -280,39 +280,8 @@ console.log( arr );	// 11 13
 + type
 + inherits
 + guid
+
 + event
-
-
-
----
-
-
-
-## jquery.validate
-
-[官方文档][10]    [官网][12]    [GitHub][11]
-
-```js
-$( $xm, $gc ).validate( {
-    rules: $.extend( {	// 验证规则, 属性名是 name 值
-        projectName: {
-            required: true,
-            maxlength: MAX_LENGTH
-        },
-        projectAddress: {
-            required: true,
-            maxlength: MAX_LENGTH
-        }
-    }, numReg, lenReg ),
-    messages: $.extend( { // 错误信息
-        projectName: '请输入项目名称',
-        projectAddress: '请输入项目地质',
-    }, numMsg, lenMsg ),
-    errorElement: 'em' // 统计师错误的标签
-} );
-```
-
-
 
 
 
@@ -329,6 +298,3 @@ $( $xm, $gc ).validate( {
 [8]: https://github.com/jsmini
 
 [9]: https://www.cnblogs.com/rubylouvre/p/3526658.html
-[10]: https://jqueryvalidation.org/documentation/
-[11]: https://github.com/jquery-validation/jquery-validation
-[12]: https://jqueryvalidation.org/
