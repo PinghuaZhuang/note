@@ -144,20 +144,22 @@ document.title = 'hahaha';
 
   其实文档里面已经清晰的说明了授权登录的主要3个步骤： 
 
-  1. web端重定向[http://github.com/login/oauth/authorize](http://www.voidcn.com/link?url=http://github.com/login/oauth/authorize)； 
+  1. web端重定向 [http://github.com/login/oauth/authorize](http://www.voidcn.com/link?url=http://github.com/login/oauth/authorize)； 
 
      ```js
      // 前端重点是地址的填写
      window.location.href = 'https://github.com/login/oauth/authorize?client_id=75d6ff0d7a95f88acae6&redirect_uri=https://manage.hgdqdev.cn/#/login'
      ```
 
-  2. 根据code获取access_token, 创建成功后 `github` 会提供 `Client ID` 以及 `Client Secret`； 
+  2. 根据 `code` 获取 `access_token`, 创建成功后 `github` 会提供 `Client ID` 以及 `Client Secret`； 
 
-  3. 根据access_token获取用户信息； 
+  3. 根据 `access_token` 获取用户信息； 
 
 ![](../images/github_01.png)
 
 ![](../images/github_02.png)
+
+
 
 ---
 
