@@ -314,6 +314,36 @@ $( $xm, $gc ).validate( {
 
 
 
+---
+
+
+
+## **bootstrap-datetimepicker**
+
+[GitHub][13]    [官网][14]
+
+```js
+$date.datetimepicker( {
+    format: 'yyyy/mm/dd', // 日期格式化
+    autoclose: true, // 组件是否自动隐藏
+    todayBtn: true, // 组件是否有 today 按钮
+    todayHighlight: 1, // today 是否高亮
+    startView: 2, 
+    minView: 2,
+    forceParse: 0
+} );
+```
+
+### 坑点
+
+在重置日日期的时候, 官方文档有点坑. 必须传入日期值, 并不会根据 `input` 标签的 `value` 值来自动更新日期.
+
+```js
+$target.siblings( '.form_datetime' ).datetimepicker( 'update', val );
+```
+
+
+
 
 
 ---
@@ -332,3 +362,5 @@ $( $xm, $gc ).validate( {
 [10]: https://jqueryvalidation.org/documentation/
 [11]: https://github.com/jquery-validation/jquery-validation
 [12]: https://jqueryvalidation.org/
+[13]: https://github.com/smalot/bootstrap-datetimepicker
+[14]: https://www.malot.fr/bootstrap-datetimepicker/
