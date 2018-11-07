@@ -250,7 +250,7 @@ _.groupBy(['one', 'two', 'three'], 'length');
 
 
 
-## 链式调用
+### 链式调用
 
 ```js
 var arr = _.filter( [ 1, 2, 3, 4 ], function ( ele, index ) {
