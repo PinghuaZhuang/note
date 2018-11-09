@@ -1,4 +1,4 @@
-# TS
+# TypeScript
 
 [GitBook][1]
 
@@ -10,7 +10,7 @@
 
 多出一个类型 `void`
 
-### void
+### void: 空值
 
 空值. undefined === void(0)
 
@@ -21,6 +21,10 @@ function alertName(): void {
     alert('My name is Tom');
 }
 ```
+
+
+
+### any: 任意值
 
 
 
