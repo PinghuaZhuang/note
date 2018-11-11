@@ -2,6 +2,18 @@
 
 
 
+## Vue + ts
+
+```b
+vue init SimonZhangITer/vue-typescript-template 项目名称
+```
+
+
+
+---
+
+
+
 ## 数组相关
 
 #### 由于 JavaScript 的限制，Vue 不能检测以下变动的数组：
