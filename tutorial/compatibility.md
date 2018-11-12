@@ -63,6 +63,24 @@ document.body.addEventListener('touchstart', function () { });
 
 2. 局部为目标注册 `touchstart` 事件
 
+
+
+---
+
+
+
+## Visual Studio Code 
+
+Visual Studio Code 装饰器提示“experimentalDecorators”的解决办法
+
+```json
+{
+    "javascript.implicitProjectConfig.experimentalDecorators": true
+}
+```
+
+
+
 ---
 
 [1]: https://blog.csdn.net/fabulous1111/article/details/73431382
