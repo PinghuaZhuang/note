@@ -1,5 +1,13 @@
 # Vue
 
+- 都有支持native的方案,React的React native,Vue的weex
+
+
+
+## 使用 jsx 语法
+
+`transform-vue-jsx`
+
 
 
 ## Provide/Inject
