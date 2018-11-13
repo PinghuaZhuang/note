@@ -2,6 +2,16 @@
 
 
 
+## 记住密码
+
+前端使用 `cookies` 保存密码, `md5.js` 加密. 提交 md5 密码跟后台验证.
+
+
+
+---
+
+
+
 ## 移动端改变 chrome 标题栏的颜色
 
 > 只有安卓系统才支持
@@ -18,6 +28,8 @@
 <!-- 16进制颜色值 -->
 <meta name="theme-color" content="<!--颜色的HEX代码-->">
 ```
+
+
 
 ---
 
@@ -104,6 +116,8 @@ window.addEventListener( 'load', function () {
 1. `PC` 和 手机安卓同一个版本号 `chrome` 浏览器( `IOS` 可能版本对不上 )
 2. 使用 USB 连接电脑( 安卓打开`USB`调试 )
 3. 打开电脑的chrome 在地址栏输入 `chrome://inspect`  选中 `Discover USB devices` 可以检测到你的设备 
+
+
 
 ---
 
