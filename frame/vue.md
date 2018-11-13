@@ -2,6 +2,47 @@
 
 
 
+## Provide/Inject
+
+```js
+export const MyComponent = Vue.extend({
+	// 子组件从 provide 中获取( 嵌套在深都可以 )
+    inject: {	
+        foo: 'foo',
+        bar: 'bar',
+        'optional': { from: 'optional', default: 'default' },
+        [symbol]: symbol
+    },
+    data () {
+        return {
+            foo: 'foo',
+            baz: 'bar'
+        }
+    },
+    // 父组件注入
+    provide () {
+        return {
+            foo: this.foo,
+            bar: this.baz
+        }
+    }
+})
+```
+
+
+
+
+
+## immediate
+
+`watch` 中, 是否使用当前值立即执行 `handler`
+
+
+
+---
+
+
+
 ## Vue + ts
 
 ```b
