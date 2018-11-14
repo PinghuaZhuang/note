@@ -2,6 +2,12 @@
 
 [官网主页][1]
 
+```b
+npm install babel-plugin-transform-vue-jsx
+```
+
+
+
 ## transform-vue-jsx
 
 使用 `jsx` 模板
