@@ -290,6 +290,72 @@ var a = document.querySelector( '#a' );
 
   用 `<img>` 来声明默认的图片显示。将 `<img>` 标签放到 `<picture>` 内的最后，浏览器在找到 `<img>` 标签之前会忽略 `<source>` 的声明。这个图片标签也需要你写上它的 alt 属性。
 
+
+
+---
+
+
+
+## canvase getImageData() 跨域问题
+
+[Document][12]
+
+### HTML crossOrigin 属性解决资源跨域问题
+
+`crossOrigin=anonymous`相对于告诉对方服务器，你不需要带任何非匿名信息过来。例如cookie，因此，当前浏览器肯定是安全的。
+
+在HTML5中，有些元素提供了支持CORS(Cross-Origin Resource Sharing)（跨域资源共享）的属性，这些元素包括`<img>`，`<video>`，`<script>`等，而提供的属性名就是`crossOrigin`属性。
+
+```js
+var canvas = document.createElement('canvas');
+var context = canvas.getContext('2d');
+
+var img = new Image();
+img.crossOrigin = '';
+img.onload = function () {
+    context.drawImage(this, 0, 0);
+    context.getImageData(0, 0, this.width, this.height);
+};
+img.src = 'https://avatars3.githubusercontent.com/u/496048?s=120&v=4';';
+```
+
+`crossOrigin`可以有下面两个值：
+
+| 关键字          | 释义                                                         |
+| --------------- | ------------------------------------------------------------ |
+| anonymous       | 元素的跨域资源请求不需要凭证标志设置。                       |
+| use-credentials | 元素的跨域资源请求需要凭证标志设置，意味着该请求需要提供凭证。 |
+
+### crossOrigin 兼容性
+
+IE11+(IE Edge)，Safari，Chrome，Firefox浏览器均支持，IE9和IE10会报SecurityError安全错误
+
+### IE10 浏览器不支持 crossOrigin
+
+我们请求图片的时候，不是直接通过`new Image()`，而是借助ajax和`URL.createObjectURL()`方法曲线救国。
+
+```js
+var xhr = new XMLHttpRequest();
+xhr.onload = function () {
+    var url = URL.createObjectURL(this.response);
+    var img = new Image();
+    img.onload = function () {
+        // 此时你就可以使用canvas对img为所欲为了
+        // ... code ...
+        // 图片用完后记得释放内存
+        URL.revokeObjectURL(url);
+    };
+    img.src = url;
+};
+xhr.open('GET', url, true);
+xhr.responseType = 'blob';
+xhr.send();
+```
+
+
+
+
+
 ---
 
 [1]: https://blog.csdn.net/ityang521/article/details/76076813
@@ -305,3 +371,4 @@ var a = document.querySelector( '#a' );
 [9]: http://www.w3school.com.cn/media/media_mimeref.asp
 [10]: https://www.jb51.net/css/589835.html
 [11]: https://blog.csdn.net/github_36534129/article/details/53537454
+[12]: https://www.zhangxinxu.com/wordpress/2018/02/crossorigin-canvas-getimagedata-cors/
