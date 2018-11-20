@@ -83,4 +83,14 @@ Visual Studio Code 装饰器提示“experimentalDecorators”的解决办法
 
 ---
 
+
+
+## IE 下不支持的方法
+
++ `fill()`
+
+
+
+---
+
 [1]: https://blog.csdn.net/fabulous1111/article/details/73431382
