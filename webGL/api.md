@@ -7,10 +7,10 @@ http://support.supermap.com.cn:8090/iserver/iClient/for3D/webgl/zh/Build/Documen
 ## 鼠标事件
 
 ```js
-var viewer = new Cesium.Viewer('cesiumContainer', {
+var viewer = new Cesium.Viewer( 'cesiumContainer', {
     infoBox: false,
     imageryProvider: new Cesium.TiandituImageryProvider({
-        credit: new Cesium.Credit('天地图全球影像服务 数据来源：国家地理信息公共服务平台 & 四川省测绘地理信息局'),
+        credit: new Cesium.Credit('天地图全球影像服务 数据来源：国家地理信息公共服务平台 & 四川省测绘地理信息局' ),
     })
 });
 
@@ -545,6 +545,8 @@ layer.setSelection( IDS );
 + setObjsVisible( ids, isVisible )
   - ids { Array }: smID 的集合
   - isVisible { Boolean }: 是否显示
+
+最终只会显示当前设置的集合. 
 
 http://support.supermap.com.cn:8090/webgl/Build/Documentation/S3MTilesLayer.html
 
