@@ -18,9 +18,11 @@ npm install babel-plugin-transform-vue-jsx
 
 ## [transform-class-properties](https://babeljs.io/docs/plugins/transform-class-properties/)
 
-类字段提议
+类字段提议, 属性初始化语法
 
 可以在类中定义静态属性( TS 中不需要, 本身就可以 )
+
+可以在 `react` 中可以默认绑定 `this`
 
 ## transform-imports
 
@@ -30,4 +32,5 @@ npm install babel-plugin-transform-vue-jsx
 
 ---
 
-[1: https://www.babeljs.cn/docs/usage/babelrc/	主页
+[1]: https://www.babeljs.cn/docs/usage/babelrc/	"主页"
+[2]: 
