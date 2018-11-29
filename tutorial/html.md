@@ -11,15 +11,15 @@
 1. 解析HTML结构
 2. 加载外部脚本和样式表文件
 3. 解析并执行脚本代码
-4. DOM树构建完成. // DOMContentLoaded
+4. DOM树构建完成. // `DOMContentLoaded`
 5. 加载图片等外部文件
-6. 页面加载完毕. // load
+6. 页面加载完毕. // `load`
 
-其实，这里还有一个readystatechange事件。
- 当document.readyState 为 interactive 的时候，同时会触发DOMContentLoaded。
- 当document.readyState 为 complete 的时候，同时会触发load。
+其实，这里还有一个 `readystatechange` 事件。
+ 当 `document.readyState` 为 `interactive`  的时候，同时会触发 `DOMContentLoaded`。
+ 当 `document.readyState ` 为 ` complete` 的时候，同时会触发 `load`。
 
-以后如需判断当前文档是否加载完成，只需要获取document.readyState的值即可。
+以后如需判断当前文档是否加载完成，只需要获取 `document.readyState` 的值即可。
 
 
 
