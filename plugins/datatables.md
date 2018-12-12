@@ -46,6 +46,16 @@ $table.DataTable( {
 
 
 
+## 去除弹窗警告
+
+```js
+$.fn.dataTable.ext.errMode = 'none';
+```
+
+
+
+
+
 ---
 
 [1]: http://www.datatables.club/reference/	"官方文档"
