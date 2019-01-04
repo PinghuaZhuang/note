@@ -4,7 +4,7 @@
 
 problem: 
 
-```cli
+```bash
 Error: ENOENT: no such file or directory, stat 'C:\Users\Administrator.DESKTOP-ON5VPQH\Documents\Gitbook\note_book\gitbook\gitbook-plugin-fontsettings\fontsettings.js'
 ```
 
@@ -35,37 +35,37 @@ vim copyPluginAssets.js
 
 **安装**
 
-```cli
+```bash
 npm install gitbook -g
 ```
 
 **初始化**
 
-```clike
+```bash
 gitbook init
 ```
 
 **编译**
 
-```cli
+```bash
 gitbook build
 ```
 
 **编译和预览**
 
-```cli
+```bash
 gitbook serve
 ```
 
 **列出本地所有的gitbook版本**
 
-```cli
+```bash
 gitbook ls
 ```
 
 **列出远程可用的gitbook版本**
 
-```cli
+```bash
 gitbok ls-remote
 ```
 
