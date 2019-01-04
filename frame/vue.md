@@ -4,6 +4,42 @@
 
 
 
+##  修改 UI 框架的样式
+
++ `/deep/`: 注意：使用 cass 和 less 只能使用 /deep/ 这个方法
+
+```vue
+<style scoped>
+  /*
+  修改样式
+  通过使用 box-out 的class类，找到下面组件内的class类，中间必须得使用 /deep/ 才能找到下面的class类。
+  */
+  .box-out /deep/ .xxxxx组件样式类 {
+    color: red;
+  }
+</style>
+```
+
+
+
++ `>>>`: 
+
+```vue
+<style scoped>
+  /*
+  修改样式
+  通过使用 box-out 的class类，找到下面组件内的class类，中间必须得使用 >>> 才能找到下面的class类。
+  */
+  .box-out >>> .xxxxx组件样式类 {
+    color: red;
+  }
+</style>
+```
+
+
+
+
+
 ## 使用 jsx 语法
 
 `transform-vue-jsx`
