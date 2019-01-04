@@ -10,7 +10,7 @@ Error: ENOENT: no such file or directory, stat 'C:\Users\Administrator.DESKTOP-O
 
 Fix:
 
-```cli
+```bash
 cd ~/.gitbook/versions/版本/lib/output/website/
 ```
 
