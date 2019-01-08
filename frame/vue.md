@@ -6,7 +6,7 @@
 
 ##  修改 UI 框架的样式
 
-+ `/deep/`: 注意：使用 cass 和 less 只能使用 /deep/ 这个方法
++ `/deep/`: 注意：使用 sass 和 less 只能使用 /deep/ 这个方法
 
 ```vue
 <style scoped>
