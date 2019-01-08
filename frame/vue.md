@@ -12,7 +12,7 @@
 <style scoped>
   /*
   修改样式
-  通过使用 box-out 的class类，找到下面组件内的class类，中间必须得使用 /deep/ 才能找到下面的class类。
+  通过使用 box-out 的 class 类，找到下面组件内的 class 类，中间必须得使用 /deep/ 才能找到下面的class类。
   */
   .box-out /deep/ .xxxxx组件样式类 {
     color: red;
