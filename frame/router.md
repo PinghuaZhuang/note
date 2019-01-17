@@ -42,3 +42,13 @@ beforeRouteEnter( to, from, next ) {
 }
 ```
 
+
+
+## 嵌套路由
+
+
+
+
+
+## 参数传递
+
