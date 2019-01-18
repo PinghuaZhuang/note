@@ -158,16 +158,16 @@ document.title = 'hahaha';
 
   其实文档里面已经清晰的说明了授权登录的主要3个步骤： 
 
-  1. web端重定向 [http://github.com/login/oauth/authorize](http://www.voidcn.com/link?url=http://github.com/login/oauth/authorize)； 
+  1. 转跳到 GitHub 用户授权页面， client_id 必须传 其他参数如果有需要就传，例如我这里需要获取用户的邮箱信息，就加了一个 scope=user:email 最终拼成的URL如下:https://github.com/login/oauth/authorize?client_id=myclient_id&scope=user:email
 
      ```js
      // 前端重点是地址的填写
      window.location.href = 'https://github.com/login/oauth/authorize?client_id=75d6ff0d7a95f88acae6&redirect_uri=https://manage.hgdqdev.cn/#/login'
      ```
 
-  2. 根据 `code` 获取 `access_token`, 创建成功后 `github` 会提供 `Client ID` 以及 `Client Secret`； 
+  2. 当用户同意授权后，链接地址就会转跳到 我们配置页面内的 Authorization callback URL 所填写的URL地址，并且会带上一个 code参数，这个参数在后面获取用户token是必须的一个参数。 获取到这个code参数后，我会将这个code传到服务器的后台，然后后台调用 https://github.com/login/oauth/access_token 这个api，传入 client_id, client_secret, code 这三个参数，可以获取到一个 access_token。
 
-  3. 根据 `access_token` 获取用户信息； 
+  3. 获取到 access_token 后， 再调用 https://api.github.com/user?access_token=access_token这个API，就可以获取到基本的用户信息了。 用户的基本信息内容如下所示， 根据第一步传入的不同的 scope，获取到的用户信息也是不同的。本博客后台使用 ID 字段作为用户的唯一标示，因为login（实则为用户名）有可能会更改。
 
 ![](../images/github_01.png)
 
