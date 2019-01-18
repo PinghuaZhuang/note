@@ -1,5 +1,15 @@
 # Compatibility
 
+## 使用 canvas 绘制图片遇到的跨域问题
+
+```js
+img.setAttribute('crossOrigin', 'anonymous'); // 允许跨域
+```
+
+
+
+
+
 ## CommonJS、AMD、CMD、NodeJs、RequireJS
 
 [原文][]
