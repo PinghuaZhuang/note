@@ -50,5 +50,34 @@ beforeRouteEnter( to, from, next ) {
 
 
 
-## 参数传递
+## 路由配置
 
+### params
+
+```js
+var routers = [ {
+    name: '/test/:id?' // :id? 这个参数可有可无
+} ];
+
+// 获取
+this.$router.params.id
+```
+
+### query
+
+```js
+var routers = [ {
+    name: '/test?id=1234' 
+} ];
+
+// 获取
+this.$route.query.id
+```
+
+
+
+## replace 与 push 的区别
+
+replace 是替换掉 history 中当前的地址, 不会添加新记录, push 会添加新记录.
+
+this.$route.go(-1) 就是调用浏览器 history 的前进后退方法, 相当于点击浏览器的前进后退.
