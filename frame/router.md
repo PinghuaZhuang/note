@@ -46,7 +46,7 @@ beforeRouteEnter( to, from, next ) {
 
 ## 嵌套路由
 
-
+vue: children 属性
 
 
 
