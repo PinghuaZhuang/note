@@ -79,7 +79,13 @@
 https://graph.qq.com/user/get_user_info?access_token=4353B301DDE151F222AECFCDEC31C9FC&oauth_consumer_key=101549566&openid=F7AC13FB348EE0A6B032861FFC47043B&format=json
 ```
 
+---
 
+
+
+## 微信登录 
+
+***微信登录需要网站备案, 暂时测试不了***
 
 
 
