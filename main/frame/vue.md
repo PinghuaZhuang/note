@@ -4,6 +4,43 @@
 
 
 
+## 路由相关
+
++ $router: 路由器
++ $route: 路由
+
+### 判断动态添加路由是否成功
+
+```js
+// 判断长度是否大于 0 
+let hasInstantiated = this.$router.resolve( { name: 'demo' } ).route.matched.length
+```
+
+### 配置基本路由
+
+禁止用户用户访问非法路由, 可以配置基本路由跳转到 404
+
+```js
+let routers = {
+    path: '*',
+    name: '404',
+    path: '404.vue'
+}
+```
+
+### 页面刷新丢失路由的问题
+
+在用户刷新一个有权限限制的页面的时候, 会重新实例化 vue, 所以 路由配置会丢失. 
+
+解决办法:
+
++ 在本地保存路由配置. ( 不安全 )
++ 再次请求获取路由配置, 添加路由.
+
+---
+
+
+
 ## 强制更新
 
 在使用 v-for 渲染的时候, 修改 item 值后, v-if 作用的内容不会发生变异
@@ -16,6 +53,8 @@
 // 强制渲染
 this.$forceUpdate();  
 ```
+
+---
 
 
 
@@ -51,13 +90,15 @@ this.$forceUpdate();
 </style>
 ```
 
-
+---
 
 
 
 ## 使用 jsx 语法
 
 `transform-vue-jsx`
+
+---
 
 
 
@@ -88,7 +129,7 @@ export const MyComponent = Vue.extend({
 })
 ```
 
-
+---
 
 
 
@@ -96,19 +137,15 @@ export const MyComponent = Vue.extend({
 
 `watch` 中, 是否使用当前值立即执行 `handler`
 
-
-
 ---
 
 
 
-## Vue + ts
+## Vue + Ts
 
 ```b
 vue init SimonZhangITer/vue-typescript-template 项目名称
 ```
-
-
 
 ---
 
@@ -116,7 +153,7 @@ vue init SimonZhangITer/vue-typescript-template 项目名称
 
 ## 数组相关
 
-#### 由于 JavaScript 的限制，Vue 不能检测以下变动的数组：
+由于 JavaScript 的限制，Vue 不能检测以下变动的数组：
 
 1. 当你利用索引直接设置一个项时，例如：`vm.items[indexOfItem] = newValue`
 
@@ -124,7 +161,7 @@ vue init SimonZhangITer/vue-typescript-template 项目名称
 
 
 
-#### Vue 包含一组观察数组的变异方法，所以它们也将会触发视图更新。这些方法如下：
+Vue 包含一组观察数组的变异方法，所以它们也将会触发视图更新。这些方法如下：
 
 - `push()`
 - `pop()`
@@ -133,8 +170,6 @@ vue init SimonZhangITer/vue-typescript-template 项目名称
 - `splice()`
 - `sort()`
 - `reverse()`
-
-
 
 ---
 
@@ -148,7 +183,7 @@ vue init SimonZhangITer/vue-typescript-template 项目名称
 
 
 
-# keep-alive
+## keep-alive
 
 页面缓存
 
@@ -173,7 +208,7 @@ meta: {
 
 
 
-## 在子组件中 data 为什么必须是函数
+## 子组件中 data 为什么必须是函数
 
 在某些情况下, 不同的组件 `data` 使用的数据来源可能是同一个对象, 这个时候就有一个问题, 修改这个共同的数据源, 就会同时影响到两个组件. 所有为了作用域的独立, 在注册组件的时候 `data` 采用了函数的形式. 注册之后会返回一个构造函数, 此时就产生了一个闭包, 保证了组件作用域的独立性.
 
@@ -212,14 +247,6 @@ export default {
 [在线文档-cdsn][2]
 
 在已有的标签上利用虚拟 DOM 的原理实现快速更新 html
-
-
-
----
-
-
-
-## VUEX
 
 ---
 
