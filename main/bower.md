@@ -141,6 +141,29 @@ document.title = 'hahaha';
 
 ---
 
+
+
+浏览器语音
+
+```js
+function speak () {
+    let speech = new SpeechSynthesisUtterance( 'Hello~' )
+    speechSynthesis.speak( speech )
+}
+
+// 不能触发
+window.onload = speak
+
+// 可以触发, 难听
+document.querySelector( '#btn' ).onclick = speak
+```
+
+
+
+
+
+---
+
 [1]: https://developers.google.com/web/updates/2014/11/Support-for-theme-color-in-Chrome-39-for-Android?hl=en
 [2]: https://hodorshy.github.io/example/chrome-title-color.html
 [3]: https://developer.mozilla.org/zh-CN/docs/Web/API/notification/Using_Web_Notifications
