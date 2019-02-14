@@ -2,6 +2,17 @@
 
 
 
+## 移动端浏览器的一些技能点
+
++ 通过设置css属性 -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
++ 取消掉手机端webkit浏览器 点击按钮或超链接之类的 默认灰色背景色 
+  设置css属性 -webkit-user-select:none; 控制用户不可选择文字 
++ 区域性 overflow: scroll | auto 滚动时使用原生效果：-webkit-overflow-scrolling: touch （ios8+，Android4.0+）
+
+---
+
+
+
 ## 记住密码
 
 前端使用 `cookies` 保存密码, `md5.js` 加密. 提交 md5 密码跟后台验证.
