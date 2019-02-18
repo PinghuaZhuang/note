@@ -14,6 +14,8 @@
 
 判断 `canvas` 点击了哪个图形, 可以使用 `ctx.isPointInPath` 方法判断, 但是当 `canvas` 画布有多个图形的化, 只能判断事件对象的位置是否在最后一个绘制的图形上.
 
+[博客][1]
+
 ### 解决思路
 
 没次点击的时候重绘图纸, 在每一个玻璃纸上进行判断.
@@ -42,4 +44,10 @@ function draw(p){
 	return who;
 }
 ```
+
+
+
+---
+
+[1]: https://blog.csdn.net/MooreLxr/article/details/81394122
 
