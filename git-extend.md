@@ -21,7 +21,8 @@ git commit --amend
 1. 列出记录, 修改 `pick` 为 `edit`
 
 ```bash
-git rebase -i HEAD~3
+git rebase -i HEAD~3 // 最近三条
+git rebase -i 2adffsf // 根据 SHA 查询
 ```
 
 2. 使用 `vim` 修改标记的提交信息
