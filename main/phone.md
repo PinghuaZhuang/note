@@ -8,11 +8,21 @@
 
 ## 输入键盘与输入框位置自适应
 
+### 底部固定定位的输入框
+
+在 `ios` 上, 弹出键盘时固定定位会失效. `ios` 对 `fixed` 定位支持不好.
+
+TODO:
+
+还有一个折中的方案是 给input外面的box设置个padding-bottom 触发键盘的时候就不会遮住.
+
+### 中间的输入框
+
 
 
 ## 横竖屏切换
 
-+ 浏览器自带事件 `orientationchange`
++ 浏览器自带事件 `orientationchange` 
 
 ```js
 var updateOrientation = function() {
