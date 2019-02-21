@@ -69,4 +69,4 @@ function alertName(): void {
 
 ---
 
-[1:]: https://ts.xcatliu.com/basics/primitive-data-types.html
+[1]: https://ts.xcatliu.com/basics/primitive-data-types.html

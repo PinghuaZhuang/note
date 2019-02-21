@@ -153,6 +153,8 @@ var a = document.querySelector( '#a' );
 
 + 浏览器兼容
 
+  华为的一些手机自带的浏览器不支持 vw wh
+
   1. PC端
 
      Chrome：自 26 版起就完美支持（2013年2月）

@@ -30,7 +30,7 @@ npm install babel-plugin-transform-vue-jsx
 
 
 
----
+------
 
 [1]: https://www.babeljs.cn/docs/usage/babelrc/	"主页"
-[2]: 
+[2]:

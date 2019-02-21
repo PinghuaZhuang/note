@@ -4,9 +4,115 @@
 
 
 
+## v-for
+
+在使用 v-for 渲染的时候, 数据源发生改变, 是有可能不会触发页面刷新的. 需要手动刷新. `this.$forceUpdate()`
+
+---
+
+
+
+## 路由相关
+
++ $router: 路由器
++ $route: 路由
+
+### 判断动态添加路由是否成功
+
+```js
+// 判断长度是否大于 0 
+let hasInstantiated = this.$router.resolve( { name: 'demo' } ).route.matched.length
+```
+
+### 配置基本路由
+
+禁止用户用户访问非法路由, 可以配置基本路由跳转到 404
+
+```js
+let routers = {
+    path: '*',
+    name: '404',
+    path: '404.vue'
+}
+```
+
+### 页面刷新丢失路由的问题
+
+在用户刷新一个有权限限制的页面的时候, 会重新实例化 vue, 所以 路由配置会丢失. 
+
+解决办法:
+
++ 在本地保存路由配置. ( 不安全 )
++ 再次请求获取路由配置, 添加路由.
+
+### meta 路由元信息
+
+在路由配置中可以配置 meta 字段, 来传递数据
+
+例如, keep-alive 页面是否要缓存, 需要一个关键字来判断, 在路由跳转的时候可以藉由这个关键字来判断.
+
+---
+
+
+
+## 强制更新
+
+在使用 v-for 渲染的时候, 修改 item 值后, v-if 作用的内容不会发生变异
+
+原因: 层级太深
+
+解决方法: 强制重新渲染组件
+
+```js
+// 强制渲染
+this.$forceUpdate();  
+```
+
+---
+
+
+
+##  修改 UI 框架的样式
+
++ `/deep/`: 注意：使用 sass 和 less 只能使用 /deep/ 这个方法
+
+```vue
+<style scoped>
+  /*
+  修改样式
+  通过使用 box-out 的 class 类，找到下面组件内的 class 类，中间必须得使用 /deep/ 才能找到下面的class类。
+  */
+  .box-out /deep/ .xxxxx组件样式类 {
+    color: red;
+  }
+</style>
+```
+
+
+
++ `>>>`: 
+
+```vue
+<style scoped>
+  /*
+  修改样式
+  通过使用 box-out 的class类，找到下面组件内的class类，中间必须得使用 >>> 才能找到下面的class类。
+  */
+  .box-out >>> .xxxxx组件样式类 {
+    color: red;
+  }
+</style>
+```
+
+---
+
+
+
 ## 使用 jsx 语法
 
 `transform-vue-jsx`
+
+---
 
 
 
@@ -37,7 +143,7 @@ export const MyComponent = Vue.extend({
 })
 ```
 
-
+---
 
 
 
@@ -45,19 +151,15 @@ export const MyComponent = Vue.extend({
 
 `watch` 中, 是否使用当前值立即执行 `handler`
 
-
-
 ---
 
 
 
-## Vue + ts
+## Vue + Ts
 
 ```b
 vue init SimonZhangITer/vue-typescript-template 项目名称
 ```
-
-
 
 ---
 
@@ -65,7 +167,7 @@ vue init SimonZhangITer/vue-typescript-template 项目名称
 
 ## 数组相关
 
-#### 由于 JavaScript 的限制，Vue 不能检测以下变动的数组：
+由于 JavaScript 的限制，Vue 不能检测以下变动的数组：
 
 1. 当你利用索引直接设置一个项时，例如：`vm.items[indexOfItem] = newValue`
 
@@ -73,7 +175,7 @@ vue init SimonZhangITer/vue-typescript-template 项目名称
 
 
 
-#### Vue 包含一组观察数组的变异方法，所以它们也将会触发视图更新。这些方法如下：
+Vue 包含一组观察数组的变异方法，所以它们也将会触发视图更新。这些方法如下：
 
 - `push()`
 - `pop()`
@@ -82,8 +184,6 @@ vue init SimonZhangITer/vue-typescript-template 项目名称
 - `splice()`
 - `sort()`
 - `reverse()`
-
-
 
 ---
 
@@ -97,32 +197,39 @@ vue init SimonZhangITer/vue-typescript-template 项目名称
 
 
 
-# keep-alive
+## keep-alive
 
-页面缓存
+***只能用来包裹动态组件***
 
-### keys
+### 属性
 
-+ include: 不包含
+- `include` - 字符串或正则表达式。只有名称匹配的组件会被缓存。
+
+- `exclude` - 字符串或正则表达式。任何名称匹配的组件都不会被缓存。
+
+  使用 name 匹配的时候, 必须与  组件的那么值一致.
+
+  优先匹配 组件 name 值, 其次是组件的局部注册名, 匿名组件不能被匹配.
+
+- `max` - 数字。最多可以缓存多少组件实例。
 
 ### FIXED
 
 当不需要的时候缓存设置为 `false`
 
 ```js
-// router.js
+// router.js 利用 路由元信息来设定是否缓存
 meta: {
-
-    // true: 缓存
     keep-alive: false
 }
+// 然后再路由跳转的时候, 根据这个设定来修改
 ```
 
 ---
 
 
 
-## 在子组件中 data 为什么必须是函数
+## 子组件中 data 为什么必须是函数
 
 在某些情况下, 不同的组件 `data` 使用的数据来源可能是同一个对象, 这个时候就有一个问题, 修改这个共同的数据源, 就会同时影响到两个组件. 所有为了作用域的独立, 在注册组件的时候 `data` 采用了函数的形式. 注册之后会返回一个构造函数, 此时就产生了一个闭包, 保证了组件作用域的独立性.
 
@@ -161,14 +268,6 @@ export default {
 [在线文档-cdsn][2]
 
 在已有的标签上利用虚拟 DOM 的原理实现快速更新 html
-
-
-
----
-
-
-
-## VUEX
 
 ---
 

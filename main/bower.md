@@ -2,9 +2,38 @@
 
 
 
+## 移动端浏览器的一些技能点
+
++ 通过设置css属性 -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
++ 取消掉手机端webkit浏览器 点击按钮或超链接之类的 默认灰色背景色 
+  设置css属性 -webkit-user-select:none; 控制用户不可选择文字 
++ 区域性 overflow: scroll | auto 滚动时使用原生效果：-webkit-overflow-scrolling: touch （ios8+，Android4.0+）
+
+---
+
+
+
 ## 记住密码
 
 前端使用 `cookies` 保存密码, `md5.js` 加密. 提交 md5 密码跟后台验证.
+
+
+
+---
+
+
+
+## CSS
+
+## calc 计算百分比与固定值的差
+
+calc 兼容性不好, 最好使用 flex 布局.
+
+```css
+.demo {
+    height: calc( 100% - 100px )
+}
+```
 
 
 
@@ -133,45 +162,9 @@ document.title = 'hahaha';
 
 
 
-## 第三方登录
+## Service Workers
 
-基本是后台重定向, 原理: OAuth2.0 协议
-
-
-### 开发平台
-
-[QQ开发平台][5]
-
-[微信开发平台][6]
-
-[微博开发平台][7]
-
-[github开发平台文档-Creating an OAuth Apps][8]
-
-[github开发平台文档-Authorizing OAuth Apps][9]
-
-> 各个平台第三方接入流程都是差不多的
-
-
-
-+ GitHub
-
-  其实文档里面已经清晰的说明了授权登录的主要3个步骤： 
-
-  1. web端重定向 [http://github.com/login/oauth/authorize](http://www.voidcn.com/link?url=http://github.com/login/oauth/authorize)； 
-
-     ```js
-     // 前端重点是地址的填写
-     window.location.href = 'https://github.com/login/oauth/authorize?client_id=75d6ff0d7a95f88acae6&redirect_uri=https://manage.hgdqdev.cn/#/login'
-     ```
-
-  2. 根据 `code` 获取 `access_token`, 创建成功后 `github` 会提供 `Client ID` 以及 `Client Secret`； 
-
-  3. 根据 `access_token` 获取用户信息； 
-
-![](../images/github_01.png)
-
-![](../images/github_02.png)
+[在线文档][10]
 
 
 
@@ -179,9 +172,22 @@ document.title = 'hahaha';
 
 
 
-## Service Workers
+浏览器语音
 
-[在线文档][10]
+```js
+function speak () {
+    let speech = new SpeechSynthesisUtterance( 'Hello~' )
+    speechSynthesis.speak( speech )
+}
+
+// 不能触发
+window.onload = speak
+
+// 可以触发, 难听
+document.querySelector( '#btn' ).onclick = speak
+```
+
+
 
 
 

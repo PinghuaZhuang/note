@@ -1,5 +1,15 @@
 # Compatibility
 
+## 使用 canvas 绘制图片遇到的跨域问题
+
+```js
+img.setAttribute('crossOrigin', 'anonymous'); // 允许跨域
+```
+
+
+
+
+
 ## CommonJS、AMD、CMD、NodeJs、RequireJS
 
 [原文][]
@@ -78,6 +88,16 @@ Visual Studio Code 装饰器提示“experimentalDecorators”的解决办法
     "javascript.implicitProjectConfig.experimentalDecorators": true
 }
 ```
+
+
+
+---
+
+
+
+## IE 下不支持的方法
+
++ `fill()`
 
 
 
