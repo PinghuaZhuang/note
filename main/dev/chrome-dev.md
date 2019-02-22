@@ -4,7 +4,7 @@
 
 ## 打开  FPS 
 
-Rending -> FPS
+More tools -> Rending -> FPS
 
 ![](../../images/chrome-dev_01.png)
 
@@ -12,3 +12,6 @@ Rending -> FPS
 
 ## 禁止缓存
 
+More tools -> Network conditions -> disable cache
+
+![](../../images/chrome-dev_02.png)
