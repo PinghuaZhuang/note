@@ -4,6 +4,30 @@
 
 
 
+## 禁用继承
+
+```js
+Vue.component('base-input', {
+  inheritAttrs: false,
+  props: ['label', 'value'],
+  template: `
+    <label>
+      {{ label }}
+      <input
+		// 手动绑定
+        v-bind="$attrs"
+        v-bind:value="value"
+        v-on:input="$emit('input', $event.target.value)"
+      >
+    </label>
+  `
+})
+```
+
+
+
+
+
 ## v-for
 
 在使用 v-for 渲染的时候, 数据源发生改变, 是有可能不会触发页面刷新的. 需要手动刷新. `this.$forceUpdate()`
