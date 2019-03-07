@@ -1,5 +1,11 @@
 # JavaScript
 
+## 设置 crossorigin
+
+```html
+<script src="https://example.com/example-framework.js" crossorigin="use-credentials"></script>
+```
+
 
 
 ## DataTransfer
