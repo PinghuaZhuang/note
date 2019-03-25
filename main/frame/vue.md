@@ -4,6 +4,76 @@
 
 
 
+## 添加全局 less 文件
+
+```bash
+npm install sass-resources-loader --save-dev
+```
+
+./build/utils.js
+
+```js
+function lessResourceLoader() {
+    var loaders = [
+      cssLoader,
+      'less-loader',
+      {
+        loader: 'sass-resources-loader',
+        options: {
+          resources: [
+            path.resolve(__dirname, '../src/style/common.less'),
+          ]
+        }
+      }
+    ];
+    if (options.extract) {
+      return ExtractTextPlugin.extract({
+        use: loaders,
+        fallback: 'vue-style-loader'
+      })
+    } else {
+      return ['vue-style-loader'].concat(loaders)
+    }
+}
+
+// ...
+
+return {
+    css: generateLoaders(),
+    postcss: generateLoaders(),
+    less: lessResourceLoader('less'),
+    sass: generateLoaders('sass', { indentedSyntax: true }),
+    scss: generateLoaders('sass'),
+    stylus: generateLoaders('stylus'),
+    styl: generateLoaders('stylus')
+}
+```
+
+vue cli 3.0
+
+```js
+// 全局使用 less 变量的方法
+function addStyleResource(rule) {
+    rule.use('style-resource')
+        .loader('style-resources-loader')
+        .options({
+            patterns: [
+                path.resolve(__dirname, './src/less/params'),
+            ],
+        })
+}
+
+chainWebpack: config => {
+    // 全局映入 less 文件
+    const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
+    types.forEach(type => addStyleResource(config.module.rule('less').oneOf(type)))
+}
+```
+
+
+
+
+
 ## 禁用继承
 
 ```js
