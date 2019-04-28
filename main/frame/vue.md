@@ -206,6 +206,12 @@ this.$forceUpdate();
 
 `transform-vue-jsx`
 
+安装一下插件:
+
+"babel-plugin-syntax-jsx": "^6.18.0",
+"babel-plugin-transform-vue-jsx": "^3.5.0",
+"babel-helper-vue-jsx-merge-props": "^2.0.3",
+
 ---
 
 
