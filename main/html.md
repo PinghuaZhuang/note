@@ -4,6 +4,18 @@
 
 
 
+## Video 标签铺满
+
+```css
+video {
+    object-fill: fill;
+}
+```
+
+
+
+
+
 ## HTML 页面加载顺序
 
 [原文链接][6]
