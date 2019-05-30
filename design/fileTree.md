@@ -4,31 +4,45 @@
 
 + doc
 
+  + TODO.md
+  + API.md
+
 + test
 
 + static
 
   + images
+  + mork-data
 
 + src
 
-  + style
+  + less
     + mixins.less
     + base.less
     + index.less
-  + ui
-    + event
-    + style
-    + ready
-    + commpents
+    + var.less
+    + element-ui
+      + button
+    + theme
   + model
+    + class
+      + abs
+    + event
     + var
-  + ctl
+    + mork
+  + control // 页面逻辑, 一帮写在 vue 文件上
     + var
   + var
-  + utils
+  + share // 工作组件
+    + icons
+    + dialog
   + test
-  + asset
+  + asset // 资源包
+  + lib // 依赖包, 没有使用 npm 的依赖包
+  + utils // 公用函数库
 
-  - class
   - config
+  - dialog // 用户交互的弹窗
+  - api
+    - index.js
+    - url.js

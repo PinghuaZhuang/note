@@ -1,6 +1,31 @@
 # Bower 浏览器相关
 
+## 视频不能自动播放的问题
 
+1. 将标签静音
+
+   注意: 这种方法不一定能实现. muted 属性不一定设置成功. 推荐第二种方法.
+
+   ```html
+   <video ref="video" id="player"
+          autoplay loop muted>
+       <source src="/static/video/scene1.mp4" />
+   </video>
+   ```
+
+2. 使用 js 来实现.
+
+   play() 方法将会返回一个 promise 方法, muted 属性不一定能设置成功.
+
+   ```js
+   this.$refs.video.play().catch( () => {
+       // Autoplay was prevented.
+   
+       //--静音再播放--
+       this.$refs.video.muted = true
+       this.$refs.video.play()
+   } )
+   ```
 
 ## chrome video 标签不能自动播放的问题
 
