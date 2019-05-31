@@ -36,13 +36,30 @@
   + share // 工作组件
     + icons
     + dialog
+    + baseUI
   + test
   + asset // 资源包
   + lib // 依赖包, 没有使用 npm 的依赖包
   + utils // 公用函数库
 
   - config
-  - dialog // 用户交互的弹窗
+    - key-map
   - api
     - index.js
     - url.js
+
+
+
+## utils
+
++ Storage
++ cookie
+
+
+
+## dialog
+
+最外层要套一层.
+
++ alert
++ confirm

@@ -31,10 +31,16 @@ handler.removeInputAction( Cesium.ScreenSpaceEventType.LEFT_CLICK );
 // 最好通过多创建 handler, 来区分要注销的事件
 ```
 
-
-
 + setInputAction: 注册事件
 + removeInputAction: 注销事件
+
+
+
+### 取消双击跟踪 entity 的行为
+
+```js
+viewer.cesiumWidget.screenSpaceEventHandler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_DOUBLE_CLICK)
+```
 
 
 
@@ -113,11 +119,46 @@ viewer.camera.flyTo( {
 
 
 
+### 相机高度变化事件
+
+```js
+ctl.camera.changed.addEventListener( this[ _changeCamera ] )
+```
+
+```js
+static [ _changeCamera ] () {
+    let ctl = this.entites.ctl
+    let cartographic = Cesium.Cartographic.fromCartesian( ctl.scene.camera.position )
+
+    this.pointHeight = ctl.camera.height
+
+    if ( cartographic.height > this.cameraHight ) {
+        // 缩小成点
+        this.trigger( {
+            type: 'camera:small',
+            ctl,
+            camera: ctl.camera
+        } )
+    } else {
+        // 正常显示
+        this.trigger( {
+            type: 'camera:normal',
+            ctl,
+            camera: ctl.camera
+        } )
+    }
+}
+```
+
+
+
+
+
 ---
 
 
 
-## entities
+## Entity
 
 ### 创建
 
@@ -146,7 +187,7 @@ viewer.selectedEntity;
 viewer.selectedEntity._id;
 ```
 
-### 跳转到 entities 点上
+### 跳转到 entity 点上
 
 ```js
 // 跳转到该位置上
@@ -164,7 +205,7 @@ wyoming.polygon.extrudedHeight : 250000;
 + 走廊 entity.corridor
 + 气缸和锥体 entity.cylinder
 + 多边形 entity.polygon
-+ 折线 entity.polyline
++ 折线 entity.polyline [Demo](<http://support.supermap.com.cn:8090/webgl/examples/editor.html#Polyline>)
 + 折线卷 entity.polylineVolume
 + 矩形 entity.rectangle
 + 球体和椭球体 entity.ellipsoid
@@ -237,6 +278,33 @@ billboard : {
 	width : 64,
 	height : 64
 }
+```
+
+
+
+### 绘制虚线
+
+```js
+let entity = new Cesium.Entity( {
+    polyline: {
+        show: true,
+        width: 2,
+        outline: false,
+        // granularity: 1,
+        material: new Cesium.PolylineDashMaterialProperty( {
+            color: new Cesium.Color( 212 / 255, 43 / 255, 47 / 255, 1 )
+        } ),
+        positions: Cesium.Cartesian3.fromDegreesArray( [
+            +doorStart.lng, +doorStart.lat,
+            +doorEnd.lng, +doorEnd.lat
+        ] )
+    },
+    position: Cesium.Cartesian3.fromDegrees(
+        +doorStart.lng,
+        +doorStart.lat,
+        +doorStart.height
+    )
+} )
 ```
 
 

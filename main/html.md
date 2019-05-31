@@ -4,6 +4,49 @@
 
 
 
+## domian 跨域
+
+开发网站后台的时候有时候会用到iframe,子页面调用父页面中的js方法,就会设计到跨域问题.JS设置document.domain实现跨域.
+
+*前提条件*：这两个域名必须属于同一个基础域名!而且所用的协议，端口都要一致，否则无法利用document.domain进行跨域
+
+在 2 个跨域的页面写上.
+
+```js
+document.domain = 'xxx.com'
+```
+
+
+
+## 视频截图
+
+```js
+ar video, output;
+var scale = 0.8;
+var init = function() {
+    imgbox = document.getElementById("imgbox");
+    video = document.getElementById("video");
+    video.addEventListener('loadeddata',captureImage);
+};
+
+var captureImage = function() {
+    var canvas = document.createElement("canvas");//创建一个canvas
+    canvas.width = video.videoWidth * scale;//设置canvas的宽度为视频的宽度
+    canvas.height = video.videoHeight * scale;//设置canvas的高度为视频的高度
+    canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);//绘制图像
+
+    var img = document.createElement("img");//创建img
+    img.src = canvas.toDataURL("image/png");//将绘制的图像用img显示出来
+    imgbox.appendChild(img);//将img添加到imgbox里
+};
+
+init();
+```
+
+
+
+
+
 ## Video 标签铺满
 
 ```css
