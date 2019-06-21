@@ -4,6 +4,9 @@
 - [ ] 接口规范.
 - [ ] 字符串全部替换. 正则.
 - [ ] 用hodor账号做一个管理页面.io( 用来展示案例 ).
+- [ ] transformData 对象
+- [ ] 大屏配置实现
+- [ ] 很多页面都有表格. 表单逻辑封装
 
 
 
@@ -13,7 +16,8 @@
 - [ ] 自定义事件.
 - [ ] 使用 node 建立长链接.
 - [ ] 超图笔记.
-- [ ] imgUpload
+- [ ] imgUpload.
+- [ ] chrome 插件.
 
 
 
@@ -45,3 +49,12 @@
 ## Class
 
 - [ ] Storage
+- [ ] End, $.end() 堆栈
+
+
+
+## Common
+
+- [ ] 
+- [ ] [`uniqueId`](https://www.lodashjs.com/docs/latest#_uniqueidprefix)
+- [ ] [`property`](https://www.lodashjs.com/docs/latest#_propertypath)

@@ -45,49 +45,20 @@ if (router.options.isAddDynamicMenuRoutes || fnCurrentRouteType(to, globalRoutes
 
 
 
-
-
-## 视频不能自动播放的问题
-
-1. 将标签静音
-
-   注意: 这种方法不一定能实现. muted 属性不一定设置成功. 推荐第二种方法.
-
-   ```html
-   <video ref="video" id="player"
-          autoplay loop muted>
-       <source src="/static/video/scene1.mp4" />
-   </video>
-   ```
-
-2. 使用 js 来实现.
-
-   play() 方法将会返回一个 promise 方法, muted 属性不一定能设置成功.
-
-   ```js
-   this.$refs.video.play().catch( () => {
-       // Autoplay was prevented.
-   
-       //--静音再播放--
-       this.$refs.video.muted = true
-       this.$refs.video.play()
-   } )
-   ```
-
-## chrome video 标签不能自动播放的问题
-
-chrome 在 2018.04 月份的时候, 为了提高用户体验, 禁止 video 标签在不禁音的时候自动播放. 需要通过用户交互后再可以.
-
-在禁音的时候, 可以自动播放. 可以通过自动 play().then().catch() 来补捉.
-
-
-
 ## 移动端浏览器的一些技能点
 
 + 通过设置css属性 -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 + 取消掉手机端webkit浏览器 点击按钮或超链接之类的 默认灰色背景色 
   设置css属性 -webkit-user-select:none; 控制用户不可选择文字 
 + 区域性 overflow: scroll | auto 滚动时使用原生效果：-webkit-overflow-scrolling: touch （ios8+，Android4.0+）
+
+---
+
+
+
+## 监听页面所有请求
+
+页面的所有 ajax 都是使用的 XMLHttpRequest 请求. 复写 open, send 等方法.
 
 ---
 

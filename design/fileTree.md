@@ -43,6 +43,8 @@
   + test
   + asset // 资源包
   + lib // 依赖包, 没有使用 npm 的依赖包
+    + polyfill.js // 一些高级语法兼容
+    + 
   + utils // 公用函数库
 
   - config

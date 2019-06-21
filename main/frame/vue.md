@@ -1,6 +1,8 @@
 # Vue
 
 - 都有支持native的方案,React的React native,Vue的weex
+- 在使用 js 来传递图片路径的时候, 要添加上全局的根路径, 否则部署的时候会出现问题.
+  - 在使用 v-bind:src 的时候可以使用 require 来获取图片
 
 
 
