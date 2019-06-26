@@ -18,6 +18,33 @@
 
   创建生产版本的配置
 
+## import 不能使用变量的原因
+
+[参考文档](<https://segmentfault.com/q/1010000011585257>)
+
+### 原因
+
+虽然import()方法在es规范中是支持动态引入的，但是webpack的实现是并不支持。
+
+> 例如`import(foo)`，这样完全动态的加载方式将会失败，因为webpack需要一些文件位置信息。因为变量`foo`可能是系统或项目中任何文件的路径。`import()`必须至少包含关于模块所在位置的一些信息，因此让捆绑可以局限于特定的目录或文件夹。
+
+### 解决方法
+
+告诉webpack部分路径.
+
+```js
+export const zList = getFiles( files, ( item ) => {
+    let name = item === 'index' ? 'z' : item
+    return {
+        path: name,
+        name: name,
+        component: () => import( `./${item}.vue` )
+    }
+} )
+```
+
+
+
 ## context
 
 项目根目录
@@ -32,33 +59,33 @@
 
 `path`
 
-​	输出文件根目录
+	输出文件根目录
 
 `filename`
 
-​	输出文件的文件名
+	输出文件的文件名
 
 `publicPath`
 
-​	输出文件目录
+	输出文件目录
 
 `library`
 
-​	将会把 `bundle` 打包成 `lib. output.library` 的值就是文件名.
+	将会把 `bundle` 打包成 `lib. output.library` 的值就是文件名.
 
 `libraryTarget`
 
-​	"var" - 通过设置一个变量导出: var Library = xxx (default)
+	"var" - 通过设置一个变量导出: var Library = xxx (default)
 
-​	"this" - 通过设置 this的属性来导出: this["Library"] = xxx
+	"this" - 通过设置 this的属性来导出: this["Library"] = xxx
 
-​	"commonjs" - 通过设置 exports的属性导出: exports["Library"] = xxx
+	"commonjs" - 通过设置 exports的属性导出: exports["Library"] = xxx
 
-​	"commonjs2" - 通过设置 module.exports导出: module.exports = xxx
+	"commonjs2" - 通过设置 module.exports导出: module.exports = xxx
 
-​	"amd" - 导出为AMD (视情况可通过output.library来命名)
+	"amd" - 导出为AMD (视情况可通过output.library来命名)
 
-​	"umd" - 导出为 AMD, CommonJS2 或者是顶级属性
+	"umd" - 导出为 AMD, CommonJS2 或者是顶级属性
 
 ## externals
 
@@ -82,15 +109,15 @@ import xx from 'aaa';
 
 `extensions`
 
-​	默认解析文件的扩展名, 优先级按顺序
+	默认解析文件的扩展名, 优先级按顺序
 
 `alias`
 
-​	解析路径的时候, 以字符串的形式替换, 允许使用正则表达式
+	解析路径的时候, 以字符串的形式替换, 允许使用正则表达式
 
 `modules`
 
-​	默认包的路径
+	默认包的路径
 
 ```js
 modules: [
@@ -107,7 +134,7 @@ modules: [
 
 `rules` 
 
-​	配置 `loader`
+	配置 `loader`
 
 ## devServer
 
@@ -115,11 +142,11 @@ modules: [
 
 `port` 
 
-​	端口号
+	端口号
 
 `hot`
 
-​	是否开启热更新
+	是否开启热更新
 
 ## plugins
 
