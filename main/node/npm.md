@@ -6,6 +6,15 @@
 
 
 
+## npm 全局安装的包
+
++ webpack
++ eslint
++ @vue-cli
++ http-server
+
+
+
 ## npm link
 
 在本地开发 `npm` 模块的时候，我们可以使用 `npm link` 命令，将 `npm` 模块 **链接** 到对应的运行项目中去，方便地对模块进行调试和测试. 可以实现动态的调试 `npm` 项目.
@@ -42,8 +51,6 @@ op1->op2
 
 
 ---
-
-
 
 
 

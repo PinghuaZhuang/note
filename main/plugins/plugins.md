@@ -1,3 +1,12 @@
+# LC-PLUSGINS
+
++ redis                    node 中使用的插件
++ crypto                  node 中使用的插件, AES SHA
++ nprogress           网页进度条
++ quill                      富文本编辑器
+
+
+
 # Plugins
 
 > 使用插件过程中的细节
