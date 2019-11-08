@@ -6,6 +6,14 @@
 
 
 
+## Clone
+
+```bash
+git clone http://用户名@地址
+```
+
+
+
 ## npm 全局安装的包
 
 + webpack

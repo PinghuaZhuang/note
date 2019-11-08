@@ -6,6 +6,13 @@
 
 
 
+## Vue 项目模板
+
++ vue-element-admin
++ renren-fast-vue
+
+
+
 ## 添加全局 less 文件
 
 ```bash
@@ -138,7 +145,7 @@ let routers = {
 
 解决办法:
 
-+ 在本地保存路由配置. ( 不安全 )
++ 在本地保存路由配置.
 + 再次请求获取路由配置, 添加路由.
 
 ### meta 路由元信息
@@ -319,13 +326,25 @@ Vue 包含一组观察数组的变异方法，所以它们也将会触发视图�
 
 当不需要的时候缓存设置为 `false`
 
+当一个标签页打开 b 路由, 退回到 a 路由, 在新标签打开 b 路由, 显示的内容是缓存的. 可以利用 vuex 来保存转态来判断是否缓存.
+
+include 和 exclude 匹配的是组建名
+
 ```js
 // router.js 利用 路由元信息来设定是否缓存
 meta: {
-    keep-alive: false
+    keepAlive: false
 }
 // 然后再路由跳转的时候, 根据这个设定来修改
 ```
+
+```vue
+<keep-alive :include="this.$route.mate.keepAlive ? 'cus' : '' ">
+    <router-view />
+</keep-alive>
+```
+
+
 
 ---
 
