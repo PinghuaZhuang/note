@@ -36,6 +36,16 @@ module.exports = {
 
 
 
+## 根据环境变量打包
+
+```bash
+vue-cli-service build --mode test
+```
+
+
+
+
+
 ---
 
 [1]: https://cli.vuejs.org/zh/config/#vue-config-js	"vue3 官方文档"

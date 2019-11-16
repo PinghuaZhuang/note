@@ -424,7 +424,16 @@ http.post( action, _data )
 
 
 
+## 跨域请求
 
+### 在子域名不同主域名相同的时候可以使用 document.domain 来解决
+
+ 对于主域相同跨子域的情况，可以通过设置 `document.domain` 来解决。具体做法是在 example.com/a.html 和 sub.example.com/b.html 两个文件分别加上 `document.domain = example.com`
+然后通过a.html 文件创建一个iframe，去控制iframe的 window，从而进行交互
+
+
+
+ 
 
 ---
 
