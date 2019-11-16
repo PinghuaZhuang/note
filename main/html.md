@@ -411,6 +411,19 @@ xhr.send();
 
 
 
+## 上传组件
+
+```js
+let { action, data, file } = _http
+let { name: filename } = file
+let _data = new FormData()
+_data.append( 'name', filename )
+_data.append( 'file', file )
+http.post( action, _data )
+```
+
+
+
 
 
 ---
