@@ -4,6 +4,7 @@
 + crypto                  node 中使用的插件, AES SHA
 + nprogress           网页进度条
 + quill                      富文本编辑器
++  export2Excel      导出功能
 
 
 
