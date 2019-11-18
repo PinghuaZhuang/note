@@ -18,7 +18,9 @@ git clone http://用户名@地址
 
 + webpack
 + eslint
++ eslint-plugin-vue, elsint-plugin-html, elsint-plugin-jquery
 + @vue-cli
++ @vue/cli-init
 + http-server
 
 
