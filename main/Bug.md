@@ -9,7 +9,7 @@
 校验的时候, 必须 `prop` 跟字段名以及 `rules` 相同.
 
 
-![](../../images/element-ui-01.png)
+![](../images/element-ui-01.png)
 
 
 
@@ -23,4 +23,24 @@
 // el-select 提供的失焦事件.
 this.$refs.select.blur()
 ```
+
+
+
+# Vue
+
+
+
+## errorHandler
+ 使用 `vue.config.errorHandler` 来做错误处理
+
+案例:
+
+	1. 路由加载不出来, 清楚本地缓存以及登录信息完成后条状首页.( 待测试 )
+
+
+
+## key
+
+ 在使用 `router-view` 的使用可以`router.path`来设置 `key` 值
+
 
