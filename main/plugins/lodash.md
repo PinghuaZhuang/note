@@ -19,3 +19,8 @@
       (timeSinceLastCall < 0) || (maxing && timeSinceLastInvoke >= maxWait))
 ```
 
+```js
+// 当 20ms 重复一次, 这个时候就要设定 maxWait
+let fn1 = debounce( fn, 1000, { maxWait: 1000 } )
+```
+
