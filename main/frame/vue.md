@@ -13,6 +13,23 @@
 
 
 
+## 在路由中, 也可以使用 get, set
+
+```js
+{
+    path: '/taskDetail',
+    name: 'taskDetail',
+	component: () => import('@/views/task/taskDetail.vue'),
+	meta: {
+		get title() { return $t("routesMeta.taskDetail") }
+	},
+},
+```
+
+
+
+
+
 ## 添加全局 less 文件
 
 ```bash

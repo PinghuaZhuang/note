@@ -2,6 +2,20 @@
 
 记录跟 html 有关的知识.
 
+## 判断文本是否溢出
+
+判断文本是否溢出, 显示三个省略号.
+
+```js
+let cHeight = noWrapDiv.clientHeight;
+let sHeight = noWrapDiv.scrollHeight;
+if ( sHeight > cHeight ) {
+    console.log( "已经溢出显示省略号" );
+} else {
+    console.log( “没有溢出” );
+}
+```
+
 
 
 ## input
