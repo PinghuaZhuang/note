@@ -1,3 +1,9 @@
+# 经验
+
+1. 添加一个 settings 的文件. 便于修改. 例如是否自适应. 是否 mock. 多利用环境变量.
+
+
+
 # Element-UI
 
 使用 element-ui 中遇到的问题.
