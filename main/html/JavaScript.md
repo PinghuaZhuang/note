@@ -1,5 +1,11 @@
 # JavaScript
 
+
+
+## 在严格模式下, window 环境下的 this 指向的都是 undefined
+
+
+
 ## 设置 crossorigin
 
 ```html
