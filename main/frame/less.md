@@ -34,3 +34,18 @@ const cssLoader = {
 }
 ```
 
+
+
+## js 导入
+
+```less
+@color: 'red';
+:export {
+    color: @color
+}
+```
+
+```js
+import { color } from 'main.less'
+```
+
