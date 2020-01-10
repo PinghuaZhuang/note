@@ -11,6 +11,74 @@
 
 
 
+## loading 的使用
+
+使用mixins或者修饰器. 监听等于 true 的时候, 设置超时时间. 
+
+lib=>decorator
+
+
+
+## popover
+
+修复定位偏差的问题
+
+```js
+/**
+ * @file 用于修复问题
+ */
+
+/**
+ * 用于修复popover弹窗在小窗口中的样式问题
+ * @description
+ *  @show="beforeShowTreeL4Popover"
+ *  @after-enter="showTreeL4Popover"
+ */
+export const popoverFix = {
+  methods: {
+    /**
+     * el-popover 显示之前
+     * 解决定位偏差为题
+     */
+    beforeShowTreeL4Popover() {
+      document.querySelectorAll(`body > .el-popover`).forEach(ele => {
+        ele.style.opacity = '0'
+      })
+    },
+    /**
+     * el-popover 显示之后
+     * 解决定位偏差为题
+     */
+    showTreeL4Popover() {
+      window.dispatchEvent(new Event('resize'))
+      window.setTimeout(_ => {
+        let ids = document.querySelectorAll(`.el-table__fixed-body-wrapper .el-popover__reference`)
+        if (ids == null) {
+          return console.error(`popover error.`)
+        }
+        ids = Array.from(ids)
+        ids = ids.map(el => el.getAttribute(`aria-describedby`))
+        document.querySelectorAll(`body > .el-popover`).forEach(ele => {
+          if (!ids.includes(ele.id)) {
+            ele.style.opacity = '1'
+          } else {
+            ele.style.display = 'none'
+          }
+        })
+
+        this.loading = false
+      }, 10)
+    },
+  }
+}
+```
+
+
+
+
+
+
+
 ## el-form
 
 校验的时候, 必须 `prop` 跟字段名以及 `rules` 相同.
