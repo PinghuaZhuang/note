@@ -1,3 +1,30 @@
+# NProgress
+
+网页加载进度条. 
+
+```js
+import router from './router'
+import NProgress from 'nprogress' // progress bar
+import 'nprogress/nprogress.css' // progress bar style
+// import getPageTitle from '@/utils/get-page-title'
+
+// NProgress.configure({ showSpinner: false }) // NProgress Configuration
+router.beforeEach(async(to, from, next) => {
+  // start progress bar
+  NProgress.start()
+  // set page title
+  // document.title = getPageTitle(to.meta.title)
+  next();
+})
+
+router.afterEach(() => {
+  // finish progress bar
+  NProgress.done()
+})
+```
+
+
+
 # LC-PLUSGINS
 
 + redis                    node 中使用的插件
