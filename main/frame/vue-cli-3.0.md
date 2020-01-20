@@ -10,6 +10,39 @@ module.exports = {
 
 
 
+## 引入修饰器
+
+```js
+// babel.config.js
+module.exports = {
+  presets: [
+    '@vue/app',
+  ],
+  "plugins": [
+    // legacy: true 需要打开
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    ["@babel/plugin-proposal-class-properties", { "loose" : true }]
+  ]
+}
+```
+
+```js
+// .eslintrc.js
+module.exports = {
+    parserOptions: {
+        parser: 'babel-eslint',
+        sourceType: 'module',
+        "ecmaFeatures": {
+          "legacyDecorators": true
+        }
+    },
+}
+```
+
+
+
+
+
 ## webpack 的配置
 
 ```js

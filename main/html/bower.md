@@ -1,5 +1,13 @@
 # Bower 浏览器相关
 
+## Error 
+
++ TypeError: 类型错误.
++ ReferenceError: 引用错误.
++ DOMError: dom 相关错误.
+
+
+
 ## 登录
 
 + cookies
