@@ -6,6 +6,33 @@
 
 
 
+## Vue 项目模板
+
++ vue-element-admin
++ renren-fast-vue
+
+
+
+## Computed
+
+### 缓存
+
+```js
+computed: {
+    // 通过这个方式去获取子组件或者dom元素
+    wrapRef: {
+      cache: false,
+      get() {
+        return this.$refs.wrap || {}
+      },
+    },
+},
+```
+
+
+
+
+
 ## 动态加载文件
 
 ```js
@@ -29,13 +56,6 @@ const store = new Vuex.Store({
 
 export default store
 ```
-
-
-
-## Vue 项目模板
-
-+ vue-element-admin
-+ renren-fast-vue
 
 
 
