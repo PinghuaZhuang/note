@@ -284,6 +284,10 @@ this.$forceUpdate();
 "babel-plugin-transform-vue-jsx": "^3.5.0",
 "babel-helper-vue-jsx-merge-props": "^2.0.3",
 
+### jsx 中使用v-model
+
+"babel-plugin-jsx-v-model", "jsx-v-model"
+
 ---
 
 

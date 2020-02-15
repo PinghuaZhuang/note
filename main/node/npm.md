@@ -6,6 +6,12 @@
 
 
 
+## .npmrc
+
+项目地下添加 .npmrc 文件可以修改npm配置.
+
+
+
 ## Clone
 
 ```bash
