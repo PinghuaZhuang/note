@@ -4,6 +4,57 @@
 
 
 
+## Buffer 转 base64
+
+```js
+/**
+ * Buffer 转 base64
+ * @param { Buffer } buffer
+ */
+export function transformArrayBufferToBase64(buffer) {
+  var binary = '';
+  var bytes = new Uint8Array(buffer);
+  for (var len = bytes.byteLength, i = 0; i < len; i++) {
+    binary += String.fromCharCode(bytes[i]);
+  }
+  return window.btoa(binary);
+}
+```
+
+
+
+## MIME API
+
+```js
+data:,文本数据
+
+data:text/plain,文本数据
+
+data:text/html,HTML代码
+
+data:text/html;base64,base64编码的HTML代码
+
+data:text/css,CSS代码
+
+data:text/css;base64,base64编码的CSS代码
+
+data:text/javascript,Javascript代码
+
+data:text/javascript;base64,base64编码的Javascript代码
+
+data:image/gif;base64,base64编码的gif图片数据
+
+data:image/png;base64,base64编码的png图片数据
+
+data:image/jpeg;base64,base64编码的jpeg图片数据
+
+data:image/x-icon;base64,base64编码的icon图片数据
+
+data:application/vnd.ms-excel;base64 xlsxs格式数据
+```
+
+
+
 ## 获取字符串长度
 
 ```js
