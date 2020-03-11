@@ -6,7 +6,7 @@
 
 
 
-## 在创建VUE组件的时候, 可以使用Vue-Styleguidist来创建文档
+## Vue-Styleguidist 编写组件文档
 
 [介绍][3] [github][4] [官方文档][5]
 
