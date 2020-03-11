@@ -6,6 +6,52 @@
 
 
 
+## 在创建VUE组件的时候, 可以使用Vue-Styleguidist来创建文档
+
+[介绍][3] [github][4] [官方文档][5]
+
+
+
+## 内联模板 inline-template
+
+当 `inline-template` 这个特殊的 attribute 出现在一个子组件上时，这个组件将会使用其里面的内容作为模板，而不是将其作为被分发的内容。这使得模板的撰写工作更加灵活。
+
+当然也可以使用 x-template.
+
+```vue
+<my-component inline-template>
+  <div>
+    <p>These are compiled as the component's own template.</p>
+    <p>Not parent's transclusion content.</p>
+  </div>
+</my-component>
+```
+
+
+
+## 监听生命周期
+
+```vue
+mounted: function () {
+  this.attachDatepicker('startDateInput')
+  this.attachDatepicker('endDateInput')
+},
+methods: {
+  attachDatepicker: function (refName) {
+    var picker = new Pikaday({
+      field: this.$refs[refName],
+      format: 'YYYY-MM-DD'
+    })
+
+    this.$once('hook:beforeDestroy', function () {
+      picker.destroy()
+    })
+  }
+}
+```
+
+
+
 ## Vue 项目模板
 
 + vue-element-admin
@@ -488,3 +534,6 @@ Nuxt.js 预设了利用Vue.js开发**服务端渲染**的应用所需要的各�
 [1]: https://www.jianshu.com/p/616999666920
 
 [2]: https://blog.csdn.net/qq_27626333/article/details/76082755
+[3]: https://www.jianshu.com/p/e6745ed87563
+[4]: https://github.com/vue-styleguidist/vue-styleguidist
+[5]: https://vue-styleguidist.github.io/docs/GettingStarted.html
