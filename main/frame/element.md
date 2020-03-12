@@ -4,7 +4,9 @@
 
 
 
-## el-popover 位置偏移的问题
+## el-popover 
+
+### 位置偏移的问题
 
 ```vue
 /**
@@ -56,7 +58,9 @@ export const popoverFix = {
 
 
 
-## el-table 懒加载的模式下, 不能快速点击未加载的数据
+## el-table
+
+###  懒加载的模式下, 不能快速点击未加载的数据
 
 bug原因: 由于treeData的更新是队列方式, 异步更新. 造成loadData的时候获取到对象非响应对象. (oldTreeData), 此时修改treeData状态是不响应的.(修改的不是同一个对象, 是computed计算出来的,)
 
@@ -100,7 +104,17 @@ export default {
 
 
 
-## el-input 限制只输入数字
+## el-input 
+
+### 限制了双向绑定为 input 了
+
+使用修饰符 .lazy 无效. 还是 input 触发方式.
+
+:value @change 是不行的 :value @input @change 是可行的. 
+
+
+
+### 限制只输入数字
 
 ```vue
 <lk-input
