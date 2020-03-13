@@ -4,6 +4,13 @@
 
 
 
+## el-datePicker
+
+1. 在校验的使用添加 `type=date`
+2. 双向绑定传入的时候转换为 `date` 对象
+
+
+
 ## el-popover 
 
 ### 位置偏移的问题
