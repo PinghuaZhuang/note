@@ -8,6 +8,27 @@ promise是微任务. setTimeout 是宏任务.
 
 宏任务执行先后按照回调时机. 当宏任务下的微任务执行完才执行其他宏任务. 
 
+同一次事件循环中  微任务永远在宏任务之前执行.
+
+evenloop概念.
+
+```js
+ setTimeout(function(){
+     console.log('定时器开始啦')
+ });
+ 
+ new Promise(function(resolve){
+     console.log('马上执行for循环啦');
+     for(var i = 0; i < 10000; i++){
+         i == 99 && resolve();
+     }
+ }).then(function(){
+     console.log('执行then函数啦')
+ });
+ 
+ console.log('代码执行结束');
+```
+
 
 
 ## Promise.resolve 
