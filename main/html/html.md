@@ -23,6 +23,37 @@ export function transformArrayBufferToBase64(buffer) {
 
 
 
+## base64 转 blob
+
+```js
+/**
+ * base64 编码转成 Blob
+ * @param { Base64 } dataURI
+ * @return { Blob }
+ */
+export function dataURIToBlob(dataURI) {
+  let binStr = atob(dataURI.split(',')[1])
+  let len = binStr.length
+  let arr = new Uint8Array(len)
+
+  for (let i = 0; i < len; i++) {
+    arr[i] = binStr.charCodeAt(i);
+  }
+
+  return new Blob([arr])
+}
+```
+
+
+
+## Buffer 转 blob
+
+```js
+const blob = new Blob([new Buffer(response.data.data)], { type: 'application/vnd.ms-excel' })
+```
+
+
+
 ## MIME API
 
 ```js
