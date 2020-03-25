@@ -6,6 +6,23 @@
 
 
 
+## $refs 获取为空
+
+由于子组件是异步加载. 会导致父组件在mouted里面$refs获取不到子组件实例. 原因是由于子组件异步加载里面执行了一次宏任务. 
+
+```js
+// 父组件
+export default {
+    mounted() {
+        window.setTimeout(_ => {
+            console.log(this.$refs.child)
+        }, 0)
+    }
+}
+```
+
+
+
 ## Vue-Styleguidist 编写组件文档
 
 [介绍][3] [github][4] [官方文档][5]
