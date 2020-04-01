@@ -4,6 +4,14 @@
 
 
 
+## blob 转 Windw.URL 
+
+```js
+window.URL.createObjectURL(blob)
+```
+
+
+
 ## Buffer 转 base64
 
 ```js
