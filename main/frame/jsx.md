@@ -4,6 +4,41 @@
 
 
 
+##  $scopedSlots 和 $slots 的区别
+
+$scopedSlots 是外部传进来的, $slots 是内部的. 
+
+$scopedSlots 可以在mounted中获取到. 在created中无法获取到. 没找对对应的更新事件.
+
+
+
+## v-on v-bind
+
+```jsx
+export default {
+  name: 'StandardSelect',
+  mixins: [i18nPlaceholder],
+  render() {
+    const { default: defRender } = this.$scopedSlots
+    return (<el-select {
+    ...{
+      props: {
+        placeholder: this.iPlaceholder,
+        clearable: true,
+        ...this.$attrs,
+      },
+      on: this.$listeners,
+    }
+    }>
+      <StandardOptionAll />
+      { defRender && defRender() }
+    </el-select>)
+  },
+}
+```
+
+
+
 ## props
 
 ## children
