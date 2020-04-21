@@ -14,6 +14,28 @@
 
 
 
+## API
+
+componentWillReceiveProps => watch
+
+componentDidMount => mouted
+
+componentWillUnmount => beforeMounted
+
+shouldComponentUpdate  => 是否更新组件
+
+componentWillUpdate => beforeUpdate
+
+componentDidUpdate => updated
+
+
+
+## React Component
+
++ static getDerivedStateFromProps()
+
+
+
 ## 路由 react-router 
 
 [文档][2]
