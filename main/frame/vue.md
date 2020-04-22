@@ -357,7 +357,7 @@ jsx 中也可以使用空模板 template
 
 // vue-cli 3.0 使用jsx
 
-```bash
+```powershell
 npm i @vue/babel-preset-jsx @vue/babel-helper-vue-jsx-merge-props --save
 ```
 
