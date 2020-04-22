@@ -344,8 +344,22 @@ this.$forceUpdate();
 安装一下插件:
 
 "babel-plugin-syntax-jsx": "^6.18.0",
-"babel-plugin-transform-vue-jsx": "^3.5.0",
+
+"babel-plugin-transform-vue-jsx": "^3.5.0", render函数使用jsx语法
+
+babel-plugin-jsx-v-model: vModel
+
 "babel-helper-vue-jsx-merge-props": "^2.0.3",
+
+"babel-plugin-jsx-event-modifiers": 修饰符
+
+jsx 中也可以使用空模板 template
+
+// vue-cli 3.0 使用jsx
+
+```bash
+npm i @vue/babel-preset-jsx @vue/babel-helper-vue-jsx-merge-props --save
+```
 
 ### jsx 中使用v-model
 
@@ -401,6 +415,12 @@ vue init SimonZhangITer/vue-typescript-template 项目名称
 ```
 
 ---
+
+
+
+## vuex实现数据持久化
+
+安装插件vuex-persistedstate.
 
 
 
