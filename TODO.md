@@ -5,8 +5,17 @@
 - [ ] 样式.
 - [ ] Row.
 - [ ] 根据 ID 映射. Map Set
-- [ ] money.
+- [ ] money
+
+- [ ] vue 模板是否可以使用 虚拟节
 
 
 
-- [ ] vue 模板是否可以使用 虚拟节点.
+
+
++ $z: utils
++ $s: setings Object.freeze
++ $c: Curreny
++ $b: base
++ $m: moment
++ 
