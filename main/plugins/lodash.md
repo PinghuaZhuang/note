@@ -2,7 +2,128 @@
 
 
 
-## debounce
+## propertyOf/property 路径<=>值
+
+```js
+var array = [0, 1, 2],
+    object = { 'a': array, 'b': array, 'c': array };
+ 
+_.map(['a[2]', 'c[0]'], _.propertyOf(object));
+// => [2, 0]
+ 
+_.map([['a', '2'], ['c', '0']], _.propertyOf(object));
+// => [2, 0]
+```
+
+```js
+var objects = [
+  { 'a': { 'b': 2 } },
+  { 'a': { 'b': 1 } }
+];
+ 
+_.map(objects, _.property('a.b'));
+// => [2, 1]
+ 
+_.map(_.sortBy(objects, _.property(['a', 'b'])), 'a.b');
+// => [1, 2]
+```
+
+
+
+## toPath 转化 value 为属性路径的数组
+
+```js
+_.toPath('a.b.c');
+// => ['a', 'b', 'c']
+ 
+_.toPath('a[0].b.c');
+// => ['a', '0', 'b', 'c']
+```
+
+
+
+## sum/subtract/multiply/divide 加减乘除
+
+不精确.
+
+
+
+## cloneDeep/cloneDeepWith 深拷贝
+
+```js
+var objects = [{ 'a': 1 }, { 'b': 2 }];
+ 
+var deep = _.cloneDeep(objects);
+console.log(deep[0] === objects[0]);
+// => false
+
+function customizer(value) {
+  if (_.isElement(value)) {
+    return value.cloneNode(true);
+  }
+}
+ 
+var el = _.cloneDeepWith(document.body, customizer);
+ 
+console.log(el === document.body);
+// => false
+console.log(el.nodeName);
+// => 'BODY'
+console.log(el.childNodes.length);
+// => 20
+```
+
+
+
+## snakeCase 拼接字符
+
+```js
+_.snakeCase('Foo Bar');
+// => 'foo_bar'
+ 
+_.snakeCase('fooBar');
+// => 'foo_bar'
+ 
+_.snakeCase('--FOO-BAR--');
+// => 'foo_bar'
+```
+
+
+
+## cameCase  驼峰命名
+
+驼峰命名
+
+```js
+_.camelCase('Foo Bar');
+// => 'fooBar'
+ 
+_.camelCase('--foo-bar--');
+// => 'fooBar'
+ 
+_.camelCase('__FOO_BAR__');
+// => 'fooBar'
+```
+
+
+
+## throttle 节流函数
+
+```js
+// 避免在滚动时过分的更新定位
+jQuery(window).on('scroll', _.throttle(updatePosition, 100));
+ 
+// 点击后就调用 `renewToken`，但5分钟内超过1次。
+var throttled = _.throttle(renewToken, 300000, { 'trailing': false });
+jQuery(element).on('click', throttled);
+ 
+// 取消一个 trailing 的节流调用。
+jQuery(window).on('popstate', throttled.cancel);
+```
+
+
+
+## debounce 防抖
 
 1. `func` *(Function)*: The function to debounce.
 2. `[wait=0]` *(number)*: The number of milliseconds to delay.
