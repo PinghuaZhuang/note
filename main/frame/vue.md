@@ -2,7 +2,74 @@
 
 - 都有支持native的方案,React的React native,Vue的weex
 - 在使用 js 来传递图片路径的时候, 要添加上全局的根路径, 否则部署的时候会出现问题.
-  - 在使用 v-bind:src 的时候可以使用 require 来获取图片
+  
+  - 在使用 v-bind:src 的时候可以使用 require 来获取图片. transformAssetUrls可以配置. 
+  
+
+
+
+## TransformAssetUrls
+
+在模板编译过程中，编译器可以将某些特性转换为 `require` 调用，例如 `src` 中的 URL。
+
+```js
+// 默认值
+{
+  video: ['src', 'poster'],
+  source: 'src',
+  img: 'src',
+  image: ['xlink:href', 'href'],
+  use: ['xlink:href', 'href']
+}
+```
+
+
+
+## CSS module
+
+[官方文档][https://vue-loader.vuejs.org/zh/guide/css-modules.html#%E7%94%A8%E6%B3%95]
+
+首先，CSS Modules 必须通过向 css-loader 传入 modules: true 来开启：
+
+```js
+// webpack.config.js
+{
+  module: {
+    rules: [
+      // ... 其它规则省略
+      {
+        test: /\.css$/,
+        use: [
+          'vue-style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              // 开启 CSS Modules
+              modules: true,
+              // 自定义生成的类名
+              localIdentName: '[local]_[hash:base64:8]'
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+然后在你的 <style> 上添加 module 特性：
+
+```vue
+<style module>
+.red {
+  color: red;
+}
+.bold {
+  font-weight: bold;
+}
+</style>
+```
+
+
 
 
 
