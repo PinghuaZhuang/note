@@ -28,6 +28,7 @@ componentWillUpdate => beforeUpdate
 
 componentDidUpdate => updated
 
+<React.Fragment>  </React.Fragment> 空标签
 
 
 ## React Component
