@@ -18,6 +18,29 @@
 
   创建生产版本的配置
 
+
+
+## Webpack 之 treeShaking
+
+[简书][https://www.jianshu.com/p/cf930283d404]
+
+直接打包有用的代码. 
+
+webpack2.0 配置
+
+```js
+// .babelrc
+{
+    "presets": [
+        ["es2015", {"modules": false}]
+    ]
+}
+```
+
+
+
+
+
 ## import 不能使用变量的原因
 
 [参考文档](<https://segmentfault.com/q/1010000011585257>)
@@ -76,15 +99,15 @@ export const zList = getFiles( files, ( item ) => {
 `libraryTarget`
 
 	"var" - 通过设置一个变量导出: var Library = xxx (default)
-
+	
 	"this" - 通过设置 this的属性来导出: this["Library"] = xxx
-
+	
 	"commonjs" - 通过设置 exports的属性导出: exports["Library"] = xxx
-
+	
 	"commonjs2" - 通过设置 module.exports导出: module.exports = xxx
-
+	
 	"amd" - 导出为AMD (视情况可通过output.library来命名)
-
+	
 	"umd" - 导出为 AMD, CommonJS2 或者是顶级属性
 
 ## externals
