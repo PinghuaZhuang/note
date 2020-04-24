@@ -6,6 +6,14 @@
 
 
 
+## 修改配置
+
+```bash
+npm config edit
+```
+
+
+
 ## .npmrc
 
 项目地下添加 .npmrc 文件可以修改npm配置.
@@ -26,8 +34,9 @@ git clone http://用户名@地址
 + eslint
 + eslint-plugin-vue, elsint-plugin-html, elsint-plugin-jquery
 + @vue-cli
-+ @vue/cli-init
-+ http-server
++ @vue/cli-init:  Vue CLI 2 (vue-cli)  搭建vue旧项目
++ http-serve
++ [Verdaccio][https://verdaccio.org]: 搭建私有npm库.
 
 
 
