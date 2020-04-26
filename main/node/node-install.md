@@ -48,6 +48,31 @@ $ NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node nvm install 4
 
 ---
 
+### 无法在cmd中使用nvm
+
+1、进入nvm安装到文件目录
+
+   cd ～/.nvm
+
+2、查看目录下文件列表
+
+   ls 
+
+3、若无.bash_profile文件，则创建该文件：
+
+创建文件步骤：
+
+3.1 touch .bash_profile
+
+3.2 open .bash_profile
+
+3.3 将下部分文件粘贴至 .bash_profile文件 
+
+```sh
+export NVM_DIR="/Users/jack-le/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+```
+
 
 
 ## nrm 镜像源管理
