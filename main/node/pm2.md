@@ -4,9 +4,29 @@ node 进程管理.
 
 
 
-## 配置
+## 常用命令
+
+```bash
+pm2 start app.js
+pm2 start app.js --watch
+
+pm2 list
+pm2 ls
+pm2 monit # 监听文件编号
+pm2 show [app-name] # 显示应用信息
+pm2 logs # 显示所有应用的日志
+pm2 logs [app-name] # 显示指定应用的日志
+pm2 stop 0 # 关闭指定进程
+pm2 stop all # 关闭所有进程
+```
 
 
+
+## 配合 http-serve 使用
+
+```bash
+pm2 start ./http-serve --name my-server-name -- /c/Users/Administrator/Documents/GitHub/demos/phone -p 7291 -d false
+```
 
 
 
