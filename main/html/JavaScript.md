@@ -1,5 +1,13 @@
 # JavaScript
 
+记录一些JavaScript中的知识点.
+
+
+
+## ~~
+
+等价于Math.floor
+
 
 
 ## 宏任务与微任务
