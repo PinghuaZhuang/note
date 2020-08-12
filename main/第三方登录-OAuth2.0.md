@@ -2,6 +2,12 @@
 
 
 
+## 苹果 APPLEID
+
+![](../\images\apple-id.png)
+
+
+
 ## GitHub
 
 基本是后台重定向, 原理: OAuth2.0 协议
