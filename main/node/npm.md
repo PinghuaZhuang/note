@@ -34,11 +34,12 @@ git clone http://用户名@地址
 + eslinteslint-plugin-vue, elsint-plugin-html, elsint-plugin-jquery
 + @vue-cli
 + @vue/cli-init:  Vue CLI 2 (vue-cli)  搭建vue旧项目
-+ http-serve
++ http-serve || http-server
 + [Verdaccio][https://verdaccio.org]: 搭建私有npm库.
 + lerna: npm publish 的使用版本号的变化.
 + @js-lib/cli: 创建一个 jslib 的脚手架.
 + pm2: node 进程管理.
++ vuepress: npm install -g vuepress
 
 
 

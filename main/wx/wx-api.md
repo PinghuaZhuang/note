@@ -4,8 +4,20 @@
 
 
 
+## 调出微信QQ
+
+```js
+weixin://
+mqq://
+```
+
+
+
+
+
 
 
 ---
 
 [1]: https://developers.weixin.qq.com/miniprogram/dev/api/
+
