@@ -8,6 +8,13 @@
 
 
 
+## $slots 与 $scopedSlots 区别
+
++ $slots 访问作用于分发的内容
++ $scopedSlots 访问作用域插槽
+
+
+
 ## TransformAssetUrls
 
 在模板编译过程中，编译器可以将某些特性转换为 `require` 调用，例如 `src` 中的 URL。
@@ -406,6 +413,8 @@ this.$forceUpdate();
 
 ## 使用 jsx 语法
 
+[所有相关插件][6]
+
 `transform-vue-jsx`
 
 安装一下插件:
@@ -414,7 +423,11 @@ this.$forceUpdate();
 
 "babel-plugin-transform-vue-jsx": "^3.5.0", render函数使用jsx语法
 
-babel-plugin-jsx-v-model: vModel
+```bash
+babel-plugin-vue-jsx-sync # sync 语法糖
+babel-plugin-jsx-vue-functional # 函数语法糖
+babel-plugin-jsx-v-model # v-model语法糖
+```
 
 "babel-helper-vue-jsx-merge-props": "^2.0.3",
 
@@ -424,6 +437,8 @@ jsx 中也可以使用空模板 template
 
 // vue-cli 3.0 使用jsx
 
+cnpm install babel-plugin-syntax-jsx babel-plugin-transform-vue-jsx babel-helper-vue-jsx-merge-props babel-preset-es2015 --save-dev
+
 ```powershell
 npm i @vue/babel-preset-jsx @vue/babel-helper-vue-jsx-merge-props --save
 ```
@@ -431,6 +446,30 @@ npm i @vue/babel-preset-jsx @vue/babel-helper-vue-jsx-merge-props --save
 ### jsx 中使用v-model
 
 "babel-plugin-jsx-v-model", "jsx-v-model"
+
+```json
+
+{
+  "presets": [
+    ["env", {
+      "modules": false,
+      "targets": {
+        "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
+      }
+    }],
+    "stage-2"
+  ],
+  "plugins": ["transform-vue-jsx","transform-runtime"],
+  "env": {
+    "test": {
+      "presets": ["env", "stage-2"], // 重点是这行
+      "plugins": ["istanbul"]
+    }
+  }
+
+```
+
+
 
 ---
 
@@ -641,3 +680,4 @@ Nuxt.js 预设了利用Vue.js开发**服务端渲染**的应用所需要的各�
 [3]: https://www.jianshu.com/p/e6745ed87563
 [4]: https://github.com/vue-styleguidist/vue-styleguidist
 [5]: https://vue-styleguidist.github.io/docs/GettingStarted.html
+[6]: https://ssr.mmxiaowu.com/article/5a4c9579c1cae068a4cf61f9

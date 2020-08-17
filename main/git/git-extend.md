@@ -1,5 +1,13 @@
 # Git 扩展
 
+# git 合并不同仓库代码
+
+```bash
+git merge feature_framework --allow-unrelated-histories
+```
+
+
+
 ## 根据 tag 创建分支
 
 当线上版本出现问题需要换到某个版本时, 可以通过 git reset 还原后创建分支后再回退到最新版本, 在分支中修改后和合并到分支.
