@@ -40,6 +40,8 @@ git clone http://用户名@地址
 + @js-lib/cli: 创建一个 jslib 的脚手架.
 + pm2: node 进程管理.
 + vuepress: npm install -g vuepress
++ npm i -g @js-lib/cli
++ npm install -g @vue/cli-service-global    对单个vue文件开发
 
 
 
