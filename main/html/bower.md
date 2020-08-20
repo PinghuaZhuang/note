@@ -1,5 +1,13 @@
 # Bower 浏览器相关
 
+
+
+## 热更新 Browsersync
+
+[官网][11]
+
+
+
 ## Error 
 
 + TypeError: 类型错误.
@@ -262,3 +270,4 @@ document.querySelector( '#btn' ).onclick = speak
 [8]: https://developer.github.com/apps/building-oauth-apps/creating-an-oauth-app/
 [9]: https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/
 [10]: https://www.w3ctech.com/topic/866
+[11]: http://www.browsersync.cn/docs/recipes/
