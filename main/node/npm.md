@@ -6,6 +6,16 @@
 
 
 
+## npm run build 添加参数
+
+```js
+const argv = process.argv
+const lastArg = argv[argv.length - 1]
+const env_config = /:/.test(lastArg) ? process.env.env_config : lastArg
+```
+
+
+
 ## 修改配置
 
 ```bash
