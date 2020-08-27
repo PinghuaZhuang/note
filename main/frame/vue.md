@@ -8,6 +8,29 @@
 
 
 
+## v-bind
+
+作为根标签使用
+
+```vue
+<!-- border 外部不能修改 -->
+<el-table 
+	boder
+	v-bind="$attrs"
+/>
+
+<!-- border 可以修改 -->
+<el-table 
+	
+	v-bind="{
+		boder: true,
+		...$attrs,
+	}"
+/>
+```
+
+
+
 ## $slots 与 $scopedSlots 区别
 
 + $slots 访问作用于分发的内容

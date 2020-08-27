@@ -41,6 +41,28 @@ router.afterEach(() => {
 
 [如何写一个JavaScript库][5]
 
+## export2Excel
+
+提示报错解决方法
+
+```js
+module.exports = {
+    // (...)
+    plugins: [
+        // (...)
+        new webpack.IgnorePlugin(/cptable/)
+    ],
+    node: {
+        fs: "empty"
+    },
+    externals: [
+        {  "./cptable": "var cptable",  "./jszip": "jszip" }
+    ]
+};
+```
+
+
+
 ## art-template
 
 引用 `lib/template-web.js` 文件, web 使用. 具体请看 [github][1]
