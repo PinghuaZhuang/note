@@ -8,6 +8,34 @@
 
 
 
+## VueCli-3.0 配置代理
+
+设置代理的时候不能使用 before 钩子.
+
+```js
+export.module = {
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'http://dev.npush-php.uheixia.com',
+        changeOrigin: true,
+        secure: false,
+        // pathRewrite: {},
+      },
+    },
+    port: port,
+    open: true,
+    overlay: {
+      warnings: false,
+      errors: true
+    },
+    // before: require('./mock/mock-server.js')
+  },
+}
+```
+
+
+
 ## v-bind
 
 作为根标签使用
