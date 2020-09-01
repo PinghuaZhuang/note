@@ -24,6 +24,10 @@ ps:ipconfig /displaydns  //显示DNS缓存内容
 
 3. 下载完成后v2ray core 放到 v2RayN 同级目录下.
 
+### 局域网连接
+
+设置代理 IP + 端口. http的端口好. 底部可以看到. 10809
+
 ---
 
 [1]: https://www.tok9.com/archives/405/
