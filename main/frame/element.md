@@ -123,6 +123,8 @@ export default {
 
 ### 限制只输入数字
 
+第一次输入的时候可能是空格和'.'.
+
 ```vue
 <lk-input
 	v-model="value"
