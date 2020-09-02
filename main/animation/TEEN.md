@@ -1,5 +1,9 @@
 # TEEN.js
 
+配合缓动函数使用. 可以做到很多动画效果. 
+
+https://easings.net/
+
 ## example
 
 ```js
