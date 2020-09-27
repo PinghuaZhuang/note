@@ -64,6 +64,19 @@ export.module = {
 + $slots 访问作用于分发的内容
 + $scopedSlots 访问作用域插槽
 
+修改 $slots  在实例渲染后更改后, 是没有效果的. 如果要修改, 有2种方式. 
+
+1. 在render函数中修改. 
+2. 在函数式编程下, 手动挂载之前修改. 
+
+```jsx
+vm.$slots.default = (<div>aaa</div>)
+vm.$mounted()
+document.appendChild(vm.$el)
+```
+
+
+
 
 
 ## TransformAssetUrls
@@ -429,6 +442,7 @@ this.$forceUpdate();
 ##  修改 UI 框架的样式
 
 + `/deep/`: 注意：使用 sass 和 less 只能使用 /deep/ 这个方法
++ ::v-deep. 新的表示. vue3.0 不识别 /deep/
 
 ```vue
 <style scoped>
