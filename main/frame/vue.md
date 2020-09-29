@@ -140,7 +140,19 @@ document.appendChild(vm.$el)
 </style>
 ```
 
+使用
 
+```vue
+<script>
+export default {
+  created () {
+    console.log(this.$style.red)
+    // -> "red_1VyoJ-uZ"
+    // 一个基于文件名和类名生成的标识符
+  }
+}
+</script>
+```
 
 
 
@@ -746,3 +758,4 @@ Nuxt.js 预设了利用Vue.js开发**服务端渲染**的应用所需要的各�
 [4]: https://github.com/vue-styleguidist/vue-styleguidist
 [5]: https://vue-styleguidist.github.io/docs/GettingStarted.html
 [6]: https://ssr.mmxiaowu.com/article/5a4c9579c1cae068a4cf61f9
+[https://vue-loader.vuejs.org/zh/guide/css-modules.html#%E7%94%A8%E6%B3%95]: 

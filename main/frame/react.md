@@ -4,12 +4,58 @@
 
 [路由器属性][3]
 
+这些use其实都一样样.
+
+### useReducer
+
+## useState
+
+useState 会返回一对值：当前状态和一个让你更新它的函数
+
+```js
+import React, { useState } from 'react'
+```
+
+
+
+## useCallback | useMemo
+
+`useCallback(fn, inputs)` === `useMemo(() => fn, inputs)`)
+
+useCallback 的真正目的还是在于缓存了每次渲染时 inline callback 的实例
+
+React.memo 
+
+## useRef | createRef
+
+useRef 并不再单单是为了 DOM 的 ref 准备的，同时也会用来存放组件实例的属性.
+
+useRef : 返回固定的地址值. 每次都会返回一个新的地址.
+
+## useEffect | useLayoutEffect
+
+update:
+
+<p>如果希望 <code>effect</code> 较少运行，可以提供第二个参数 - 值数组。 将它们视为该<code>effect</code>的依赖关系。 如果其中一个依赖项自上次更改后，<code>effect</code>将再次运行。</p>
+
+<p>使用<code>useEffect</code>，可以直接在函数组件内处理生命周期事件。 如果你熟悉 React class 的生命周期函数，你可以把 <code>useEffect</code> Hook 看做 <code>componentDidMount</code>，<code>componentDidUpdate</code> 和 <code>componentWillUnmount</code> 这三个函数的组合。来看看例子：</p>
+
+mounted
+
+<p>如果想执行只运行一次的 <code>effect</code>（仅在组件挂载和卸载时执行），可以传递一个空数组（<code>[]</code>）作为第二个参数。这就告诉 React 你的 <code>effect</code> 不依赖于 <code>props</code> 或 <code>state</code> 中的任何值，所以它永远都不需要重复执行。这并不属于特殊情况 —— 它依然遵循依赖数组的工作方式。</p>
+
+useLayoutEffect: 在render后立马执行. useEffect 在队列中执行. 
+
 
 
 ## 全家桶
 
 + react
+
 + redux
+
+  reducer 其实是在下次 render 时才执行的，所以在 reducer 里，访问到的永远是新的 props 和 state
+
 + react-router
 
 
