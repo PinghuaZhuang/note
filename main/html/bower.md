@@ -2,6 +2,40 @@
 
 
 
+## Chrome DevTools
+
+### monitorEvent(el: Element, eventName: String|Array\<string\>) 
+
+监听事件
+
+### MutationObserver
+
+监听元素属性的变化. 在其他脚本全部执行完后执行回到.
+
+[MDN][12]
+
+```js
+ var ul = document.querySelector("ul");
+var Observer = new MutationObserver(function (mutations, instance) {
+    console.log(mutations);
+    console.log(instance);
+    mutations.forEach(function (mutation) {
+        console.log(mutation);
+    });
+});
+
+Observer.observe(ul, {
+    attributes: true
+});
+ul.setAttribute("class", "a");
+ul.setAttribute("class", "b");
+ul.removeAttribute("class");
+```
+
+
+
+
+
 ## 热更新 Browsersync
 
 [官网][11]
@@ -271,3 +305,4 @@ document.querySelector( '#btn' ).onclick = speak
 [9]: https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/
 [10]: https://www.w3ctech.com/topic/866
 [11]: http://www.browsersync.cn/docs/recipes/
+[12]: https://developer.mozilla.org/zh-CN/docs/Web/API/MutationObserver
