@@ -6,7 +6,7 @@
 
 这些use其实都一样样.
 
-### useReducer
+## useReducer
 
 ## useState
 
@@ -26,27 +26,83 @@ useCallback 的真正目的还是在于缓存了每次渲染时 inline callback 
 
 React.memo 
 
+
+
 ## useRef | createRef
 
 useRef 并不再单单是为了 DOM 的 ref 准备的，同时也会用来存放组件实例的属性.
 
 useRef : 返回固定的地址值. 每次都会返回一个新的地址.
 
-## useEffect | useLayoutEffect
 
-update:
+
+## useEffect | useLayoutEffect
 
 <p>如果希望 <code>effect</code> 较少运行，可以提供第二个参数 - 值数组。 将它们视为该<code>effect</code>的依赖关系。 如果其中一个依赖项自上次更改后，<code>effect</code>将再次运行。</p>
 
 <p>使用<code>useEffect</code>，可以直接在函数组件内处理生命周期事件。 如果你熟悉 React class 的生命周期函数，你可以把 <code>useEffect</code> Hook 看做 <code>componentDidMount</code>，<code>componentDidUpdate</code> 和 <code>componentWillUnmount</code> 这三个函数的组合。来看看例子：</p>
-
-mounted
 
 <p>如果想执行只运行一次的 <code>effect</code>（仅在组件挂载和卸载时执行），可以传递一个空数组（<code>[]</code>）作为第二个参数。这就告诉 React 你的 <code>effect</code> 不依赖于 <code>props</code> 或 <code>state</code> 中的任何值，所以它永远都不需要重复执行。这并不属于特殊情况 —— 它依然遵循依赖数组的工作方式。</p>
 
 useLayoutEffect: 在render后立马执行. useEffect 在队列中执行. 
 
 
+
+## 插槽-children
+
+默认的插槽
+
+```jsx
+function FancyBorder(props) {
+  return (
+    <div className={'FancyBorder FancyBorder-' + props.color}>
+      {props.children}
+    </div>
+  );
+}
+
+function WelcomeDialog() {
+  return (
+    <FancyBorder color="blue">
+      <h1 className="Dialog-title">
+        Welcome
+      </h1>
+      <p className="Dialog-message">
+        Thank you for visiting our spacecraft!
+      </p>
+    </FancyBorder>
+  );
+}
+```
+
+类似于插槽
+
+```jsx
+function SplitPane(props) {
+  return (
+    <div className="SplitPane">
+      <div className="SplitPane-left">
+        {props.left}
+      </div>
+      <div className="SplitPane-right">
+        {props.right}
+      </div>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <SplitPane
+      left={
+        <Contacts />
+      }
+      right={
+        <Chat />
+      } />
+  );
+}
+```
 
 ## 全家桶
 
@@ -60,7 +116,13 @@ useLayoutEffect: 在render后立马执行. useEffect 在队列中执行.
 
 
 
-## API
+# React Component
+
++ static getDerivedStateFromProps()
+
+
+
+## hooks
 
 componentWillReceiveProps => watch
 
@@ -77,13 +139,84 @@ componentDidUpdate => updated
 <React.Fragment>  </React.Fragment> 空标签
 
 
-## React Component
 
-+ static getDerivedStateFromProps()
+## 错误边界
+
+```jsx
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+    
+  static getDerivedStateFromError(error) {
+    // 更新 state 使下一次渲染能够显示降级后的 UI
+    return { hasError: true };
+  }
+	
+  // 改捕获到异常
+  componentDidCatch(error, errorInfo) {
+    // 你同样可以将错误日志上报给服务器
+    logErrorToMyService(error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      // 你可以自定义降级后的 UI 并渲染
+      return <h1>Something went wrong.</h1>;
+    }
+
+    return this.props.children; 
+  }
+}
+```
 
 
 
-## 路由 react-router 
+## Context provider
+
+```jsx
+// Context 可以让我们无须明确地传遍每一个组件，就能将值深入传递进组件树。
+// 为当前的 theme 创建一个 context（“light”为默认值）。
+const ThemeContext = React.createContext('light');
+class App extends React.Component {
+  render() {
+    // 使用一个 Provider 来将当前的 theme 传递给以下的组件树。
+    // 无论多深，任何组件都能读取这个值。
+    // 在这个例子中，我们将 “dark” 作为当前的值传递下去。
+    return (
+      <ThemeContext.Provider value="dark">
+        <Toolbar />
+      </ThemeContext.Provider>
+    );
+  }
+}
+
+// 中间的组件再也不必指明往下传递 theme 了。
+function Toolbar() {
+  return (
+    <div>
+      <ThemedButton />
+    </div>
+  );
+}
+
+class ThemedButton extends React.Component {
+  // 指定 contextType 读取当前的 theme context。
+  // React 会往上找到最近的 theme Provider，然后使用它的值。
+  // 在这个例子中，当前的 theme 值为 “dark”。
+  static contextType = ThemeContext;
+  render() {
+    return <Button theme={this.context} />;
+  }
+}
+```
+
+
+
+
+
+# React-router 
 
 [文档][2]
 
@@ -176,11 +309,38 @@ import { Link } from 'react-router-dom';
 
 
 
+# React-redux 
 
 
-## 状态管理 redux 
 
 
+
+# React.lazy
+
+1. 引入组件.
+
+   ```jsx
+   const OtherComponent = React.lazy(() => import('./OtherComponent'));
+   ```
+
+2. jsx中使用组件, 然后应在 Suspense 组件中渲染 lazy 组件，如此使得我们可以使用在等待加载 lazy 组件时做优雅降级（如 loading 指示器等).
+   fallback 属性接受任何在组件加载过程中你想展示的 React 元素。你可以将 Suspense 组件置于懒加载组件之上的任何位置。你甚至可以用一个 Suspense 组件包裹多个懒加载组件。
+
+   ```jsx
+   import React, { Suspense } from 'react';
+   
+   const OtherComponent = React.lazy(() => import('./OtherComponent'));
+   
+   function MyComponent() {
+     return (
+       <div>
+         <Suspense fallback={<div>Loading...</div>}>
+           <OtherComponent />
+         </Suspense>
+       </div>
+     );
+   }
+   ```
 
 
 

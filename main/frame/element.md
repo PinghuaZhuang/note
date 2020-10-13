@@ -4,6 +4,50 @@
 
 
 
+## el-scrollbar
+
+```vue
+<!-- ParentItems -->
+<el-scrollbar class="group-scroll parent">
+    <el-checkbox-group
+                       v-model="parentVals"
+                       class="item-group parent-group"
+                       @change="handleParentGroupChange"
+                       >
+        <div v-for="(item, index) in parentDatas" :key="index" class="item">
+            <el-checkbox
+                         :label="item.id"
+                         :value="item.id"
+                         :indeterminate="item.ind"
+                         @change="val => handleParentChange(item, val)"
+                         >{{ '' }}</el-checkbox>
+            <span
+                  class="checkbox-span"
+                  @click="handleParentItemSpanClick(item)"
+                  >{{ item.data[displayName] }}</span>
+            <i class="el-icon-arrow-right" />
+        </div>
+    </el-checkbox-group>
+</el-scrollbar>
+```
+
+```js
+props: {
+    native: Boolean,  // 是否使用本地，设为true则不会启用element-ui自定义的滚动条
+    wrapStyle: {},  // 包裹层自定义样式
+    wrapClass: {},  // 包裹层自定义样式类
+    viewClass: {},  // 可滚动部分自定义样式类
+    viewStyle: {},  // 可滚动部分自定义样式
+    noresize: Boolean, // 如果 container 尺寸不会发生变化，最好设置它可以优化性能
+    tag: {  // 生成的标签类型，默认使用 `div`标签包裹
+      type: String,
+      default: 'div'
+    }
+}
+```
+
+
+
 ## el-datePicker
 
 1. 在校验的使用添加 `type=date`
