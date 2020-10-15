@@ -8,6 +8,86 @@
 
 
 
+## 修改主题色
+
+在 theme-var 中暴露出主题色. 然后在js中修改. 
+
+```scss
+/**
+* I think element-ui's default theme color is too light for long-term use.
+* So I modified the default color and you can modify it to your liking.
+**/
+
+/* theme color */
+$--color-primary: #2E88FC;
+$--color-success: #67C23A;
+$--color-warning: #E3A23D;
+$--color-danger: #F26D6C;
+$--color-info: #909399;
+
+$--button-font-weight: 400;
+
+// $--color-text-regular: #1f2d3d;
+
+$--border-color-light: #dfe4ed;
+$--border-color-lighter: #e6ebf5;
+
+$--table-border: 1px solid #EBEEF5;
+
+/* icon font path, required */
+$--font-path: "~element-ui/lib/theme-chalk/fonts";
+
+@import "~element-ui/packages/theme-chalk/src/index";
+
+// the :export directive is the magic sauce for webpack
+// https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
+:export {
+  theme: $--color-primary;
+}
+```
+
+```js
+import variables from '@/styles/theme/light.scss'
+import defaultSettings from '@/settings'
+
+const { showSettings, tagsView, fixedHeader, sidebarLogo } = defaultSettings
+
+const state = {
+  // 在这里修改主题色 
+  theme: variables.theme,
+  showSettings: showSettings,
+  tagsView: tagsView,
+  fixedHeader: fixedHeader,
+  sidebarLogo: sidebarLogo
+}
+
+const mutations = {
+  CHANGE_SETTING: (state, { key, value }) => {
+    // eslint-disable-next-line no-prototype-builtins
+    if (state.hasOwnProperty(key)) {
+      state[key] = value
+    }
+  }
+}
+
+const actions = {
+  changeSetting({ commit }, data) {
+    commit('CHANGE_SETTING', data)
+  }
+}
+
+export default {
+  namespaced: true,
+  state,
+  mutations,
+  actions
+}
+```
+
+
+
+
+
 ## VueCli-3.0 配置代理
 
 设置代理的时候不能使用 before 钩子.
