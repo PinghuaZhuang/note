@@ -86,6 +86,13 @@ export default {
 
 
 
+## Vue.extend
+
+```js
+// _parentListeners 注册事件
+// propsData 传递 props
+```
+
 
 
 ## VueCli-3.0 配置代理

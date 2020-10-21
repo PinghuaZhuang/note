@@ -140,6 +140,13 @@ componentDidUpdate => updated
 
 
 
+```jsx
+componentWillUpdate(object nextProps, object nextState)
+componentDidUpdate(object prevProps, object prevState)
+```
+
+
+
 ## 错误边界
 
 ```jsx
