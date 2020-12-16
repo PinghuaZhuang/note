@@ -1,5 +1,20 @@
 # Git 扩展
 
+
+
+## commitlint
+
+要在 git init 后按照依赖否则不生效. 
+
+https://segmentfault.com/a/1190000017281595?utm_source=tag-newest
+
+
+## 私有仓库地址.
+
+registry=http://39.101.209.235:4873/
+
+
+
 # git 合并不同仓库代码
 
 ```bash
