@@ -17,6 +17,9 @@ registry=http://39.101.209.235:4873/
 
 # git 合并不同仓库代码
 
+1. 先拉取不同的项目代码到本地. 
+2. 创建本地分支. 合并本地2个分支. 
+
 ```bash
 git merge feature_framework --allow-unrelated-histories
 ```
