@@ -20,6 +20,32 @@
 
 
 
+## 配置cssmodule
+
+https://github.com/css-modules/css-modules
+
+```js
+{
+    module: {
+      rules: [
+        {
+          loader: "less-loader",
+          options: {
+            javascriptEnabled: true
+          }
+        }
+      ],
+      loaders: [
+        { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader') },
+      ]
+    },
+}
+```
+
+
+
+
+
 ## Webpack 之 treeShaking
 
 [简书][https://www.jianshu.com/p/cf930283d404]

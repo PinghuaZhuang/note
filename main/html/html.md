@@ -4,7 +4,24 @@
 
 
 
+## Script 标签在线引用文件
+
+```html
+<script type="module">
+  import { h, Component, render } from 'https://unpkg.com/preact?module';
+
+  // Create your app
+  const app = h('h1', null, 'Hello World!');
+
+  render(app, document.body);
+</script>
+```
+
+
+
 ## blob 转 Windw.URL 
+
+file-saver: 插件.
 
 ```js
 window.URL.createObjectURL(blob)

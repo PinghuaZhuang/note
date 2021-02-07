@@ -67,6 +67,8 @@ git clone http://用户名@地址
 + ```bash
   npm install -g browser-sync # 热更新
   ```
+  
++ flyover: 代理工具. 替换线上文件. 实现在线调试.
 
 
 
