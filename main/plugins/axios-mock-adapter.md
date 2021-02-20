@@ -1,4 +1,4 @@
-# aixios
+# axios
 
 ```js
 axios.get(url, {
@@ -17,6 +17,12 @@ responseType的常见类型:
 4. text
 5. document
 6. application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 
+
+
+
+## axios 拦截器
+
+[知乎](https://zhuanlan.zhihu.com/p/294004927)
 
 
 
