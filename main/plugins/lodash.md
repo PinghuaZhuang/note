@@ -136,6 +136,8 @@ jQuery(window).on('popstate', throttled.cancel);
 // 源码等待的条件, 所有在快速频繁的调用下, 必须设定 maxWait
 // 频繁调用会导致 timeSinceLastCall < wait 一直成立, 每次都会等待.
 // 成立一个就会等待, 不执行.
+
+// 没有设置 maxWait 会在重复执行中, 一直触发延迟. 所有一直不会执行. 
 (lastCallTime === undefined || (timeSinceLastCall >= wait) ||
       (timeSinceLastCall < 0) || (maxing && timeSinceLastInvoke >= maxWait))
 ```
