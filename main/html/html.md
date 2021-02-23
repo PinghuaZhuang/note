@@ -4,6 +4,24 @@
 
 
 
+## 图片自适应 Picture标签
+
+你是否遇到过在不同场景或者不同尺寸的设备上面的时候，图片展示适配问题呢？我想大家都遇到过。
+
+针对只有一个尺寸的图片素材的时候，我们往往可以通过CSS的`object-fit`属性来进行裁切适配。但是有些时候需要针对不同的分辨率来显示不同尺寸的图片的场景的时候，我们是否可以直接通过HTML来实现呢？
+
+HTML提供了`<picture>`标签，允许我们来添加多张图片资源，并且根据不同的分辨率需求来展示不同的图片。
+
+```html
+<picture>
+  <source media="(min-width:768px)" srcset="med_flower.jpg">
+  <source media="(min-width:495px)" srcset="small_flower.jpg">
+  <img src="high_flower" style="width: auto;" />
+</picture>
+```
+
+
+
 ## Script 标签在线引用文件
 
 ```html
