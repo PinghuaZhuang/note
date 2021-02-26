@@ -2,6 +2,17 @@
 
 
 
+## 获取目录树 TREE
+
+```powershell
+# 获取当前目录下的文件夹和文件 depth 表示层级
+Get-ChildItem ./  -Depth 0
+```
+
+
+
+
+
 ## 修改host
 
 hosts文件位置：C:\windows\system32\drivers\etc
