@@ -1,8 +1,6 @@
 # My notes
 
-工作中的一些笔记, 放在 [ GitBook ][1]上, gitbook 停更.
-测试-gitee
-测试-github
+工作中的一些笔记.
 
 
 ---
