@@ -2,6 +2,22 @@
 
 
 
+## 线上代码回滚操作
+
+### reset
+
+在本地 reset --hard 到指定提交, 在利用git push -f 提交到仓库. 高风险.  而且无法指定中间错开的提交. 
+
+### revert + rebase
+
+[参考地址](jianshu.com/p/6add7a1090ac)
+
+revert 所有提交. 然后利用 rebase 合并 revert的提交.  最后git push 到仓库即可. 开发人员 pick 改提交然后 revert revert 后. 修改再合并.
+
+revert f范围内多个提交 revert old^..new
+
+
+
 ## commitlint
 
 要在 git init 后按照依赖否则不生效. 
