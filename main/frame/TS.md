@@ -6,6 +6,18 @@
 
 
 
+## tsconfig.json
+
+引入typings
+
+```json
+"files": [
+    "typings/index.d.ts"
+  ],
+```
+
+
+
 ## 泛型
 
 ```typescript
