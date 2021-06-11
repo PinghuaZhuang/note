@@ -287,6 +287,8 @@ function getVisibilityState() {
 
 ### 如何判断页面是否缓存
 
+https://developer.mozilla.org/zh-CN/docs/Web/API/Navigator/sendBeacon
+
 可以使用 PageTransitionEvent 对象的 persisted 属性来检测页面是从服务器下载的或是缓存的, 如果缓存了页面, 返回 true, 否则, 返回 false.
 
 ---

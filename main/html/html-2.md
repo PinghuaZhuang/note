@@ -17,3 +17,18 @@ var intersectionObserver = new IntersectionObserver(function(entries) {
 intersectionObserver.observe(document.querySelector('.scrollerFooter'));
 ```
 
+
+
+# URL 拼接 path.join
+
+```js
+pathJoin(...rest) {
+    const parths = rest.join('/')
+    return parths
+      // '//' '/./' => '/'
+      .replace(/((?<!\:)\/(\/)+)|(\/+\.\/+)/g, '/')
+      // '/*/../' => '/'
+      .replace(/\/[^\/]*?\/\.\.\//g, '/')
+  },
+```
+
