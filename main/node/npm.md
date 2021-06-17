@@ -6,6 +6,12 @@
 
 
 
+## workspace 
+
+https://docs.npmjs.com/cli/v7/using-npm/workspaces
+
+
+
 ## npm run build 添加参数
 
 ```js
