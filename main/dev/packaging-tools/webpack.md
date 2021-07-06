@@ -20,6 +20,100 @@
 
 
 
+## 配置 pug-loader
+
+```js
+const autoprefixer = require('autoprefixer')
+const pxToViewport = require('postcss-px-to-viewport')
+const path = require('path')
+
+const PUBLIC_PATH = process.env.PUBLIC_PATH
+const VUE_APP_BASE_API = process.env.VUE_APP_BASE_API
+
+const resolve = (pathName) => path.resolve(__dirname, pathName)
+
+function chunksMerge(...rest) {
+  const chunks = ['runtime', 'vendors', 'polyfill']
+  chunks.push(...rest)
+  return chunks
+}
+
+module.exports = {
+  outputDir: 'dist',
+  publicPath: PUBLIC_PATH,
+  pages: {
+    index: {
+      title: '看视频送金币',
+      entry: 'src/main.js',
+      chunks: ['runtime', 'vendors', 'polyfill', 'index']
+    },
+    download: {
+      title: '邀请下载',
+      entry: 'src/shared/download/main.js',
+      chunks: ['runtime', 'polyfill', 'download'],
+    },
+    inviteCode: {
+      title: '邀请好友',
+      entry: 'src/views/invite-code/main.js',
+      template: 'src/views/invite-code/app.pug',
+      chunks: chunksMerge('inviteCode'),
+    }
+  },
+  devServer: {
+    proxy: {
+      '^/api': {
+        target: VUE_APP_BASE_API,
+        changeOrigin: true,
+        secure: false, // https true
+        pathRewrite: {
+          // '^/api': '/'
+        }
+      },
+    },
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+      'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization'
+    }
+  },
+  css: {
+    loaderOptions: {
+      postcss: {
+        plugins: [
+          autoprefixer(),
+          pxToViewport({
+            viewportWidth: 375,
+          }),
+        ],
+      },
+    },
+  },
+  pluginOptions: {
+    'style-resources-loader': {
+      preProcessor: 'less',
+      patterns: [resolve('src/style/variable.less')],
+    },
+  },
+  configureWebpack: {
+    module: {
+      // 使用 chainWebpack 有问题.
+      rules: [
+        { test: /\.pug$/, loader: ['pug-html-loader'] }
+      ],
+    },
+    // 配置loader查找路径
+    resolveLoader: {
+      modules: ['./node_modules', './loader'] // 配置loader的查找目录
+    },
+  },
+};
+
+```
+
+
+
+
+
 ## 配置cssmodule
 
 https://github.com/css-modules/css-modules

@@ -4,6 +4,24 @@
 
 
 
+# weakSet weakMap
+
+在控制台打印的时候, 会生成一个引用. 这个时候看不出效果. 
+
+```js
+const ws = new WeakSet(); 
+const container = { 
+ val: {} 
+}; 
+ws.add(container.val); 
+function removeReference() { 
+ container.val = null; 
+} 
+removeReference()
+```
+
+
+
 ## ?. 和 ??
 
 [可选链式操作符](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
