@@ -4,6 +4,12 @@
 
 
 
+## el-table-column
+
+重复使用组件进行编译. 会导致组件生命周期没有走完.
+
+
+
 ## el-scrollbar
 
 ```vue
