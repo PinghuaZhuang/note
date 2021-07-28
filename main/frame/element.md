@@ -173,6 +173,8 @@ export default {
 
 ### 限制只输入数字
 
+直接使用 el-input-number.
+
 第一次输入的时候可能是空格和'.'.
 
 ```vue
