@@ -1,5 +1,7 @@
 # H5 video 标签
 
+设置 crossOrigin: 'anonymous' 可能会导致部分浏览器打不开. 
+
 
 
 ## 事件
