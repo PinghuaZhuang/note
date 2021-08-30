@@ -1,5 +1,8 @@
 # Git 扩展
 
+token 地址提交代码
+
+https://<token>@github.com/user/repo.git
 
 
 ## 线上代码回滚操作
