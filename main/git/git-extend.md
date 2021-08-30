@@ -1,5 +1,19 @@
 # Git 扩展
 
+
+
+## git 代理
+
+```bash
+git config --global --unset http.proxy
+git config --global --unset http.https://github.com.proxy
+
+git config --global http.proxy http://127.0.0.1:1234
+git config --global https.proxy http://127.0.0.1:1234
+```
+
+
+
 token 地址提交代码
 
 https://<token>@github.com/user/repo.git
