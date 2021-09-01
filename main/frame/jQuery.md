@@ -6,6 +6,10 @@
 
 [菜鸟教程][1]	
 
+窗口隐藏激活事件
+
+窗口激活事件
+
 + $.holdReady( true ): 暂停
 + $.holdReady( false ): 继续
 
