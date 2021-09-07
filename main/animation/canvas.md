@@ -1,8 +1,19 @@
 # Canvas
 
+## 获取指定区域的颜色
+
+```js
+var c = ctx.getImageData(mouseX, mouseY, 1, 1).data;
+var red = c[0];
+var green = c[1];
+var blue = c[2];
+```
+
 
 
 ## 移动端 canvas 变模糊
+
+Device pixel ratio
 
 
 

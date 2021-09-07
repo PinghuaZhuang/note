@@ -1,5 +1,9 @@
 # 移动端APP webview 调试方式
 
+https://www.jianshu.com/p/66896bec620e
+
+
+
 ## 安卓 inspect 链接
 
 1. 开启开发者模式用USB链接电脑. 
