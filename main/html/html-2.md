@@ -1,3 +1,9 @@
+## ready 事件
+
+DOMContentLoaded
+
+
+
 # 监听dom元素是否在viewport内
 
 可视区域
