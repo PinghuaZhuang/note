@@ -6,6 +6,12 @@
 
 
 
+## npm run all
+
+并行/串行多个命令.
+
+
+
 ## workspace 
 
 https://docs.npmjs.com/cli/v7/using-npm/workspaces

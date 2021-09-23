@@ -1,6 +1,6 @@
 # TODO
 
-- [ ] rollup.config.js
+- [ ] [[rollup]].config.js
 
 [![FirstAppKotlin](https://github-readme-stats.vercel.app/api/pin/?username=PinghuaZhuang&repo=ZProgress&theme=radical)](https://github.com/hendrasob/FoodApp)
 

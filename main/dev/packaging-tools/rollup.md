@@ -6,6 +6,52 @@
 
 [在线文档2][3]
 
+
+
+## watch
+
+https://rollupjs.org/guide/en/#watchinclude
+
+将文件监视限制为某些文件。请注意，这仅过滤模块图，但不允许添加额外的监视文件.
+
+添加额外的监视文件. 
+
+https://stackoverflow.com/questions/63373804/rollup-watch-include-directory
+
+```js
+plugins: [
+    {
+        name: 'watch-external',
+        buildStart(){
+            this.addWatchFile(path.resolve(__dirname, 'foo.js'))
+        }
+    }
+]
+```
+
+将它与一些 globbing 实用程序结合起来，例如`fast-glob`调用`this.addWatchFile`您要复制的每个文件：
+
+```js
+import fg from 'fast-glob';
+
+export default {
+    // ...
+    plugins: [
+       {
+           name: 'watch-external',
+           async buildStart(){
+               const files = await fg('src/**/*');
+               for(let file of files){
+                   this.addWatchFile(file);
+               }
+           }
+       } 
+    ]
+}
+```
+
+
+
 ## rollup 与 webpack 区别
 
 简单说就是 纯 `js` 使用 `rollup`, 其他混合使用 `webpack`.

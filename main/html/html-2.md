@@ -1,4 +1,4 @@
-## ready 事件
+## load ready 事件
 
 DOMContentLoaded
 
