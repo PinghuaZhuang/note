@@ -2,6 +2,8 @@
 
 工作中的一些笔记.
 
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=notifirehq&repo=notifire)](https://github.com/notifirehq/notifire)
+
 
 ---
 
