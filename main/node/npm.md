@@ -16,6 +16,12 @@
 
 https://docs.npmjs.com/cli/v7/using-npm/workspaces
 
+leran 部署
+
+1. 配置 package.json 私有 "private": true, 根目录下. pacakges 下不用
+2. 先到 package 下发布 npm publish --access public
+3. 之后就可以使用 leran 发布了.
+
 
 
 ## npm run build 添加参数
