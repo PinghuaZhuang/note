@@ -35,6 +35,13 @@ revert f范围内多个提交 revert old^..new
 
 
 
+## 合并分支时允许合并不相关的历史
+
+```bash
+# unable to merge unrelated histories in this repository
+git merge otherBranch  --allow-unrelated-histories
+```
+
 ## commitlint
 
 要在 git init 后按照依赖否则不生效. 
