@@ -6,6 +6,10 @@
 
 这些use其实都一样样.
 
+## React.forwardRef
+
+> forwardRef会创建一个React组件，这个组件能够将其接受的 ref 属性转发到其组件树下的另一个组件中。
+
 ## React.memo 
 
 > 浅对比props, 没有变化就不会更新. 
@@ -35,6 +39,10 @@ function areEqual(prevProps, nextProps) {
 export default React.memo(Child,areEqual)
 ```
 
+## useImperativeHandle
+
+> 正常情况下 ref 是不能挂在到函数组件上的，因为函数组件没有实例，但是 useImperativeHandle 为我们提供了一个类似实例的东西。它帮助我们通过
+
 ## useReducer | 
 
 ## useState
@@ -45,15 +53,11 @@ useState 会返回一对值：当前状态和一个让你更新它的函数
 import React, { useState } from 'react'
 ```
 
-
-
 ## useCallback | useMemo
 
 `useCallback(fn, inputs)` === `useMemo(() => fn, inputs)`)
 
 useCallback 的真正目的还是在于缓存了每次渲染时 inline callback 的实例
-
-
 
 ## useRef | createRef
 
@@ -65,8 +69,6 @@ useRef:
 
 ​	2. 返回固定的地址值. 每次都会返回一个新的地址.
 
-
-
 ## useEffect | useLayoutEffect
 
 > useLayoutEffect: 在render后立马执行. useEffect 在队列中执行. 
@@ -76,10 +78,6 @@ useRef:
 <p>使用<code>useEffect</code>，可以直接在函数组件内处理生命周期事件。 如果你熟悉 React class 的生命周期函数，你可以把 <code>useEffect</code> Hook 看做 <code>componentDidMount</code>，<code>componentDidUpdate</code> 和 <code>componentWillUnmount</code> 这三个函数的组合。来看看例子：</p>
 
 <p>如果想执行只运行一次的 <code>effect</code>（仅在组件挂载和卸载时执行），可以传递一个空数组（<code>[]</code>）作为第二个参数。这就告诉 React 你的 <code>effect</code> 不依赖于 <code>props</code> 或 <code>state</code> 中的任何值，所以它永远都不需要重复执行。这并不属于特殊情况 —— 它依然遵循依赖数组的工作方式。</p>
-
-
-
-
 
 ## 插槽-children
 
