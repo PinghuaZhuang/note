@@ -105,7 +105,7 @@ export default {
 
 ```js
 // _parentListeners 注册事件
-// propsData 传递 props
+// propsData 传递 props 单元测试的时候使用
 ```
 
 
@@ -186,6 +186,7 @@ document.appendChild(vm.$el)
 在模板编译过程中，编译器可以将某些特性转换为 `require` 调用，例如 `src` 中的 URL。
 
 ```js
+// vue-loader
 // 默认值
 {
   video: ['src', 'poster'],

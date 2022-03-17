@@ -6,7 +6,36 @@
 
 这些use其实都一样样.
 
-## useReducer
+## React.memo 
+
+> 浅对比props, 没有变化就不会更新. 
+
+React [v16.6.0](https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ffacebook%2Freact%2Fblob%2Fmaster%2FCHANGELOG.md%231660-october-23-2018)出了一些新的**包装函数**(*wrapped functions*)，一种用于函数组件PureComponent(浅对比) / shouldComponentUpdate(是否刷新, 默认true) 形式的React.memo()
+
+第二个参数控制是否刷新.
+
+```jsx
+import React from "react";
+
+function Child({seconds}){
+    console.log('I am rendering');
+    return (
+        <div>I am update every {seconds} seconds</div>
+    )
+};
+
+function areEqual(prevProps, nextProps) {
+    if(prevProps.seconds===nextProps.seconds){
+        return true
+    }else {
+        return false
+    }
+
+}
+export default React.memo(Child,areEqual)
+```
+
+## useReducer | 
 
 ## useState
 
@@ -24,19 +53,23 @@ import React, { useState } from 'react'
 
 useCallback 的真正目的还是在于缓存了每次渲染时 inline callback 的实例
 
-React.memo 
-
 
 
 ## useRef | createRef
 
-useRef 并不再单单是为了 DOM 的 ref 准备的，同时也会用来存放组件实例的属性.
+> 换句人话说 , useRef 在 react hook 中的作用, 正如官网说的, 它像一个变量, 类似于 this , 它就像一个盒子, 你可以存放任何东西. createRef 每次渲染都会返回一个新的引用，而 useRef 每次都会返回相同的引用。
 
-useRef : 返回固定的地址值. 每次都会返回一个新的地址.
+useRef: 
+
+​	1. 并不再单单是为了 DOM 的 ref 准备的，同时也会用来存放组件实例的属性.
+
+​	2. 返回固定的地址值. 每次都会返回一个新的地址.
 
 
 
 ## useEffect | useLayoutEffect
+
+> useLayoutEffect: 在render后立马执行. useEffect 在队列中执行. 
 
 <p>如果希望 <code>effect</code> 较少运行，可以提供第二个参数 - 值数组。 将它们视为该<code>effect</code>的依赖关系。 如果其中一个依赖项自上次更改后，<code>effect</code>将再次运行。</p>
 
@@ -44,7 +77,7 @@ useRef : 返回固定的地址值. 每次都会返回一个新的地址.
 
 <p>如果想执行只运行一次的 <code>effect</code>（仅在组件挂载和卸载时执行），可以传递一个空数组（<code>[]</code>）作为第二个参数。这就告诉 React 你的 <code>effect</code> 不依赖于 <code>props</code> 或 <code>state</code> 中的任何值，所以它永远都不需要重复执行。这并不属于特殊情况 —— 它依然遵循依赖数组的工作方式。</p>
 
-useLayoutEffect: 在render后立马执行. useEffect 在队列中执行. 
+
 
 
 
@@ -115,6 +148,12 @@ function App() {
 + react-router
 
 
+
+# React Plugins
+
++ ahooks: https://ahooks.js.org/zh-CN/hooks/use-unmounted-ref/
+
+  
 
 # React Component
 
