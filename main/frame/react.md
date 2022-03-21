@@ -139,7 +139,7 @@ function App() {
 
 + react
 
-+ redux
++ redux: 推荐使用 `mobx`
 
   reducer 其实是在下次 render 时才执行的，所以在 reducer 里，访问到的永远是新的 props 和 state
 
@@ -161,7 +161,9 @@ function App() {
 
 ## hooks
 
-getDerivedStateFromProps:从props中获取state. **意味着即使你的props没有任何变化，而是父state发生了变化，导致子组件发生了re-render，这个生命周期函数依然会被调用**
+getSnapshotBeforeUpdate: 在最近一次渲染输出（提交到 DOM 节点）之前调用。我们可以访问更新前的 props 和 state。需要与 componentDidUpdate() 方法一起使用，否则会出现错误。
+
+getDerivedStateFromProps: 从props中获取state. **意味着即使你的props没有任何变化，而是父state发生了变化，导致子组件发生了re-render，这个生命周期函数依然会被调用**
 
 componentWillReceiveProps => watch
 
@@ -187,13 +189,13 @@ class ErrorBoundary extends React.Component {
   }
     
   static getDerivedStateFromError(error) {
-    // 更新 state 使下一次渲染能够显示降级后的 UI
+    // 当父组件出现错误的时候, 会触发. 并传递给子组件.
     return { hasError: true };
   }
 	
   // 改捕获到异常
   componentDidCatch(error, errorInfo) {
-    // 你同样可以将错误日志上报给服务器
+    // 捕获当前组件的错误
     logErrorToMyService(error, errorInfo);
   }
 
@@ -261,9 +263,27 @@ React Router被拆分成三个包：`react-router`,`react-router-dom`和`react-r
 npm install --save react-router-dom
 ```
 
+## 路由阻塞 history.block
 
+例如路由跳转前, 提示用户是否继续跳转. 
 
-### BrowserRouter  与 HashRouter
+```js
+// 注册一个简单的提示消息，在用户离开当前页面之前，该消息将显示给用户。
+const unblock = history.block('Are you sure you want to leave this page?');
+
+// 或者在需要时使用返回消息的函数。
+history.block((location, action) => {
+  //location和action参数指示我们要转换到的位置以及如何到达那里。
+
+  //一个常见的用例是防止用户在有表单尚未提交时离开页面。
+  if (input.value !== '') return 'Are you sure you want to leave this page?';
+});
+
+// 要停止blocking transitions，请调用block（）返回的函数。
+unblock();
+```
+
+## BrowserRouter  与 HashRouter
 
 BrowserRouter 是动态路由, 最为常用. `<HashRouter>` 使用 URL 的 `hash` 部分（即 `window.location.hash`）来保持 UI 和 URL 的同步.
 
@@ -275,7 +295,7 @@ BrowserRouter 是动态路由, 最为常用. `<HashRouter>` 使用 URL 的 `hash
 |       keyLength<Number>       |             `location.key` 的长度，默认为 `6`。              |
 |        children<Node>         | 要呈现的[单个子元素（组件）](https://reactjs.org/docs/react-api.html#react.children.only)。 |
 
-### 使用
+## 使用
 
 在使用路由之前必须先加载路由器才可以使用, 类似于 VUE 中的 `< router-view / >`, 然后再内部注册路由.
 
