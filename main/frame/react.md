@@ -14,7 +14,7 @@
 
 > 浅对比props, 没有变化就不会更新. 
 
-React [v16.6.0](https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ffacebook%2Freact%2Fblob%2Fmaster%2FCHANGELOG.md%231660-october-23-2018)出了一些新的**包装函数**(*wrapped functions*)，一种用于函数组件PureComponent(浅对比) / shouldComponentUpdate(是否刷新, 默认true) 形式的React.memo()
+React [v16.6.0](https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ffacebook%2Freact%2Fblob%2Fmaster%2FCHANGELOG.md%231660-october-23-2018)出了一些新的**包装函数**(*wrapped functions*)，一种用于函数组件`PureComponent`(浅对比) / `shouldComponentUpdate`(是否刷新, 默认true) 形式的React.memo()
 
 第二个参数控制是否刷新.
 
@@ -306,8 +306,6 @@ BrowserRouter 是动态路由, 最为常用. `<HashRouter>` 使用 URL 的 `hash
 ```
 
 ### 路由重定向  Redirect
-
-
 
 ### Switch  的使用
 
