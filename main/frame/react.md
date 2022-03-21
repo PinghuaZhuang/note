@@ -145,21 +145,23 @@ function App() {
 
 + react-router
 
+# 生命周期示意图
 
+![](../../images/12185313-85b3010f0b8b7d16.webp)
 
 # React Plugins
 
 + ahooks: https://ahooks.js.org/zh-CN/hooks/use-unmounted-ref/
 
++ mobox.js: [https://cn.mobx.js.org/](https://cn.mobx.js.org/)
+
   
 
 # React Component
 
-+ static getDerivedStateFromProps()
-
-
-
 ## hooks
+
+getDerivedStateFromProps:从props中获取state. **意味着即使你的props没有任何变化，而是父state发生了变化，导致子组件发生了re-render，这个生命周期函数依然会被调用**
 
 componentWillReceiveProps => watch
 
@@ -174,15 +176,6 @@ componentWillUpdate => beforeUpdate
 componentDidUpdate => updated
 
 <React.Fragment>  </React.Fragment> 空标签
-
-
-
-```jsx
-componentWillUpdate(object nextProps, object nextState)
-componentDidUpdate(object prevProps, object prevState)
-```
-
-
 
 ## 错误边界
 
@@ -214,8 +207,6 @@ class ErrorBoundary extends React.Component {
   }
 }
 ```
-
-
 
 ## Context provider
 
@@ -255,8 +246,6 @@ class ThemedButton extends React.Component {
   }
 }
 ```
-
-
 
 
 
