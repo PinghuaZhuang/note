@@ -28,7 +28,9 @@ pm2 stop all # 关闭所有进程
 pm2 start ./http-serve --name my-server-name -- /c/Users/Administrator/Documents/GitHub/demos/phone -p 7291 -d false
 ```
 
+historyApiFallback: true
 
+http-serve ./ -f ./index.html
 
 ## 自动部署
 
