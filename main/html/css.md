@@ -11,3 +11,8 @@ overflow: hidden;
 -webkit-box-orient: vertical;
 ```
 
+
+
+## 轮播图
+
+scroll-snap
