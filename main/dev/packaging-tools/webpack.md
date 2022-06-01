@@ -20,6 +20,18 @@
 
 
 
+## hash、chunkhash、contenthash三者
++ hash（所有⽂件哈希值相同，只要改变内容跟之前的不⼀致，所有哈希值都改变，没有做到缓存意义）
++ chunkhash（同⼀个模块，就算将js和css分离，其哈希值也是相同的，修改⼀处，js和css哈希值都会变，同hash，没有做到缓存意义）
++ contenthash（只要⽂件内容一样, hash就不会变)
+
+## CriticalDependency 警告
+
+```js
+// 在 chainWebpack 中设置
+config.module.set('unknownContextCritical', false);
+```
+
 ## 配置 pug-loader
 
 ```js
@@ -110,10 +122,6 @@ module.exports = {
 
 ```
 
-
-
-
-
 ## 配置cssmodule
 
 https://github.com/css-modules/css-modules
@@ -135,10 +143,6 @@ https://github.com/css-modules/css-modules
     },
 }
 ```
-
-
-
-
 
 ## Webpack 之 treeShaking
 
@@ -185,8 +189,6 @@ export const zList = getFiles( files, ( item ) => {
     }
 } )
 ```
-
-
 
 ## context
 
@@ -243,8 +245,6 @@ externals: {
 // 项目中引用
 import xx from 'aaa';
 ```
-
-
 
 ## resolve
 
@@ -316,8 +316,6 @@ modules: [
 
 ---
 
-
-
 ## 配置开启的服务器
 
 开发过程中可以使用 `node` 写一些后台业务, 可以使用这个模拟数据传递.
@@ -379,8 +377,6 @@ module.exports = {
     }
 };
 ```
-
-
 
 ## 关于图片压缩成二进制问题
 
