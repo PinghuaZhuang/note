@@ -1,16 +1,17 @@
 interface Todo {
   title: string
-  description: string
+  description?: Todo
   completed: boolean
 }
 
-type MyPick  {
-
+type MyPick<T, K extends keyof T> = {
+  [P in K]?: T[P];
 }
 
 type TodoPreview = MyPick<Todo, 'title' | 'completed'>
 
-const todo: TodoPreview = {
+const todo: Todo = {
     title: 'Clean room',
     completed: false,
 }
+todo.description!.title
