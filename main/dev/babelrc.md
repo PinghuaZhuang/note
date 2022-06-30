@@ -8,6 +8,35 @@ npm install babel-plugin-transform-vue-jsx
 
 
 
+## 编译 2019
+
+```js
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "usage",
+        "corejs": "3.23",
+        "targets": {
+          "chrome": 49
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "helpers": false,
+        "regenerator": false
+      }
+    ]
+  ]
+}
+
+```
+
 ## transform-vue-jsx
 
 使用 `jsx` 模板
