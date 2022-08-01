@@ -4,6 +4,8 @@
 
 ## 禁用默认的鼠标行为
 
+![](https://git.poker/PinghuaZhuang/note/blob/master/images-upload/h-generator.4llm8u71pwk0.gif?raw=true)
+
 ```css
 pointer-events: none;
 ```

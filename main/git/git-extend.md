@@ -1,6 +1,10 @@
 # Git 扩展
 
+## 空白分支
 
+```bash
+git checkout --orphan emptybranch
+```
 
 ## git 代理
 
