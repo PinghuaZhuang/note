@@ -20,6 +20,48 @@
 
 
 
+## 配置全局样式 less sass
+
+第一种: https://segmentfault.com/a/1190000019920162?sort=votes
+
+```js
+module.exports = {
+  // sass-loader
+  // vue-loader.vuejs.org/zh/guide/pre-processors.html#sass
+  css: {
+    loaderOptions: {
+      sass: {
+        // webpack.docschina.org/loaders/sass-loader/#options
+        // webpack.docschina.org/loaders/sass-loader/#additionaldata
+        // cli.vuejs.org/guide/css.html#passing-options-to-pre-processor-loaders
+        additionalData: '@import "~@/style/variables.scss";'
+      },
+      scss: {
+        additionalData: (content, loaderContext) => {
+          const { resourcePath, rootContext } = loaderContext;
+          const relativePath = path.relative(rootContext, resourcePath);
+          if (/styles\\variables.scss/.test(relativePath)) {
+            return `@import "~@/styles/mixin.scss";` + content
+          }
+
+          return `@import "~@/styles/mixin.scss";
+          @import "~@/styles/variables.scss";` + content
+        }
+      }
+    }
+  },
+}
+```
+
+第二种:
+
+```js
+```
+
+
+
+
+
 ## 配置 pug-loader
 
 ```js
