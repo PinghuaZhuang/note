@@ -62,6 +62,18 @@ module.exports = {
 
 
 
+## hash、chunkhash、contenthash三者
++ hash（所有⽂件哈希值相同，只要改变内容跟之前的不⼀致，所有哈希值都改变，没有做到缓存意义）
++ chunkhash（同⼀个模块，就算将js和css分离，其哈希值也是相同的，修改⼀处，js和css哈希值都会变，同hash，没有做到缓存意义）
++ contenthash（只要⽂件内容一样, hash就不会变)
+
+## CriticalDependency 警告
+
+```js
+// 在 chainWebpack 中设置
+config.module.set('unknownContextCritical', false);
+```
+
 ## 配置 pug-loader
 
 ```js
@@ -152,10 +164,6 @@ module.exports = {
 
 ```
 
-
-
-
-
 ## 配置cssmodule
 
 https://github.com/css-modules/css-modules
@@ -178,15 +186,11 @@ https://github.com/css-modules/css-modules
 }
 ```
 
-
-
-
-
 ## Webpack 之 treeShaking
 
 [简书][https://www.jianshu.com/p/cf930283d404]
 
-直接打包有用的代码. 
+直接打包有用的代码.
 
 webpack2.0 配置
 
@@ -228,8 +232,6 @@ export const zList = getFiles( files, ( item ) => {
 } )
 ```
 
-
-
 ## context
 
 项目根目录
@@ -261,15 +263,15 @@ export const zList = getFiles( files, ( item ) => {
 `libraryTarget`
 
 	"var" - 通过设置一个变量导出: var Library = xxx (default)
-	
+
 	"this" - 通过设置 this的属性来导出: this["Library"] = xxx
-	
+
 	"commonjs" - 通过设置 exports的属性导出: exports["Library"] = xxx
-	
+
 	"commonjs2" - 通过设置 module.exports导出: module.exports = xxx
-	
+
 	"amd" - 导出为AMD (视情况可通过output.library来命名)
-	
+
 	"umd" - 导出为 AMD, CommonJS2 或者是顶级属性
 
 ## externals
@@ -285,8 +287,6 @@ externals: {
 // 项目中引用
 import xx from 'aaa';
 ```
-
-
 
 ## resolve
 
@@ -317,7 +317,7 @@ modules: [
 
 模块
 
-`rules` 
+`rules`
 
 	配置 `loader`
 
@@ -325,7 +325,7 @@ modules: [
 
 调试过程开启的服务器配置
 
-`port` 
+`port`
 
 	端口号
 
@@ -357,8 +357,6 @@ modules: [
 
 
 ---
-
-
 
 ## 配置开启的服务器
 
@@ -421,8 +419,6 @@ module.exports = {
     }
 };
 ```
-
-
 
 ## 关于图片压缩成二进制问题
 

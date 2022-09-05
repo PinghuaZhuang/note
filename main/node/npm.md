@@ -6,6 +6,11 @@
 
 
 
+## npm-install-peers
+
+https://github.com/spatie/npm-install-peers
+usage: npm-install-peers
+
 ## npm run all
 
 并行/串行多个命令.

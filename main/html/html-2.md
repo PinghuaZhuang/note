@@ -1,3 +1,8 @@
+## 表单元素 input 回车(enter)自动提交的触发
+
+1. 只有一个 `input`, 并且 `type="text"`, 并且没有不合规范的参数(不要出现[object Oject]). 
+2. 有 `type="submit"` 的按钮, 任意的 `input` 回车都可以触发. 
+
 ## load ready 事件
 
 DOMContentLoaded
