@@ -40,6 +40,26 @@ docker run -it --name centos-1 --network testnet --network-alias centos-1 docker
 docker run -it --name centos-2 --network testnet --network-alias centos-2 docker.io/centos:latest
 ```
 
+## root 进入容器
+
+```bash
+docker exec -it -u root <container_id> /bin/bash
+```
+
+获取容器id
+
+```bash
+docker ps -a # 所有的
+docker ps # 启动的
+```
+
+按照vim
+
+```bash
+apt-get install update # 需要先更新
+apt-get install vim
+```
+
 
 
 
@@ -49,3 +69,5 @@ docker run -it --name centos-2 --network testnet --network-alias centos-2 docker
 参考文献:
 
 [容器之间访问][https://www.cnblogs.com/shenh/p/9714547.html]
+
+[按照 vim][https://jhooq.com/docker-edit-file-inside-container/]
