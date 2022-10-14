@@ -2,6 +2,10 @@
 
 
 
+## Content-Disposition
+
+设置Content-Disposition应该可以避免下载后默认打开吧
+
 ## Chrome DevTools
 
 ### monitorEvent(el: Element, eventName: String|Array\<string\>) 
