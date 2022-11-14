@@ -1,3 +1,17 @@
+
+
+## pushState replaceState
+
+> `history.pushState()` 或 `history.replaceState()` 不会触发 `popstate` 事件
+
+## document.body.scrolltop
+
+页面设置了 DTD 的时候, `document.body.scrolltop` 获取不到数据. 应该使用 `document.documentElement.scrollTop`;
+
+> 页面指定了DTD，即指定了DOCTYPE时，使用document.documentElement
+>
+> 页面没有DTD，即没指定DOCTYPE时，使用document.body
+
 ## 表单元素 input 回车(enter)自动提交的触发
 
 1. 只有一个 `input`, 并且 `type="text"`, 并且没有不合规范的参数(不要出现[object Oject]). 

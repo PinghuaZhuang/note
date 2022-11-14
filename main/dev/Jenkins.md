@@ -8,8 +8,10 @@
 
 ## Error 403 No valid crumb was included in the request
 
+利用请求进行部署.
+
 1. Dashboard > 全局安全配置 > 跨站请求伪造保护.
-2. 请求携带crumb来实现(还要携带上cookies).
+2. 请求携带crumb来实现(还要携带上`cookies`).
 3. 如果上面的方法不行, 则关闭掉跨站请求伪造保护.
 
 ## No such plugin: cloudbees-folder
@@ -33,3 +35,4 @@ https://blog.csdn.net/Lemonhlj/article/details/112140367
 ---
 
 [1]: https://www.cnblogs.com/wfd360/p/11314697.html
+[https://blog.csdn.net/qq_33285694/article/details/119886289]: 
