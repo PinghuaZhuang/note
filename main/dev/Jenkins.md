@@ -11,12 +11,24 @@
 利用请求进行部署.
 
 1. Dashboard > 全局安全配置 > 跨站请求伪造保护.
-2. 请求携带crumb来实现(还要携带上`cookies`).
+2. 请求携带crumb来实现(这种方式需要使用账号密码登录, 并且需要携带cookie).
 3. 如果上面的方法不行, 则关闭掉跨站请求伪造保护.
 
 ## No such plugin: cloudbees-folder
 
 https://blog.csdn.net/Lemonhlj/article/details/112140367
+
+
+
+## 关闭跨站请求伪造保护, 不建议
+
+```bash
+hudson.security.csrf.GlobalCrumbIssuerConfiguration.DISABLE_CSRF_PROTECTION = true
+```
+
+
+
+![image-20221122091626554](./assets/image-20221122091626554.png)
 
 
 
@@ -35,4 +47,7 @@ https://blog.csdn.net/Lemonhlj/article/details/112140367
 ---
 
 [1]: https://www.cnblogs.com/wfd360/p/11314697.html
+[https://blog.csdn.net/qq_33285694/article/details/119886289]: 
+
+[https://www.jianshu.com/p/00fcfa4a53b5]: 
 [https://blog.csdn.net/qq_33285694/article/details/119886289]: 
