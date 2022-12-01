@@ -2,7 +2,17 @@
 
 记录跟 html 有关的知识.
 
+## 获取 Response中的自定义headers
 
+后端发送请求的时候设置：
+
+> // 自定义响应头
+>
+> ctx.res.setHeader('myheader', 'abc')
+>
+> // 通过此header设置允许前端访问
+>
+> ctx.res.setHeader('Access-Control-Expose-Headers', 'myheader')
 
 ## 复制文本
 
